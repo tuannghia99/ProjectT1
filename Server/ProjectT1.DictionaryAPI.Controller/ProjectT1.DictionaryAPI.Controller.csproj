@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Controllers\cChucNang\CapNhatTienDoGiaiNganBangNVSNChiTietCTNguonVonMappingController.cs" />
+		<Compile Remove="Controllers\cChucNang\DM0003Controller.cs" />
+		<Compile Remove="Controllers\cChucNang\DM0004Controller.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+    <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.ReDoc" Version="6.5.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+    <Using Include="app.StdFramework" />
+		<Using Include="app.StdFramework.WebApi" />
+    <Using Include="Asp.Versioning" />
+		<Using Include="VCSCASStdLib" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Controllers\cChucNang\" />
+	  <Folder Include="Controllers\cNghiepVu\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\ProjectT1.DictionaryAPI.Infrastructure\ProjectT1.DictionaryAPI.Infrastructure.csproj" />
+	</ItemGroup>
+
+</Project>

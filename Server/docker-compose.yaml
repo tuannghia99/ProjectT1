@@ -1,0 +1,12 @@
+services:
+  api:
+    image: projectyserver
+    build:
+      context: ./
+      dockerfile : /ProjectY.DataBusiness.ServiceAPI/Dockerfile
+    ports:
+      - "3031:80"
+ 
+
+
+  
