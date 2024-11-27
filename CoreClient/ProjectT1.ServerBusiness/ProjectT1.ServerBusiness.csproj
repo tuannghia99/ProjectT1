@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Business\ExcelDataExchange\**" />
+	  <EmbeddedResource Remove="Business\ExcelDataExchange\**" />
+	  <None Remove="Business\ExcelDataExchange\**" />
+	</ItemGroup>
+
+	<ItemGroup><!--<ProjectReference Include="..\ProjectX.Abstract\ProjectX.Abstract.csproj" />
+	  <ProjectReference Include="..\ProjectZ1.Client.ServerBusiness.Infrastructure\ProjectZ1.Client.ServerBusiness.Infrastructure.csproj" />-->
+	
+	  <PackageReference Include="app.StdFramework.Core" Version="2021.1.29" />
+	
+	  <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+	
+	  <PackageReference Include="ProjectX.Abstract" Version="1.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Business\" />
+	</ItemGroup>
+
+</Project>
