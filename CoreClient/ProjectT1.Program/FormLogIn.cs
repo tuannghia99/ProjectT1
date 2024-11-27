@@ -85,7 +85,6 @@ namespace ProjectT1.CoreClient {
                         }
                     }
                     this.Visible = false;
-                    FormMain._sessionAPI = _session;
                 }
                 else {
                     _isLoginSucess = false;

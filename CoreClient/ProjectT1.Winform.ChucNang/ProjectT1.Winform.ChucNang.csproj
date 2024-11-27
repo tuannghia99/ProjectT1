@@ -52,14 +52,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Forms\FrmKyLuat.cs">
+	    <SubType>Form</SubType>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 		<EmbeddedResource Update="Properties\Resources.resx">
 			<Generator>ResXFileCodeGenerator</Generator>
 			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
 		</EmbeddedResource>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="FormChucNangV2\Forms\" />
 	</ItemGroup>
 
 </Project>

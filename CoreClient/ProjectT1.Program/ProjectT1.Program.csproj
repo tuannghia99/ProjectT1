@@ -72,9 +72,4 @@
   <ItemGroup>
     <ProjectReference Include="..\ProjectT1.Winform.ChucNang\ProjectT1.Winform.ChucNang.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="FormMain.cs" />
-    <Compile Update="FormMenu.cs" />
-  </ItemGroup>
 </Project>
