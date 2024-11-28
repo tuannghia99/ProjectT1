@@ -10,19 +10,18 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace ProjectT1.DictionaryAPI.Infrastructure.Services {
-    public class PhongBanService(
+    public class KhenThuongService(
         DatabaseContext _context,
         IMapper _mapper,
-        ILogger<PhongBanService> _logger,
-        IValidator<PhongBanDTO> _validator
-        ) : IPhongBanService {
-        const string _category = "PhongBan";
+        ILogger<KhenThuongService> _logger,
+        IValidator<KhenThuongDTO> _validator
+        ) : IKhenThuongService {
 
-        public async Task<(IEnumerable<PhongBanDTO> Result, int Code, string Message)> GetAll() {
+        public async Task<(IEnumerable<KhenThuongDTO> Result, int Code, string Message)> GetAll() {
             _logger.LogInformation("GetAll called");
             try {
-                var data = await _context.CommonCategories.AsNoTracking().Where(x => x.CategoryId == _category).ToListAsync();
-                var res = data.Select(_mapper.Map<CommonCategory, PhongBanDTO>).ToList();
+                var data = await _context.KhenThuongs.AsNoTracking().ToListAsync();
+                var res = data.Select(_mapper.Map<KhenThuong, KhenThuongDTO>).ToList();
 
                 _logger.LogTrace("GetAll success: Result count {ResultCount}", res.Count);
                 return (res, StatusCodes.Status200OK, null);
@@ -33,14 +32,14 @@ namespace ProjectT1.DictionaryAPI.Infrastructure.Services {
             }
         }
 
-        public async Task<(PhongBanDTO Result, int Code, string Message)> GetById(Guid id) {
+        public async Task<(KhenThuongDTO Result, int Code, string Message)> GetById(Guid id) {
             _logger.LogInformation("GetById called: Id {Id}", id);
             try {
-                var obj = await _context.CommonCategories.AsNoTracking().FirstOrDefaultAsync(x => x.CategoryId == _category && x.Oid == id);
+                var obj = await _context.KhenThuongs.AsNoTracking().FirstOrDefaultAsync(x => x.Oid == id);
                 if (obj == null)
                     return (null, StatusCodes.Status404NotFound, null);
 
-                var res = _mapper.Map<CommonCategory, PhongBanDTO>(obj);
+                var res = _mapper.Map<KhenThuong, KhenThuongDTO>(obj);
 
                 _logger.LogTrace("GetById success: Id {Id}", id);
                 return (res, StatusCodes.Status200OK, null);
@@ -51,11 +50,11 @@ namespace ProjectT1.DictionaryAPI.Infrastructure.Services {
             }
         }
 
-        public async Task<(IEnumerable<PhongBanDTO> Result, int Code, string Message)> Post(IEnumerable<PhongBanDTO> dataSource) {
+        public async Task<(IEnumerable<KhenThuongDTO> Result, int Code, string Message)> Post(IEnumerable<KhenThuongDTO> dataSource) {
             _logger.LogInformation("Post called: DataSource {DataSource}", JsonConvert.SerializeObject(dataSource));
             using var transaction = await _context.Database.BeginTransactionAsync();
             try {
-                var lstMsCode = await _context.CommonCategories.AsNoTracking().Where(x => x.CategoryId == _category).Select(x => x.Mscode).ToListAsync();
+                var lstMsCode = await _context.KhenThuongs.AsNoTracking().Select(x => x.MaSo).ToListAsync();
                 foreach (var item in dataSource) {
                     if (!MsCodeValidator.CheckValidMsCode(item.MaSo, lstMsCode)) {
                         var mess = $"MsCode \'{item.MaSo}\' is duplicate";
@@ -64,14 +63,9 @@ namespace ProjectT1.DictionaryAPI.Infrastructure.Services {
                     }
                 }
 
-                var dataDest = dataSource.Select(_mapper.Map<PhongBanDTO, CommonCategory>).ToList();
-                dataDest.ForEach(x => {
-                    x.Mscode = (string.IsNullOrEmpty(x.Mscode)) ? string.Empty : x.Mscode;
-                    x.Msname = (string.IsNullOrEmpty(x.Msname)) ? string.Empty : x.Msname;
-                    x.CategoryId = _category;
-                });
+                var dataDest = dataSource.Select(_mapper.Map<KhenThuongDTO, KhenThuong>).ToList();
 
-                await _context.CommonCategories.AddRangeAsync(dataDest);
+                await _context.KhenThuongs.AddRangeAsync(dataDest);
                 await _context.SaveChangesAsync();
                 await transaction.CommitAsync();
 
@@ -85,16 +79,16 @@ namespace ProjectT1.DictionaryAPI.Infrastructure.Services {
             }
         }
 
-        public async Task<(PhongBanDTO Result, int Code, string Message)> Put(PhongBanDTO objSource, Guid id) {
+        public async Task<(KhenThuongDTO Result, int Code, string Message)> Put(KhenThuongDTO objSource, Guid id) {
             _logger.LogInformation("Put called: ObjSource {ObjSource}, Id {id}", JsonConvert.SerializeObject(objSource), id);
             using var transaction = await _context.Database.BeginTransactionAsync();
             try {
-                var objDest = await _context.CommonCategories.FirstOrDefaultAsync(x => x.CategoryId == _category && x.Oid == id);
+                var objDest = await _context.KhenThuongs.FirstOrDefaultAsync(x => x.Oid == id);
                 if (objDest == null)
                     return (null, StatusCodes.Status404NotFound, null);
 
-                var lstMsCode = await _context.CommonCategories.AsNoTracking().Where(x => x.CategoryId == _category).Select(x => x.Mscode).ToListAsync();
-                if (objSource.MaSo != objDest.Mscode) {
+                var lstMsCode = await _context.KhenThuongs.AsNoTracking().Select(x => x.MaSo).ToListAsync();
+                if (objSource.MaSo != objDest.MaSo) {
                     if (!MsCodeValidator.CheckValidMsCode(objSource.MaSo, lstMsCode)) {
                         var mess = $"MsCode \'{objSource.MaSo}\' is duplicate";
                         _logger.LogTrace("Put processing CheckMsCode: {Mess}", mess);
@@ -103,9 +97,6 @@ namespace ProjectT1.DictionaryAPI.Infrastructure.Services {
                 }
 
                 _mapper.Map(objSource, objDest);
-                objDest.Mscode = (string.IsNullOrEmpty(objDest.Mscode)) ? string.Empty : objDest.Mscode;
-                objDest.Msname = (string.IsNullOrEmpty(objDest.Msname)) ? string.Empty : objDest.Msname;
-                objDest.CategoryId = _category;
 
                 await _context.SaveChangesAsync();
                 await transaction.CommitAsync();
@@ -124,11 +115,11 @@ namespace ProjectT1.DictionaryAPI.Infrastructure.Services {
             _logger.LogInformation("Delete called: Id {Id}", id);
             using var transaction = await _context.Database.BeginTransactionAsync();
             try {
-                var objDest = await _context.CommonCategories.FirstOrDefaultAsync(x => x.CategoryId == _category && x.Oid == id);
+                var objDest = await _context.KhenThuongs.FirstOrDefaultAsync(x => x.Oid == id);
                 if (objDest == null)
                     return (null, StatusCodes.Status404NotFound, null);
 
-                _context.CommonCategories.Remove(objDest);
+                _context.KhenThuongs.Remove(objDest);
                 await _context.SaveChangesAsync();
                 await transaction.CommitAsync();
 

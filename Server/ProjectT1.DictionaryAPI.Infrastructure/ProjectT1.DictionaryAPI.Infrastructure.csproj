@@ -21,13 +21,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="DTOs\ChucNang\" />
-		<Folder Include="Services\sChucNang\Implements\" />
-		<Folder Include="Services\sChucNang\Interfaces\" />
-		<Folder Include="Validators\ChucNang\" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<Reference Include="app.StdFramework.Core">
 			<HintPath>..\DLLs\app.StdFramework.Core.dll</HintPath>
 		</Reference>

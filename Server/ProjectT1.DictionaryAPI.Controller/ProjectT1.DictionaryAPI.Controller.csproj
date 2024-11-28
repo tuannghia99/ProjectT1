@@ -23,7 +23,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Controllers\cChucNang\" />
 		<Folder Include="Controllers\cNghiepVu\" />
 	</ItemGroup>
 
