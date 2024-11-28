@@ -6,26 +6,31 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="app.StdFramework.Core" Version="2021.1.29" />
-		<PackageReference Include="app.StdFramework.WebApi" Version="2021.1.25" />
 		<PackageReference Include="AutoMapper" Version="13.0.1" />
 		<PackageReference Include="FluentValidation" Version="11.9.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.29" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.29" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Using Include="System" />
 		<Using Include="FluentValidation" />
-		<Using Include="app.StdCommon.Serialization" />
+		<Using Include="app.StdFramework" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="DTOs\ChucNang\" />
-	  <Folder Include="Services\sChucNang\Implements\" />
-	  <Folder Include="Services\sChucNang\Interfaces\" />
-	  <Folder Include="Validators\ChucNang\" />
+		<Folder Include="DTOs\ChucNang\" />
+		<Folder Include="Services\sChucNang\Implements\" />
+		<Folder Include="Services\sChucNang\Interfaces\" />
+		<Folder Include="Validators\ChucNang\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="app.StdFramework.Core">
+			<HintPath>..\DLLs\app.StdFramework.Core.dll</HintPath>
+		</Reference>
 	</ItemGroup>
 
 </Project>

@@ -13,24 +13,28 @@
 	</ItemGroup>
 
 	<ItemGroup>
-    <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="6.4.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore.ReDoc" Version="6.5.0" />
+		<PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="6.4.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore.ReDoc" Version="6.5.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-    <Using Include="app.StdFramework" />
-		<Using Include="app.StdFramework.WebApi" />
-    <Using Include="Asp.Versioning" />
-		<Using Include="VCSCASStdLib" />
+		<Using Include="app.StdFramework" />
+		<Using Include="Asp.Versioning" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Controllers\cChucNang\" />
-	  <Folder Include="Controllers\cNghiepVu\" />
+		<Folder Include="Controllers\cChucNang\" />
+		<Folder Include="Controllers\cNghiepVu\" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\ProjectT1.DictionaryAPI.Infrastructure\ProjectT1.DictionaryAPI.Infrastructure.csproj" />
+		<ProjectReference Include="..\ProjectT1.DictionaryAPI.Infrastructure\ProjectT1.DictionaryAPI.Infrastructure.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="app.StdFramework.Core">
+			<HintPath>..\DLLs\app.StdFramework.Core.dll</HintPath>
+		</Reference>
 	</ItemGroup>
 
 </Project>

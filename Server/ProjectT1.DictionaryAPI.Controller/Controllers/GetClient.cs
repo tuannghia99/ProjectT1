@@ -1,5 +1,4 @@
-﻿using app.StdCommon;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 
 namespace ProjectT1.DictionaryAPI.Controller.Controllers {
     public static class GetClient {

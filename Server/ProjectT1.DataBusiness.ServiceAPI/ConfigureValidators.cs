@@ -6,13 +6,15 @@ using System.Reflection;
 
 namespace ProjectT1.DataBusiness.ServiceAPI {
     public static class ConfigureValidators {
-        public static IServiceCollection ConfigureM8Validators(this IServiceCollection services) {
+        public static IServiceCollection ConfigValidators(this IServiceCollection services) {
             var asm = Assembly.GetExecutingAssembly();
 
             // ChucNang
 
             // DanhMuc
-            services.AddTransient<IValidator<LinhVucDTO>, BaseValidator<LinhVucDTO>>();
+            services.AddTransient<IValidator<ChucVuDTO>, BaseValidator<ChucVuDTO>>();
+            services.AddTransient<IValidator<PhongBanDTO>, BaseValidator<PhongBanDTO>>();
+            services.AddTransient<IValidator<TrinhDoHocVanDTO>, BaseValidator<TrinhDoHocVanDTO>>();
 
             return services;
         }

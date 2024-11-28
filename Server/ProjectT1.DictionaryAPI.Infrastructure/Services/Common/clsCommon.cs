@@ -1,9 +1,5 @@
-﻿using app.StdCommon;
-using app.StdFramework;
-using GenerateModelSQLServerEFCore.Models;
+﻿using app.StdFramework;
 using Microsoft.AspNetCore.Http;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace ProjectT1.DictionaryAPI.Infrastructure.Services {
     public static class clsCommon {
@@ -30,46 +26,5 @@ namespace ProjectT1.DictionaryAPI.Infrastructure.Services {
             return operationResult;
         }
         #endregion
-
-        #region Business
-        public static List<string> CheckLichSu<T>(List<T> dataSource, string IdCha, List<string> List) {
-            var Obj = dataSource.Where(s => s.GetType().GetProperty("IdVanBanDenParent")?.GetValue(s, null).SafeToString() == IdCha).FirstOrDefault();
-            if (Obj != null) {
-                List.Add(Obj.GetType().GetProperty("Oid")?.GetValue(Obj, null).SafeToString());
-                return CheckLichSu(dataSource, Obj.GetType().GetProperty("Oid")?.GetValue(Obj, null).SafeToString(), List);
-            }
-            else {
-                return List;
-            }
-        }
-
-        public static List<string> TraPheDuyet<T>(List<T> dataSource, string IdCha, List<string> List) {
-            var Obj = dataSource.Where(s => s.GetType().GetProperty("Oid")?.GetValue(s, null).SafeToString() == IdCha).FirstOrDefault();
-            if (Obj != null) {
-                List.Add(Obj.GetType().GetProperty("Oid")?.GetValue(Obj, null).SafeToString());
-                return TraPheDuyet(dataSource, Obj.GetType().GetProperty("IdVanBanDiParent")?.GetValue(Obj, null).SafeToString(), List);
-            }
-            else {
-                return List;
-            }
-        }
-
-        public static bool CheckTrungMaSoSua<T>(List<Dm0002> dataSource, string category, T data) {
-            var Obj = dataSource.Where(s => s.GetType().GetProperty("CategoryId")?.GetValue(s, null).SafeToString() == category
-            && s.Mscode == data.GetType().GetProperty("MaSo")?.GetValue(data, null).SafeToString()
-            && s.Oid.SafeToString() != data.GetType().GetProperty("Oid")?.GetValue(data, null).SafeToString()).FirstOrDefault();
-            if (Obj != null) {
-
-                return true;
-            }
-            else {
-                return false;
-            }
-        }
-        #endregion
-    }
-    public enum g_LastAction {
-        New = 1,
-        Update = 2
     }
 }

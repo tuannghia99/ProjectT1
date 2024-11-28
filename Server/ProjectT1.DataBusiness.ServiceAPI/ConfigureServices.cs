@@ -4,13 +4,15 @@ using System.Reflection;
 
 namespace ProjectT1.DataBusiness.ServiceAPI {
     public static class ConfigureServices {
-        public static IServiceCollection ConfigureM8Services(this IServiceCollection services) {
+        public static IServiceCollection ConfigServices(this IServiceCollection services) {
             var asm = Assembly.GetExecutingAssembly();
 
             // ChucNang
 
             // DanhMuc
-            services.AddTransient<ILinhVucService, LinhVucService>();
+            services.AddTransient<IChucVuService, ChucVuService>();
+            services.AddTransient<IPhongBanService, PhongBanService>();
+            services.AddTransient<ITrinhDoHocVanService, TrinhDoHocVanService>();
 
             return services;
         }
