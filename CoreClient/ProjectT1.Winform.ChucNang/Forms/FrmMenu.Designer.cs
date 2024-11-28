@@ -27,13 +27,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             barManager1 = new DevExpress.XtraBars.BarManager(components);
             bar1 = new DevExpress.XtraBars.Bar();
+            btnHome = new DevExpress.XtraBars.BarButtonItem();
+            btnNhanVien = new DevExpress.XtraBars.BarButtonItem();
             bar3 = new DevExpress.XtraBars.Bar();
             barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.btnHome = new DevExpress.XtraBars.BarButtonItem();
-            btnNhanVien = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)barManager1).BeginInit();
             SuspendLayout();
             // 
@@ -45,7 +45,7 @@
             barManager1.DockControls.Add(barDockControlLeft);
             barManager1.DockControls.Add(barDockControlRight);
             barManager1.Form = this;
-            barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { this.btnHome, btnNhanVien });
+            barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { btnHome, btnNhanVien });
             barManager1.MaxItemId = 2;
             barManager1.StatusBar = bar3;
             // 
@@ -56,8 +56,24 @@
             bar1.DockRow = 0;
             bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             bar1.FloatLocation = new Point(49, 134);
-            bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] { new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnHome, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, btnNhanVien, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph) });
+            bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] { new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, btnHome, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, btnNhanVien, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph) });
             bar1.Text = "Tools";
+            // 
+            // btnHome
+            // 
+            btnHome.Caption = "Home";
+            btnHome.Id = 0;
+            btnHome.ImageOptions.Image = (Image)resources.GetObject("btnHome.ImageOptions.Image");
+            btnHome.ImageOptions.LargeImage = (Image)resources.GetObject("btnHome.ImageOptions.LargeImage");
+            btnHome.Name = "btnHome";
+            // 
+            // btnNhanVien
+            // 
+            btnNhanVien.Caption = "Quản lý nhân viên";
+            btnNhanVien.Id = 1;
+            btnNhanVien.ImageOptions.Image = (Image)resources.GetObject("btnNhanVien.ImageOptions.Image");
+            btnNhanVien.Name = "btnNhanVien";
+            btnNhanVien.ItemClick += btnNhanVien_ItemClick;
             // 
             // bar3
             // 
@@ -103,21 +119,6 @@
             barDockControlRight.Manager = barManager1;
             barDockControlRight.Size = new Size(0, 645);
             // 
-            // btnHome
-            // 
-            this.btnHome.Caption = "Home";
-            this.btnHome.Id = 0;
-            this.btnHome.ImageOptions.Image = (Image)resources.GetObject("barButtonItem1.ImageOptions.Image");
-            this.btnHome.ImageOptions.LargeImage = (Image)resources.GetObject("barButtonItem1.ImageOptions.LargeImage");
-            this.btnHome.Name = "btnHome";
-            // 
-            // btnNhanVien
-            // 
-            btnNhanVien.Caption = "Quản lý nhân viên";
-            btnNhanVien.Id = 1;
-            btnNhanVien.ImageOptions.Image = (Image)resources.GetObject("barButtonItem2.ImageOptions.Image");
-            btnNhanVien.Name = "btnNhanVien";
-            // 
             // FrmMenu
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
@@ -129,6 +130,7 @@
             Controls.Add(barDockControlTop);
             Name = "FrmMenu";
             Text = "FrmMenu";
+            Load += FrmMenu_Load;
             ((System.ComponentModel.ISupportInitialize)barManager1).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -1,5 +1,5 @@
 ﻿namespace Project.Client.Winform {
-    partial class FrmNhanVien {
+    partial class FrmDanhSachNhanVien {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -24,50 +24,50 @@
         /// </summary>
         private void InitializeComponent() {
             components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNhanVien));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDanhSachNhanVien));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             barManager1 = new DevExpress.XtraBars.BarManager(components);
             bar1 = new DevExpress.XtraBars.Bar();
+            barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             bar3 = new DevExpress.XtraBars.Bar();
             barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            gridControlDsNhanVien = new DevExpress.XtraGrid.GridControl();
-            gridViewDsNhanVien = new DevExpress.XtraGrid.Views.Grid.GridView();
-            layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            gridControlMain = new DevExpress.XtraGrid.GridControl();
+            gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            repoChiTiet = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             repoIdPhongBan = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             repoIdChucDanh = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             repositoryItemSearchLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            repoChiTiet = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)barManager1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControl1).BeginInit();
             layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)Root).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)gridControlDsNhanVien).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)gridViewDsNhanVien).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)layoutControlItem1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridControlMain).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridViewMain).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repoChiTiet).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repoIdPhongBan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemSearchLookUpEdit1View).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repoIdChucDanh).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemSearchLookUpEdit2View).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)repoChiTiet).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Root).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem1).BeginInit();
             SuspendLayout();
             // 
             // barManager1
@@ -86,10 +86,17 @@
             // 
             bar1.BarName = "Tools";
             bar1.DockCol = 0;
-            bar1.DockRow = 1;
+            bar1.DockRow = 0;
             bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] { new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph) });
             bar1.Text = "Tools";
+            // 
+            // barButtonItem1
+            // 
+            barButtonItem1.Caption = "Home";
+            barButtonItem1.Id = 0;
+            barButtonItem1.ImageOptions.Image = (Image)resources.GetObject("barButtonItem1.ImageOptions.Image");
+            barButtonItem1.Name = "barButtonItem1";
             // 
             // bar3
             // 
@@ -137,7 +144,7 @@
             // 
             // layoutControl1
             // 
-            layoutControl1.Controls.Add(gridControlDsNhanVien);
+            layoutControl1.Controls.Add(gridControlMain);
             layoutControl1.Dock = DockStyle.Fill;
             layoutControl1.Location = new Point(0, 24);
             layoutControl1.Name = "layoutControl1";
@@ -146,54 +153,28 @@
             layoutControl1.TabIndex = 4;
             layoutControl1.Text = "layoutControl1";
             // 
-            // Root
+            // gridControlMain
             // 
-            Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            Root.GroupBordersVisible = false;
-            Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem1 });
-            Root.Name = "Root";
-            Root.Size = new Size(1207, 618);
-            Root.TextVisible = false;
+            gridControlMain.Location = new Point(12, 12);
+            gridControlMain.MainView = gridViewMain;
+            gridControlMain.MenuManager = barManager1;
+            gridControlMain.Name = "gridControlMain";
+            gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repoIdPhongBan, repoIdChucDanh, repoChiTiet });
+            gridControlMain.Size = new Size(1183, 594);
+            gridControlMain.TabIndex = 3;
+            gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewMain });
             // 
-            // gridControlDsNhanVien
+            // gridViewMain
             // 
-            gridControlDsNhanVien.Location = new Point(12, 12);
-            gridControlDsNhanVien.MainView = gridViewDsNhanVien;
-            gridControlDsNhanVien.MenuManager = barManager1;
-            gridControlDsNhanVien.Name = "gridControlDsNhanVien";
-            gridControlDsNhanVien.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repoIdPhongBan, repoIdChucDanh, repoChiTiet });
-            gridControlDsNhanVien.Size = new Size(1183, 594);
-            gridControlDsNhanVien.TabIndex = 3;
-            gridControlDsNhanVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewDsNhanVien });
-            // 
-            // gridViewDsNhanVien
-            // 
-            gridViewDsNhanVien.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { gridColumn1, gridColumn3, gridColumn4, gridColumn5, gridColumn6, gridColumn7, gridColumn2, gridColumn8 });
-            gridViewDsNhanVien.GridControl = gridControlDsNhanVien;
-            gridViewDsNhanVien.Name = "gridViewDsNhanVien";
-            // 
-            // layoutControlItem1
-            // 
-            layoutControlItem1.Control = gridControlDsNhanVien;
-            layoutControlItem1.Location = new Point(0, 0);
-            layoutControlItem1.Name = "layoutControlItem1";
-            layoutControlItem1.Size = new Size(1187, 598);
-            layoutControlItem1.TextSize = new Size(0, 0);
-            layoutControlItem1.TextVisible = false;
+            gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { gridColumn1, gridColumn3, gridColumn4, gridColumn5, gridColumn6, gridColumn7, gridColumn2, gridColumn8 });
+            gridViewMain.GridControl = gridControlMain;
+            gridViewMain.Name = "gridViewMain";
             // 
             // gridColumn1
             // 
             gridColumn1.Caption = "Oid";
             gridColumn1.FieldName = "Oid";
             gridColumn1.Name = "gridColumn1";
-            // 
-            // gridColumn2
-            // 
-            gridColumn2.Caption = "Hình ảnh";
-            gridColumn2.FieldName = "Avatar";
-            gridColumn2.Name = "gridColumn2";
-            gridColumn2.Visible = true;
-            gridColumn2.VisibleIndex = 5;
             // 
             // gridColumn3
             // 
@@ -235,6 +216,14 @@
             gridColumn7.Visible = true;
             gridColumn7.VisibleIndex = 4;
             // 
+            // gridColumn2
+            // 
+            gridColumn2.Caption = "Hình ảnh";
+            gridColumn2.FieldName = "Avatar";
+            gridColumn2.Name = "gridColumn2";
+            gridColumn2.Visible = true;
+            gridColumn2.VisibleIndex = 5;
+            // 
             // gridColumn8
             // 
             gridColumn8.Caption = "Chi tiết";
@@ -243,6 +232,15 @@
             gridColumn8.Name = "gridColumn8";
             gridColumn8.Visible = true;
             gridColumn8.VisibleIndex = 6;
+            // 
+            // repoChiTiet
+            // 
+            repoChiTiet.AutoHeight = false;
+            editorButtonImageOptions2.ImageUri.Uri = "Show";
+            editorButtonImageOptions2.SvgImageSize = new Size(15, 15);
+            repoChiTiet.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
+            repoChiTiet.Name = "repoChiTiet";
+            repoChiTiet.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // repoIdPhongBan
             // 
@@ -274,21 +272,23 @@
             repositoryItemSearchLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
             repositoryItemSearchLookUpEdit2View.OptionsView.ShowGroupPanel = false;
             // 
-            // repoChiTiet
+            // Root
             // 
-            repoChiTiet.AutoHeight = false;
-            editorButtonImageOptions1.ImageUri.Uri = "Show";
-            editorButtonImageOptions1.SvgImageSize = new Size(15, 15);
-            repoChiTiet.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
-            repoChiTiet.Name = "repoChiTiet";
-            repoChiTiet.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            Root.GroupBordersVisible = false;
+            Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem1 });
+            Root.Name = "Root";
+            Root.Size = new Size(1207, 618);
+            Root.TextVisible = false;
             // 
-            // barButtonItem1
+            // layoutControlItem1
             // 
-            barButtonItem1.Caption = "Home";
-            barButtonItem1.Id = 0;
-            barButtonItem1.ImageOptions.Image = (Image)resources.GetObject("barButtonItem1.ImageOptions.Image");
-            barButtonItem1.Name = "barButtonItem1";
+            layoutControlItem1.Control = gridControlMain;
+            layoutControlItem1.Location = new Point(0, 0);
+            layoutControlItem1.Name = "layoutControlItem1";
+            layoutControlItem1.Size = new Size(1187, 598);
+            layoutControlItem1.TextSize = new Size(0, 0);
+            layoutControlItem1.TextVisible = false;
             // 
             // FrmNhanVien
             // 
@@ -305,15 +305,15 @@
             ((System.ComponentModel.ISupportInitialize)barManager1).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControl1).EndInit();
             layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)Root).EndInit();
-            ((System.ComponentModel.ISupportInitialize)gridControlDsNhanVien).EndInit();
-            ((System.ComponentModel.ISupportInitialize)gridViewDsNhanVien).EndInit();
-            ((System.ComponentModel.ISupportInitialize)layoutControlItem1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridControlMain).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridViewMain).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repoChiTiet).EndInit();
             ((System.ComponentModel.ISupportInitialize)repoIdPhongBan).EndInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemSearchLookUpEdit1View).EndInit();
             ((System.ComponentModel.ISupportInitialize)repoIdChucDanh).EndInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemSearchLookUpEdit2View).EndInit();
-            ((System.ComponentModel.ISupportInitialize)repoChiTiet).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Root).EndInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -329,8 +329,8 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraGrid.GridControl gridControlDsNhanVien;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewDsNhanVien;
+        private DevExpress.XtraGrid.GridControl gridControlMain;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewMain;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;

@@ -14,5 +14,14 @@ namespace Project.Client.Winform {
         public FrmMenu() {
             InitializeComponent();
         }
+
+        private void FrmMenu_Load(object sender, EventArgs e) {
+
+        }
+
+        private void btnNhanVien_ItemClick(object sender, ItemClickEventArgs e) {
+            var formDsNhanVien = new FrmDanhSachNhanVien();
+            formDsNhanVien.ShowDialog();
+        }
     }
 }
