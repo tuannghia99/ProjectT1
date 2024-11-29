@@ -25,11 +25,11 @@
         private void InitializeComponent() {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDanhSachNhanVien));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             barManager1 = new DevExpress.XtraBars.BarManager(components);
             bar1 = new DevExpress.XtraBars.Bar();
             barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -45,6 +45,7 @@
             gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            repoNgay = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,6 +62,8 @@
             layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridControlMain).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridViewMain).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repoNgay).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repoNgay.CalendarTimeProperties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repoChiTiet).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repoIdPhongBan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemSearchLookUpEdit1View).BeginInit();
@@ -159,7 +162,7 @@
             gridControlMain.MainView = gridViewMain;
             gridControlMain.MenuManager = barManager1;
             gridControlMain.Name = "gridControlMain";
-            gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repoIdPhongBan, repoIdChucDanh, repoChiTiet });
+            gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repoIdPhongBan, repoIdChucDanh, repoChiTiet, repoNgay });
             gridControlMain.Size = new Size(1183, 594);
             gridControlMain.TabIndex = 3;
             gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewMain });
@@ -179,7 +182,7 @@
             // gridColumn3
             // 
             gridColumn3.Caption = "Tên nhân viên";
-            gridColumn3.FieldName = "TenNhanVien";
+            gridColumn3.FieldName = "Ten";
             gridColumn3.Name = "gridColumn3";
             gridColumn3.Visible = true;
             gridColumn3.VisibleIndex = 0;
@@ -195,10 +198,18 @@
             // gridColumn5
             // 
             gridColumn5.Caption = "Ngày sinh";
+            gridColumn5.ColumnEdit = repoNgay;
             gridColumn5.FieldName = "NgaySinh";
             gridColumn5.Name = "gridColumn5";
             gridColumn5.Visible = true;
             gridColumn5.VisibleIndex = 2;
+            // 
+            // repoNgay
+            // 
+            repoNgay.AutoHeight = false;
+            repoNgay.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            repoNgay.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            repoNgay.Name = "repoNgay";
             // 
             // gridColumn6
             // 
@@ -236,11 +247,12 @@
             // repoChiTiet
             // 
             repoChiTiet.AutoHeight = false;
-            editorButtonImageOptions2.ImageUri.Uri = "Show";
-            editorButtonImageOptions2.SvgImageSize = new Size(15, 15);
-            repoChiTiet.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
+            editorButtonImageOptions1.ImageUri.Uri = "Show";
+            editorButtonImageOptions1.SvgImageSize = new Size(15, 15);
+            repoChiTiet.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
             repoChiTiet.Name = "repoChiTiet";
             repoChiTiet.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            repoChiTiet.Click += repoChiTiet_Click;
             // 
             // repoIdPhongBan
             // 
@@ -290,7 +302,7 @@
             layoutControlItem1.TextSize = new Size(0, 0);
             layoutControlItem1.TextVisible = false;
             // 
-            // FrmNhanVien
+            // FrmDanhSachNhanVien
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -300,13 +312,16 @@
             Controls.Add(barDockControlRight);
             Controls.Add(barDockControlBottom);
             Controls.Add(barDockControlTop);
-            Name = "FrmNhanVien";
+            Name = "FrmDanhSachNhanVien";
             Text = "FrmNhanVien";
+            Load += FrmDanhSachNhanVien_Load;
             ((System.ComponentModel.ISupportInitialize)barManager1).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControl1).EndInit();
             layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gridControlMain).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridViewMain).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repoNgay.CalendarTimeProperties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repoNgay).EndInit();
             ((System.ComponentModel.ISupportInitialize)repoChiTiet).EndInit();
             ((System.ComponentModel.ISupportInitialize)repoIdPhongBan).EndInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemSearchLookUpEdit1View).EndInit();
@@ -346,5 +361,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit repoIdChucDanh;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit2View;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repoNgay;
     }
 }
