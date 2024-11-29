@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjectT1.DictionaryAPI.Infrastructure.DTOs;
 using ProjectT1.DictionaryAPI.Infrastructure.Services;
-using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ProjectT1.DictionaryAPI.Controller {
@@ -19,21 +17,21 @@ namespace ProjectT1.DictionaryAPI.Controller {
 
         [HttpPost]
         [Route("Login")]
-        public async Task<ActionResult<OperationResultInfo<IEnumerable<bool>>>> Login(LoginRequestDTO request) {
+        public async Task<ActionResult<OperationResultInfo<bool>>> Login(LoginRequestDTO request) {
             var (Result, Code, Message) = await service.Login(request);
             return StatusCode(Code, clsCommon.ApiResponse(Result, Code, Message));
         }
 
         [HttpPost]
         [Route("ChangePassword")]
-        public async Task<ActionResult<OperationResultInfo<IEnumerable<bool>>>> ChangePassword(ChangePasswordRequestDTO request) {
+        public async Task<ActionResult<OperationResultInfo<bool>>> ChangePassword(ChangePasswordRequestDTO request) {
             var (Result, Code, Message) = await service.ChangePassword(request);
             return StatusCode(Code, clsCommon.ApiResponse(Result, Code, Message));
         }
 
         [HttpPost]
         [Route("ResetPassword")]
-        public async Task<ActionResult<OperationResultInfo<IEnumerable<bool>>>> ResetPassword(ResetPasswordRequestDTO request) {
+        public async Task<ActionResult<OperationResultInfo<bool>>> ResetPassword(ResetPasswordRequestDTO request) {
             var (Result, Code, Message) = await service.ResetPassword(request);
             return StatusCode(Code, clsCommon.ApiResponse(Result, Code, Message));
         }

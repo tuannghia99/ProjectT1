@@ -31,10 +31,10 @@ namespace ProjectT1.DictionaryAPI.Infrastructure.Services {
             try {
                 var user = await _context.NhanViens.AsNoTracking().FirstOrDefaultAsync(x => x.Username == request.UserName);
                 if (user == null) {
-                    return (false, StatusCodes.Status400BadRequest, "Tài khoản không tồn tại");
+                    return (false, StatusCodes.Status200OK, "Tài khoản không tồn tại");
                 }
                 if (HashPasswordByMD5(request.Password) != user.Password) {
-                    return (false, StatusCodes.Status400BadRequest, "Mật khẩu không đúng");
+                    return (false, StatusCodes.Status200OK, "Mật khẩu không đúng");
                 }
                 _logger.LogTrace("Login success");
                 return (true, StatusCodes.Status200OK, "Đăng nhập thành công");
@@ -50,17 +50,17 @@ namespace ProjectT1.DictionaryAPI.Infrastructure.Services {
             try {
                 var user = await _context.NhanViens.FirstOrDefaultAsync(x => x.Oid == request.IdAccount);
                 if (user == null) {
-                    return (false, StatusCodes.Status400BadRequest, "Tài khoản không tồn tại");
+                    return (false, StatusCodes.Status200OK, "Tài khoản không tồn tại");
                 }
                 if (HashPasswordByMD5(request.OldPassword) != user.Password) {
-                    return (false, StatusCodes.Status400BadRequest, "Mật khẩu cũ không đúng");
+                    return (false, StatusCodes.Status200OK, "Mật khẩu cũ không đúng");
                 }
                 else {
                     if (request.OldPassword == request.NewPassword) {
-                        return (false, StatusCodes.Status400BadRequest, "Mật khẩu mới trùng mật khẩu cũ");
+                        return (false, StatusCodes.Status200OK, "Mật khẩu mới trùng mật khẩu cũ");
                     }
                     else if (request.ConfirmPassword != request.NewPassword) {
-                        return (false, StatusCodes.Status400BadRequest, "Mật khẩu mới và xác nhận mật khẩu không khớp");
+                        return (false, StatusCodes.Status200OK, "Mật khẩu mới và xác nhận mật khẩu không khớp");
                     }
                 }
                 user.Password = HashPasswordByMD5(request.NewPassword);
@@ -82,7 +82,7 @@ namespace ProjectT1.DictionaryAPI.Infrastructure.Services {
             try {
                 var user = await _context.NhanViens.FirstOrDefaultAsync(x => x.Oid == request.IdAccount);
                 if (user == null) {
-                    return (false, StatusCodes.Status400BadRequest, "Tài khoản không tồn tại");
+                    return (false, StatusCodes.Status200OK, "Tài khoản không tồn tại");
                 }
                 user.Password = HashPasswordByMD5(request.DefaultPassword);
                 await _context.SaveChangesAsync();
