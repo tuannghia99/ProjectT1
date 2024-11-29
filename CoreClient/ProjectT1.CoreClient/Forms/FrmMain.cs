@@ -26,15 +26,18 @@ namespace ProjectT1.CoreClient {
         }
 
         private void btnDmChucVu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
-            // TODO
+            var form = new FrmDMChucVu();
+            form.ShowDialog();
         }
 
         private void btnDmPhongBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
-            // TODO
+            var form = new FrmDMPhongBan();
+            form.ShowDialog();
         }
 
         private void btnDmTrinhDoHocVan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
-            // TODO
+            var form = new FrmDMTrinhDoHocVan();
+            form.ShowDialog();
         }
 
         private void btnCnDsNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
