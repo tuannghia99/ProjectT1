@@ -29,11 +29,13 @@
             bar1 = new DevExpress.XtraBars.Bar();
             btnHome = new DevExpress.XtraBars.BarButtonItem();
             btnNhanVien = new DevExpress.XtraBars.BarButtonItem();
+            btnDanhMuc = new DevExpress.XtraBars.BarListItem();
             bar3 = new DevExpress.XtraBars.Bar();
             barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)barManager1).BeginInit();
             SuspendLayout();
             // 
@@ -45,8 +47,8 @@
             barManager1.DockControls.Add(barDockControlLeft);
             barManager1.DockControls.Add(barDockControlRight);
             barManager1.Form = this;
-            barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { btnHome, btnNhanVien });
-            barManager1.MaxItemId = 2;
+            barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { btnHome, btnNhanVien, barButtonItem1, btnDanhMuc });
+            barManager1.MaxItemId = 4;
             barManager1.StatusBar = bar3;
             // 
             // bar1
@@ -56,7 +58,7 @@
             bar1.DockRow = 0;
             bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             bar1.FloatLocation = new Point(49, 134);
-            bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] { new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, btnHome, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, btnNhanVien, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph) });
+            bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] { new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, btnHome, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, btnNhanVien, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, btnDanhMuc, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph) });
             bar1.Text = "Tools";
             // 
             // btnHome
@@ -74,6 +76,14 @@
             btnNhanVien.ImageOptions.Image = (Image)resources.GetObject("btnNhanVien.ImageOptions.Image");
             btnNhanVien.Name = "btnNhanVien";
             btnNhanVien.ItemClick += btnNhanVien_ItemClick;
+            // 
+            // btnDanhMuc
+            // 
+            btnDanhMuc.Caption = "Quản lý danh mục";
+            btnDanhMuc.Id = 3;
+            btnDanhMuc.ImageOptions.Image = (Image)resources.GetObject("btnDanhMuc.ImageOptions.Image");
+            btnDanhMuc.Name = "btnDanhMuc";
+            btnDanhMuc.ListItemClick += btnDanhMuc_ListItemClick;
             // 
             // bar3
             // 
@@ -119,6 +129,12 @@
             barDockControlRight.Manager = barManager1;
             barDockControlRight.Size = new Size(0, 645);
             // 
+            // barButtonItem1
+            // 
+            barButtonItem1.Caption = "barButtonItem1";
+            barButtonItem1.Id = 2;
+            barButtonItem1.Name = "barButtonItem1";
+            // 
             // FrmMenu
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
@@ -147,5 +163,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem btnNhanVien;
         private DevExpress.XtraBars.BarButtonItem btnHome;
+        private DevExpress.XtraBars.BarListItem btnDanhMuc;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }
