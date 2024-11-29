@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<OutputType>Library</OutputType>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Version>1.2.0-alpha6</Version>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<Description>Contains interfaces for connecting with backend service</Description>
+		<PackageReleaseNotes>Version 1.2.0-alpha6: Remove try-catch blocks in DictionaryIntegrator to allow exceptions escalation to caller</PackageReleaseNotes>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="GeneratedClientsOff.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="app.StdCommon.Core" Version="2025.1.1" />
+		<PackageReference Include="app.StdCommon.Services" Version="2021.1.20" />
+		<PackageReference Include="AutoMapper" Version="10.1.1" />
+		<PackageReference Include="NSwag.MSBuild" Version="13.12.0">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.13" />
+	</ItemGroup>
+ 
+	<!--<Target Name="NSwagGenerateApiClientSourceCode" BeforeTargets="CoreCompile;PrepareResource">
+		<Exec Command="$(NSwagExe_Core21) run nswag.json /variables:Configuration=$(Configuration)" />
+	</Target>-->
+
+</Project>

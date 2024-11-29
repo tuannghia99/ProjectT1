@@ -10,6 +10,9 @@ namespace ProjectT1.DataBusiness.ServiceAPI {
             var asm = Assembly.GetExecutingAssembly();
 
             // ChucNang
+            services.AddTransient<IValidator<KhenThuongDTO>, BaseValidator<KhenThuongDTO>>();
+            services.AddTransient<IValidator<KyLuatDTO>, BaseValidator<KyLuatDTO>>();
+            services.AddTransient<IValidator<NhanVienDTO>, BaseValidator<NhanVienDTO>>();
 
             // DanhMuc
             services.AddTransient<IValidator<ChucVuDTO>, BaseValidator<ChucVuDTO>>();

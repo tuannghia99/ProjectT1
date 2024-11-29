@@ -36,7 +36,7 @@ namespace ProjectT1.DictionaryAPI.Infrastructure.Services {
         public async Task<(TrinhDoHocVanDTO Result, int Code, string Message)> GetById(Guid id) {
             _logger.LogInformation("GetById called: Id {Id}", id);
             try {
-                var obj = await _context.CommonCategories.AsNoTracking().FirstOrDefaultAsync(x => x.CategoryId == _category);
+                var obj = await _context.CommonCategories.AsNoTracking().FirstOrDefaultAsync(x => x.CategoryId == _category && x.Oid == id);
                 if (obj == null)
                     return (null, StatusCodes.Status404NotFound, null);
 

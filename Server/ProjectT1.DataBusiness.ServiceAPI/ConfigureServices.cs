@@ -8,11 +8,17 @@ namespace ProjectT1.DataBusiness.ServiceAPI {
             var asm = Assembly.GetExecutingAssembly();
 
             // ChucNang
+            services.AddTransient<IKhenThuongService, KhenThuongService>();
+            services.AddTransient<IKyLuatService, KyLuatService>();
+            services.AddTransient<INhanVienService, NhanVienService>();
 
             // DanhMuc
             services.AddTransient<IChucVuService, ChucVuService>();
             services.AddTransient<IPhongBanService, PhongBanService>();
             services.AddTransient<ITrinhDoHocVanService, TrinhDoHocVanService>();
+
+            // NghiepVu
+            services.AddTransient<IAccountService, AccountService>();
 
             return services;
         }
