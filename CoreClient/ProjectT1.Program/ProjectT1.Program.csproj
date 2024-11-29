@@ -60,7 +60,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="app.StdFramework.Core" Version="2021.1.30" />
     <PackageReference Include="DevExpress.Win.Design" Version="24.1.5" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />

@@ -1,12 +1,8 @@
-﻿using DevExpress.Spreadsheet;
-using DevExpress.Utils;
+﻿using DevExpress.Utils;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
-using DevExpress.XtraSplashScreen;
 using ProjectT1.Client.Winform;
-using System.Data;
-using VCSCASStdLib;
 using static ProjectT1.Client.Winform.clsCommon;
 
 namespace ProjectY.Client.Winform {
@@ -28,9 +24,6 @@ namespace ProjectY.Client.Winform {
         #endregion
         #region ConfigHandler & LoadData
         private void CommonConfig() {
-            clsCommon.CommonHandler.PreventMouseWheelForDropdown(this);
-            clsCommon.CommonHandler.ConfigBarButtonFormat(btnCreate, btnEdit, btnDelete, btnSubmit, btnCancel, btnRefresh, btnClose);
-            clsCommon.CommonHandler.ConfigForGridViewHeader(this, layoutControlGroupMainData, gridViewMain);
             ConfigShorthandEvent();
 
             gridViewMain.OptionsBehavior.Editable = false;
@@ -98,12 +91,7 @@ namespace ProjectY.Client.Winform {
             fMaSo.Focus();
         }
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
-            if (_curIdMain.()) {
-                clsCommon.CommonHandler.ShowXtraMessageBox_NeedToSelectRecord();
-                return;
-            }
-            ConfigControlStatus(_mainStatus = MainStatusForm.EDIT);
-            fMaSo.Focus();
+            
         }
         private async void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
             //IOverlaySplashScreenHandle? handle = default;
@@ -139,74 +127,16 @@ namespace ProjectY.Client.Winform {
             //handle?.Close();
         }
         private async void btnSubmit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
-            try {
-                gridViewMain.Focus();
-                if (!clsCommon.CommonHandler.CheckValidControlData(layoutControlGroupEditControl)) return;
-
-                if (_mainStatus == MainStatusForm.CREATE) _curIdMain = _tempNewIdMain;
-                var obj = new HinhThucQuanLyDTO {
-                    Oid = (_mainStatus == MainStatusForm.CREATE) ? _tempNewIdMain : _curIdMain,
-                    MaSo = fMaSo.EditValue.ToString(),
-                    Ten = fTen.EditValue.ToString(),
-                    KyHieuDanhMuc = fKyHieuDanhMuc.EditValue.ToString(),
-                };
-
-                // Validate
-                clsCommon.CommonHandler.ClearEditControlErrorText(layoutControlGroupEditControl);
-                var validator = new HinhThucQuanLyValidator();
-                var validateResult = await validator.ValidateAsync(obj);
-                if (!validateResult.IsValid) {
-                    var fieldWithMessage = validateResult.Errors.Select(x => new Tuple<string, string>(x.PropertyName, x.ErrorMessage)).ToArray();
-                    clsCommon.CommonHandler.SetEditControlErrorText_ValidateResult(this, fieldWithMessage);
-                    return;
-                }
-
-                //  Check MsCode
-                var oldMsCode = (_mainStatus == MainStatusForm.EDIT) ? _bindingListMain.FirstOrDefault(x => x.Oid == _curIdMain)?.MaSo : null;
-                var checkMsCode = MsCodeValidator.CheckValidMsCode(_bindingListMain.Select(x => x.MaSo), obj.MaSo, _mainStatus == MainStatusForm.CREATE, oldMsCode);
-                if (!checkMsCode) {
-                    clsCommon.CommonHandler.SetEditControlErrorText_DuplicateMsCode(fMaSo);
-                    return;
-                }
-
-                // Submit
-                if (_mainStatus == MainStatusForm.CREATE) {
-                    var res = await IBusObj.InsertNewItem(obj);
-                    if (res.Code == 200) clsCommon.CommonHandler.ShowNotificationForm_CreatedSuccessfully();
-                    _bindingListMain.Add(obj);
-                    gridViewMain.RefreshData();
-                    gridViewMain.FocusedRowHandle = gridViewMain.LocateByValue("Oid", obj.Oid);
-                }
-                else if (_mainStatus == MainStatusForm.EDIT) {
-                    var res = await IBusObj.UpdateItem(obj);
-                    if (res.Code == 200) clsCommon.CommonHandler.ShowNotificationForm_UpdatedSuccessfully();
-                    var objToEdit = (HinhThucQuanLyDTO)gridViewMain.GetRow(gridViewMain.FocusedRowHandle);
-                    clsCommon.CommonHandler.MemberwiseClone(obj, ref objToEdit);
-                    gridViewMain.RefreshData();
-                }
-                ConfigControlStatus(_mainStatus = MainStatusForm.VIEW);
-            }
-            catch (Exception ex) {
-            }
+            
         }
         private async void btnCancel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
-            clsCommon.CommonHandler.ClearControlData(layoutControlGroupEditControl);
-            if (gridViewMain.RowCount > 0) {
-                var objMain = (HinhThucQuanLyDTO)gridViewMain.GetFocusedRow();
-                clsCommon.CommonHandler.SetValueToControl(objMain, this);
-            }
-            ConfigControlStatus(_mainStatus = MainStatusForm.VIEW);
         }
         private async void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) => await LoadDataMainGrid();
         private void btnClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) => this.Close();
         #endregion
         #region EventHandler
         private async void gridViewMain_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
-            if (gridViewMain.RowCount > 0) {
-                _curIdMain = (Guid)gridViewMain.GetFocusedRowCellValue("Oid");
-                var objMain = (HinhThucQuanLyDTO)gridViewMain.GetFocusedRow();
-                clsCommon.CommonHandler.SetValueToControl(objMain, this);
-            }
+           
         }
         private void gridViewMain_RowCountChanged(object sender, EventArgs e) {
             if (gridViewMain.RowCount == 0) {

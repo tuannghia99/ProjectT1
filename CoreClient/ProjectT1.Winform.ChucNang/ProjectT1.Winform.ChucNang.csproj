@@ -34,10 +34,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="app.Common.v24.1" Version="2024.5.1" />
-		<PackageReference Include="app.Framework.v24.1" Version="2024.5.1" />
-		<PackageReference Include="app.StdCommon.Services" Version="2021.1.20" />
-		<PackageReference Include="app.StdFramework.Core" Version="2021.1.29" />
 		<PackageReference Include="DevExpress.Document.Processor" Version="24.1.5" />
 		<PackageReference Include="DevExpress.Win.Design" Version="24.1.5" />
 		<!--<PackageReference Include="DevExpress.Wpf.Core" Version="24.1.5" />-->
@@ -48,7 +44,6 @@
 		<PackageReference Include="ProjectX.Client.ServerBusiness.Infrastructure" Version="1.2.1" />
 		<!--<PackageReference Include="ProjectX.Client.Winform.Common" Version="1.2.0-alpha5" />-->
 		<!--<PackageReference Include="ProjectX.Client.Winform.Common" Version="1.2.0-alpha5" />-->
-		<PackageReference Include="SSOLibStd.Win" Version="2021.1.36" />
 	</ItemGroup>
 
 	<ItemGroup>

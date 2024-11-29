@@ -28,101 +28,6 @@ namespace ProjectT1.Client.Winform {
             //LOCK = 5
         }
         public partial class CommonHandler {
-            public static void ConfigBarButtonFormat(BarItem btnCreate = null, BarItem btnEdit = null, BarItem btnDelete = null, BarItem btnSubmit = null, BarItem btnCancel = null, BarItem btnRefresh = null, BarItem btnClose = null, BarItem btnSearch = null, BarItem btnPrint = null, BarItem btnGetOrRestoreData = null, BarItem btnSendOrRecallData = null, BarItem btnUpdateDataReport = null, BarItem btnApprove = null, BarItem btnKeThua = null, BarItem btnYear = null) {
-                if (btnCreate != null) {
-                    btnCreate.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    btnCreate.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.add_16x16));
-                    btnCreate.ItemShortcut = new BarShortcut((Keys.Control | Keys.N));
-                    btnCreate.Hint = "Ctrl + N";
-                    btnCreate.Caption = "Thêm";
-                }
-                if (btnEdit != null) {
-                    btnEdit.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    btnEdit.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.edit_16x16));
-                    btnEdit.ItemShortcut = new BarShortcut((Keys.Control | Keys.E));
-                    btnEdit.Hint = "Ctrl + E";
-                    btnEdit.Caption = "Sửa";
-                }
-                if (btnDelete != null) {
-                    btnDelete.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    btnDelete.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.remove_16x16));
-                    btnDelete.ItemShortcut = new BarShortcut((Keys.Control | Keys.Delete));
-                    btnDelete.Hint = "Ctrl + Delete";
-                    btnDelete.Caption = "Xoá";
-                }
-                if (btnSubmit != null) {
-                    btnSubmit.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    btnSubmit.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.apply_16x16));
-                    btnSubmit.ItemShortcut = new BarShortcut((Keys.Control | Keys.S));
-                    btnSubmit.Hint = "Ctrl + S";
-                    btnSubmit.Caption = "Ghi";
-                }
-                if (btnCancel != null) {
-                    btnCancel.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    btnCancel.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.cancel_16x16));
-                    btnCancel.ItemShortcut = new BarShortcut((Keys.Control | Keys.Z));
-                    btnCancel.Hint = "Ctrl + Z";
-                    btnCancel.Caption = "Bỏ qua";
-                }
-                if (btnRefresh != null) {
-                    btnRefresh.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    btnRefresh.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.refresh_16x16));
-                    btnRefresh.ItemShortcut = new BarShortcut((Keys.Control | Keys.F5));
-                    btnRefresh.Hint = "Ctrl + F5";
-                    btnRefresh.Caption = "Làm mới";
-                }
-                if (btnClose != null) {
-                    btnClose.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    btnClose.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.close_16x16));
-                    btnClose.ItemShortcut = new BarShortcut((Keys.Control | Keys.Q));
-                    btnClose.Hint = "Ctrl + Q";
-                    btnClose.Caption = "Đóng";
-                }
-                if (btnSearch != null) {
-                    btnSearch.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    btnSearch.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.find_16x16));
-                    btnSearch.ItemShortcut = new BarShortcut((Keys.Control | Keys.Shift | Keys.F));
-                    btnSearch.Hint = "Ctrl + Shift + F";
-                    btnSearch.Caption = "Tìm kiếm";
-                }
-                if (btnPrint != null) {
-                    btnPrint.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    btnPrint.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.print_16x16));
-                    btnPrint.ItemShortcut = new BarShortcut((Keys.Control | Keys.P));
-                    btnPrint.Hint = "Ctrl + P";
-                    btnPrint.Caption = "In báo cáo";
-                    btnPrint.Visibility = BarItemVisibility.Never;
-                }
-                if (btnGetOrRestoreData != null) {
-                    btnGetOrRestoreData.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    btnGetOrRestoreData.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.Article_16x16));
-                    btnGetOrRestoreData.ItemShortcut = new BarShortcut((Keys.Control | Keys.Shift | Keys.F1));
-                    btnGetOrRestoreData.Hint = "Ctrl + Shift + F1";
-                    btnGetOrRestoreData.Caption = "Cập nhật/Hoàn trả dữ liệu";
-                }
-                if (btnSendOrRecallData != null) {
-                    btnSendOrRecallData.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    btnSendOrRecallData.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.SortGroupHeader_16x16));
-                    btnSendOrRecallData.ItemShortcut = new BarShortcut((Keys.Control | Keys.Shift | Keys.F2));
-                    btnSendOrRecallData.Hint = "Ctrl + Shift + F2";
-                    btnSendOrRecallData.Caption = "Gửi/Thu hồi dữ liệu";
-                }
-                if (btnUpdateDataReport != null) {
-                    btnUpdateDataReport.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    btnUpdateDataReport.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.EditDataSource_16x16));
-                    btnUpdateDataReport.Caption = "Cập nhật dữ liệu báo cáo";
-                }
-                if (btnApprove != null) {
-                    btnApprove.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    btnApprove.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.Task_16x16));
-                    btnApprove.Caption = "Phê duyệt";
-                }
-                if (btnKeThua != null) {
-                    btnKeThua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    btnKeThua.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.CopyModelDifferences_16x16));
-                    btnKeThua.Caption = "Kế thừa";
-                }
-            }
             public static void ConfigBarButtonEnable(bool isEnable, params BarButtonItem[] btns) {
                 foreach (var btn in btns) {
                     btn.Enabled = isEnable;
@@ -155,17 +60,6 @@ namespace ProjectT1.Client.Winform {
                     throw new ApplicationException(ex.Message);
                 }
             }
-            public static void ShowNotificationForm(string content) {
-                var timer = new System.Windows.Forms.Timer();
-                var formThongBao = new NotificationForm(content);
-                formThongBao.Show();
-            }
-            public static void ShowNotificationForm_CustomMessage_Successfully(string message) => ShowNotificationForm(message);
-            public static void ShowNotificationForm_CreatedSuccessfully() => ShowNotificationForm("Thêm mới thành công");
-            public static void ShowNotificationForm_UpdatedSuccessfully() => ShowNotificationForm("Cập nhật thành công");
-            public static void ShowNotificationForm_DeletedSuccessfully() => ShowNotificationForm("Xoá thành công");
-            public static void ShowNotificationForm_ApprovedSuccessfully() => ShowNotificationForm("Phê duyệt dữ liệu thành công");
-            public static void ShowNotificationForm_InheritedSuccessfully() => ShowNotificationForm("Kế thừa dữ liệu thành công");
             public static DialogResult ShowXtraMessageBox_NeedToSelectRecord() => MessageBox.Show("Cần chọn bản ghi dữ liệu trước khi thực hiện thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             public static DialogResult ShowXtraMessageBox_NoDataDelete() => MessageBox.Show("Không có dữ liệu để xoá", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             public static DialogResult ShowXtraMessageBox_ConvertDataSuccess() => MessageBox.Show("Chuyển đổi dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
