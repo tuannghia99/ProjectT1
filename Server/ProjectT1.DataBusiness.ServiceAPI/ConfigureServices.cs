@@ -17,6 +17,9 @@ namespace ProjectT1.DataBusiness.ServiceAPI {
             services.AddTransient<IPhongBanService, PhongBanService>();
             services.AddTransient<ITrinhDoHocVanService, TrinhDoHocVanService>();
 
+            // NghiepVu
+            services.AddTransient<IAccountService, AccountService>();
+
             return services;
         }
     }

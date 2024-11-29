@@ -23,10 +23,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Controllers\cNghiepVu\" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<ProjectReference Include="..\ProjectT1.DictionaryAPI.Infrastructure\ProjectT1.DictionaryAPI.Infrastructure.csproj" />
 	</ItemGroup>
 
