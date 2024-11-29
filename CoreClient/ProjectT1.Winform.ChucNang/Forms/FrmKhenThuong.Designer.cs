@@ -51,15 +51,15 @@
             barEditItem2 = new DevExpress.XtraBars.BarEditItem();
             selectReport = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            fTen = new DevExpress.XtraEditors.TextEdit();
             textEdit2 = new DevExpress.XtraEditors.TextEdit();
             textEdit3 = new DevExpress.XtraEditors.TextEdit();
             textEdit4 = new DevExpress.XtraEditors.TextEdit();
             textEdit5 = new DevExpress.XtraEditors.TextEdit();
             textEdit6 = new DevExpress.XtraEditors.TextEdit();
-            textEdit7 = new DevExpress.XtraEditors.TextEdit();
-            memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
-            dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            fHinhThucKhenThuong = new DevExpress.XtraEditors.TextEdit();
+            fLyDoKhenThuong = new DevExpress.XtraEditors.MemoEdit();
+            fNgayKhenThuong = new DevExpress.XtraEditors.DateEdit();
             textEdit8 = new DevExpress.XtraEditors.ComboBoxEdit();
             Root = new DevExpress.XtraLayout.LayoutControlGroup();
             layoutControlGroupExtension = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -81,6 +81,13 @@
             layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             imageCollection1 = new DevExpress.Utils.ImageCollection(components);
+            fMaSo = new DevExpress.XtraEditors.TextEdit();
+            layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
+            gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            repoChucDanh = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
+            repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            repoPhongBan = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
+            repositoryItemSearchLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)repositoryItemTextEdit1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControl1).BeginInit();
             layoutControl1.SuspendLayout();
@@ -89,16 +96,16 @@
             ((System.ComponentModel.ISupportInitialize)barManager1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)selectReport).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridView9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fTen.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit5.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit6.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit7.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)memoEdit1.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties.CalendarTimeProperties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fHinhThucKhenThuong.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fLyDoKhenThuong.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayKhenThuong.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayKhenThuong.Properties.CalendarTimeProperties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit8.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Root).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlGroupExtension).BeginInit();
@@ -120,6 +127,12 @@
             ((System.ComponentModel.ISupportInitialize)layoutControlItem8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imageCollection1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fMaSo.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem14).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repoChucDanh).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repositoryItemSearchLookUpEdit1View).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repoPhongBan).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repositoryItemSearchLookUpEdit2View).BeginInit();
             SuspendLayout();
             // 
             // repositoryItemTextEdit1
@@ -130,16 +143,17 @@
             // layoutControl1
             // 
             layoutControl1.Controls.Add(gridControlMain);
-            layoutControl1.Controls.Add(textEdit1);
+            layoutControl1.Controls.Add(fTen);
             layoutControl1.Controls.Add(textEdit2);
             layoutControl1.Controls.Add(textEdit3);
             layoutControl1.Controls.Add(textEdit4);
             layoutControl1.Controls.Add(textEdit5);
             layoutControl1.Controls.Add(textEdit6);
-            layoutControl1.Controls.Add(textEdit7);
-            layoutControl1.Controls.Add(memoEdit1);
-            layoutControl1.Controls.Add(dateEdit1);
+            layoutControl1.Controls.Add(fHinhThucKhenThuong);
+            layoutControl1.Controls.Add(fLyDoKhenThuong);
+            layoutControl1.Controls.Add(fNgayKhenThuong);
             layoutControl1.Controls.Add(textEdit8);
+            layoutControl1.Controls.Add(fMaSo);
             layoutControl1.Dock = DockStyle.Fill;
             layoutControl1.Location = new Point(0, 24);
             layoutControl1.Name = "layoutControl1";
@@ -155,13 +169,14 @@
             gridControlMain.MainView = gridViewMain;
             gridControlMain.MenuManager = barManager1;
             gridControlMain.Name = "gridControlMain";
+            gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repoChucDanh, repoPhongBan });
             gridControlMain.Size = new Size(490, 655);
             gridControlMain.TabIndex = 0;
             gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewMain });
             // 
             // gridViewMain
             // 
-            gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { gridColumn2, gridColumn1, gridColumn3, gridColumn4 });
+            gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { gridColumn2, gridColumn5, gridColumn1, gridColumn3, gridColumn4 });
             gridViewMain.GridControl = gridControlMain;
             gridViewMain.Name = "gridViewMain";
             gridViewMain.OptionsSelection.MultiSelect = true;
@@ -181,21 +196,23 @@
             gridColumn1.Caption = "Tên nhân viên";
             gridColumn1.Name = "gridColumn1";
             gridColumn1.Visible = true;
-            gridColumn1.VisibleIndex = 1;
+            gridColumn1.VisibleIndex = 2;
             // 
             // gridColumn3
             // 
             gridColumn3.Caption = "Chức danh";
+            gridColumn3.ColumnEdit = repoChucDanh;
             gridColumn3.Name = "gridColumn3";
             gridColumn3.Visible = true;
-            gridColumn3.VisibleIndex = 2;
+            gridColumn3.VisibleIndex = 3;
             // 
             // gridColumn4
             // 
             gridColumn4.Caption = "Phòng ban";
+            gridColumn4.ColumnEdit = repoPhongBan;
             gridColumn4.Name = "gridColumn4";
             gridColumn4.Visible = true;
-            gridColumn4.VisibleIndex = 3;
+            gridColumn4.VisibleIndex = 4;
             // 
             // barManager1
             // 
@@ -343,89 +360,89 @@
             gridView9.OptionsSelection.EnableAppearanceFocusedCell = false;
             gridView9.OptionsView.ShowGroupPanel = false;
             // 
-            // textEdit1
+            // fTen
             // 
-            textEdit1.Location = new Point(681, 71);
-            textEdit1.MenuManager = barManager1;
-            textEdit1.Name = "textEdit1";
-            textEdit1.Size = new Size(903, 20);
-            textEdit1.StyleController = layoutControl1;
-            textEdit1.TabIndex = 3;
+            fTen.Location = new Point(681, 95);
+            fTen.MenuManager = barManager1;
+            fTen.Name = "fTen";
+            fTen.Size = new Size(903, 20);
+            fTen.StyleController = layoutControl1;
+            fTen.TabIndex = 5;
             // 
             // textEdit2
             // 
-            textEdit2.Location = new Point(681, 95);
+            textEdit2.Location = new Point(681, 119);
             textEdit2.MenuManager = barManager1;
             textEdit2.Name = "textEdit2";
             textEdit2.Size = new Size(386, 20);
             textEdit2.StyleController = layoutControl1;
-            textEdit2.TabIndex = 4;
+            textEdit2.TabIndex = 6;
             // 
             // textEdit3
             // 
-            textEdit3.Location = new Point(1197, 95);
+            textEdit3.Location = new Point(1197, 119);
             textEdit3.MenuManager = barManager1;
             textEdit3.Name = "textEdit3";
             textEdit3.Size = new Size(387, 20);
             textEdit3.StyleController = layoutControl1;
-            textEdit3.TabIndex = 5;
+            textEdit3.TabIndex = 7;
             // 
             // textEdit4
             // 
-            textEdit4.Location = new Point(681, 143);
+            textEdit4.Location = new Point(681, 167);
             textEdit4.MenuManager = barManager1;
             textEdit4.Name = "textEdit4";
             textEdit4.Size = new Size(903, 20);
             textEdit4.StyleController = layoutControl1;
-            textEdit4.TabIndex = 7;
+            textEdit4.TabIndex = 9;
             // 
             // textEdit5
             // 
-            textEdit5.Location = new Point(681, 167);
+            textEdit5.Location = new Point(681, 191);
             textEdit5.MenuManager = barManager1;
             textEdit5.Name = "textEdit5";
             textEdit5.Size = new Size(903, 20);
             textEdit5.StyleController = layoutControl1;
-            textEdit5.TabIndex = 8;
+            textEdit5.TabIndex = 10;
             // 
             // textEdit6
             // 
-            textEdit6.Location = new Point(681, 119);
+            textEdit6.Location = new Point(681, 143);
             textEdit6.MenuManager = barManager1;
             textEdit6.Name = "textEdit6";
             textEdit6.Size = new Size(903, 20);
             textEdit6.StyleController = layoutControl1;
-            textEdit6.TabIndex = 6;
+            textEdit6.TabIndex = 8;
             // 
-            // textEdit7
+            // fHinhThucKhenThuong
             // 
-            textEdit7.Location = new Point(681, 312);
-            textEdit7.MenuManager = barManager1;
-            textEdit7.Name = "textEdit7";
-            textEdit7.Size = new Size(386, 20);
-            textEdit7.StyleController = layoutControl1;
-            textEdit7.TabIndex = 10;
+            fHinhThucKhenThuong.Location = new Point(681, 340);
+            fHinhThucKhenThuong.MenuManager = barManager1;
+            fHinhThucKhenThuong.Name = "fHinhThucKhenThuong";
+            fHinhThucKhenThuong.Size = new Size(386, 20);
+            fHinhThucKhenThuong.StyleController = layoutControl1;
+            fHinhThucKhenThuong.TabIndex = 12;
             // 
-            // memoEdit1
+            // fLyDoKhenThuong
             // 
-            memoEdit1.Location = new Point(555, 207);
-            memoEdit1.MenuManager = barManager1;
-            memoEdit1.Name = "memoEdit1";
-            memoEdit1.Size = new Size(1029, 101);
-            memoEdit1.StyleController = layoutControl1;
-            memoEdit1.TabIndex = 9;
+            fLyDoKhenThuong.Location = new Point(555, 231);
+            fLyDoKhenThuong.MenuManager = barManager1;
+            fLyDoKhenThuong.Name = "fLyDoKhenThuong";
+            fLyDoKhenThuong.Size = new Size(1029, 105);
+            fLyDoKhenThuong.StyleController = layoutControl1;
+            fLyDoKhenThuong.TabIndex = 11;
             // 
-            // dateEdit1
+            // fNgayKhenThuong
             // 
-            dateEdit1.EditValue = null;
-            dateEdit1.Location = new Point(1197, 312);
-            dateEdit1.MenuManager = barManager1;
-            dateEdit1.Name = "dateEdit1";
-            dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateEdit1.Size = new Size(387, 20);
-            dateEdit1.StyleController = layoutControl1;
-            dateEdit1.TabIndex = 11;
+            fNgayKhenThuong.EditValue = null;
+            fNgayKhenThuong.Location = new Point(1197, 340);
+            fNgayKhenThuong.MenuManager = barManager1;
+            fNgayKhenThuong.Name = "fNgayKhenThuong";
+            fNgayKhenThuong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fNgayKhenThuong.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fNgayKhenThuong.Size = new Size(387, 20);
+            fNgayKhenThuong.StyleController = layoutControl1;
+            fNgayKhenThuong.TabIndex = 13;
             // 
             // textEdit8
             // 
@@ -479,7 +496,7 @@
             // layoutControlGroupNameReport
             // 
             layoutControlGroupNameReport.CustomizationFormText = "Chi tiết báo cáo";
-            layoutControlGroupNameReport.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem2, layoutControlItem3, layoutControlItem5, layoutControlItem6, layoutControlItem4, layoutControlItem7, layoutControlItem10, layoutControlItem11, emptySpaceItem1, layoutControlItem12, layoutControlItem13 });
+            layoutControlGroupNameReport.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem2, layoutControlItem3, layoutControlItem5, layoutControlItem6, layoutControlItem4, layoutControlItem7, layoutControlItem10, layoutControlItem11, emptySpaceItem1, layoutControlItem12, layoutControlItem13, layoutControlItem14 });
             layoutControlGroupNameReport.Location = new Point(0, 0);
             layoutControlGroupNameReport.Name = "layoutControlGroupNameReport";
             layoutControlGroupNameReport.Size = new Size(1057, 699);
@@ -487,8 +504,8 @@
             // 
             // layoutControlItem2
             // 
-            layoutControlItem2.Control = textEdit1;
-            layoutControlItem2.Location = new Point(0, 24);
+            layoutControlItem2.Control = fTen;
+            layoutControlItem2.Location = new Point(0, 48);
             layoutControlItem2.Name = "layoutControlItem2";
             layoutControlItem2.Size = new Size(1033, 24);
             layoutControlItem2.Text = "Họ và tên:";
@@ -497,7 +514,7 @@
             // layoutControlItem3
             // 
             layoutControlItem3.Control = textEdit2;
-            layoutControlItem3.Location = new Point(0, 48);
+            layoutControlItem3.Location = new Point(0, 72);
             layoutControlItem3.Name = "layoutControlItem3";
             layoutControlItem3.Size = new Size(516, 24);
             layoutControlItem3.Text = "Giới tính:";
@@ -506,7 +523,7 @@
             // layoutControlItem5
             // 
             layoutControlItem5.Control = textEdit4;
-            layoutControlItem5.Location = new Point(0, 96);
+            layoutControlItem5.Location = new Point(0, 120);
             layoutControlItem5.Name = "layoutControlItem5";
             layoutControlItem5.Size = new Size(1033, 24);
             layoutControlItem5.Text = "Phòng ban:";
@@ -515,7 +532,7 @@
             // layoutControlItem6
             // 
             layoutControlItem6.Control = textEdit5;
-            layoutControlItem6.Location = new Point(0, 120);
+            layoutControlItem6.Location = new Point(0, 144);
             layoutControlItem6.Name = "layoutControlItem6";
             layoutControlItem6.Size = new Size(1033, 24);
             layoutControlItem6.Text = "Chức danh:";
@@ -524,7 +541,7 @@
             // layoutControlItem4
             // 
             layoutControlItem4.Control = textEdit3;
-            layoutControlItem4.Location = new Point(516, 48);
+            layoutControlItem4.Location = new Point(516, 72);
             layoutControlItem4.Name = "layoutControlItem4";
             layoutControlItem4.Size = new Size(517, 24);
             layoutControlItem4.Text = "Ngày sinh:";
@@ -533,7 +550,7 @@
             // layoutControlItem7
             // 
             layoutControlItem7.Control = textEdit6;
-            layoutControlItem7.Location = new Point(0, 72);
+            layoutControlItem7.Location = new Point(0, 96);
             layoutControlItem7.Name = "layoutControlItem7";
             layoutControlItem7.Size = new Size(1033, 24);
             layoutControlItem7.Text = "Quê quán:";
@@ -541,8 +558,8 @@
             // 
             // layoutControlItem10
             // 
-            layoutControlItem10.Control = textEdit7;
-            layoutControlItem10.Location = new Point(0, 265);
+            layoutControlItem10.Control = fHinhThucKhenThuong;
+            layoutControlItem10.Location = new Point(0, 293);
             layoutControlItem10.Name = "layoutControlItem10";
             layoutControlItem10.Size = new Size(516, 24);
             layoutControlItem10.Text = "Hình thức khen thưởng:";
@@ -550,10 +567,10 @@
             // 
             // layoutControlItem11
             // 
-            layoutControlItem11.Control = memoEdit1;
-            layoutControlItem11.Location = new Point(0, 144);
+            layoutControlItem11.Control = fLyDoKhenThuong;
+            layoutControlItem11.Location = new Point(0, 168);
             layoutControlItem11.Name = "layoutControlItem11";
-            layoutControlItem11.Size = new Size(1033, 121);
+            layoutControlItem11.Size = new Size(1033, 125);
             layoutControlItem11.Text = "Nội dung khen thưởng";
             layoutControlItem11.TextLocation = DevExpress.Utils.Locations.Top;
             layoutControlItem11.TextSize = new Size(114, 13);
@@ -561,15 +578,15 @@
             // emptySpaceItem1
             // 
             emptySpaceItem1.AllowHotTrack = false;
-            emptySpaceItem1.Location = new Point(0, 289);
+            emptySpaceItem1.Location = new Point(0, 317);
             emptySpaceItem1.Name = "emptySpaceItem1";
-            emptySpaceItem1.Size = new Size(1033, 365);
+            emptySpaceItem1.Size = new Size(1033, 337);
             emptySpaceItem1.TextSize = new Size(0, 0);
             // 
             // layoutControlItem12
             // 
-            layoutControlItem12.Control = dateEdit1;
-            layoutControlItem12.Location = new Point(516, 265);
+            layoutControlItem12.Control = fNgayKhenThuong;
+            layoutControlItem12.Location = new Point(516, 293);
             layoutControlItem12.Name = "layoutControlItem12";
             layoutControlItem12.Size = new Size(517, 24);
             layoutControlItem12.Text = "Ngày khen thưởng:";
@@ -612,6 +629,62 @@
             imageCollection1.ImageStream = (DevExpress.Utils.ImageCollectionStreamer)resources.GetObject("imageCollection1.ImageStream");
             imageCollection1.Images.SetKeyName(0, "warning_16x16.png");
             // 
+            // fMaSo
+            // 
+            fMaSo.Location = new Point(681, 71);
+            fMaSo.MenuManager = barManager1;
+            fMaSo.Name = "fMaSo";
+            fMaSo.Size = new Size(903, 20);
+            fMaSo.StyleController = layoutControl1;
+            fMaSo.TabIndex = 4;
+            // 
+            // layoutControlItem14
+            // 
+            layoutControlItem14.Control = fMaSo;
+            layoutControlItem14.Location = new Point(0, 24);
+            layoutControlItem14.Name = "layoutControlItem14";
+            layoutControlItem14.Size = new Size(1033, 24);
+            layoutControlItem14.Text = "Mã số:";
+            layoutControlItem14.TextSize = new Size(114, 13);
+            // 
+            // gridColumn5
+            // 
+            gridColumn5.Caption = "Mã số";
+            gridColumn5.FieldName = "MaSo";
+            gridColumn5.Name = "gridColumn5";
+            gridColumn5.Visible = true;
+            gridColumn5.VisibleIndex = 1;
+            // 
+            // repoChucDanh
+            // 
+            repoChucDanh.AutoHeight = false;
+            repoChucDanh.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            repoChucDanh.Name = "repoChucDanh";
+            repoChucDanh.NullText = "";
+            repoChucDanh.PopupView = repositoryItemSearchLookUpEdit1View;
+            // 
+            // repositoryItemSearchLookUpEdit1View
+            // 
+            repositoryItemSearchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
+            repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // repoPhongBan
+            // 
+            repoPhongBan.AutoHeight = false;
+            repoPhongBan.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            repoPhongBan.Name = "repoPhongBan";
+            repoPhongBan.NullText = "";
+            repoPhongBan.PopupView = repositoryItemSearchLookUpEdit2View;
+            // 
+            // repositoryItemSearchLookUpEdit2View
+            // 
+            repositoryItemSearchLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            repositoryItemSearchLookUpEdit2View.Name = "repositoryItemSearchLookUpEdit2View";
+            repositoryItemSearchLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            repositoryItemSearchLookUpEdit2View.OptionsView.ShowGroupPanel = false;
+            // 
             // FrmKhenThuong
             // 
             ClientSize = new Size(1633, 768);
@@ -632,16 +705,16 @@
             ((System.ComponentModel.ISupportInitialize)barManager1).EndInit();
             ((System.ComponentModel.ISupportInitialize)selectReport).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridView9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fTen.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit5.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit6.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit7.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)memoEdit1.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties.CalendarTimeProperties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fHinhThucKhenThuong.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fLyDoKhenThuong.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayKhenThuong.Properties.CalendarTimeProperties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayKhenThuong.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit8.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)Root).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlGroupExtension).EndInit();
@@ -663,6 +736,12 @@
             ((System.ComponentModel.ISupportInitialize)layoutControlItem8).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem9).EndInit();
             ((System.ComponentModel.ISupportInitialize)imageCollection1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fMaSo.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem14).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repoChucDanh).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repositoryItemSearchLookUpEdit1View).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repoPhongBan).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repositoryItemSearchLookUpEdit2View).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -692,7 +771,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewMain;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroupNameReport;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit fTen;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
@@ -710,9 +789,9 @@
         private DevExpress.XtraEditors.TextEdit textEdit4;
         private DevExpress.XtraEditors.TextEdit textEdit5;
         private DevExpress.XtraEditors.TextEdit textEdit6;
-        private DevExpress.XtraEditors.TextEdit textEdit7;
-        private DevExpress.XtraEditors.MemoEdit memoEdit1;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.TextEdit fHinhThucKhenThuong;
+        private DevExpress.XtraEditors.MemoEdit fLyDoKhenThuong;
+        private DevExpress.XtraEditors.DateEdit fNgayKhenThuong;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
@@ -723,5 +802,12 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraEditors.ComboBoxEdit textEdit8;
+        private DevExpress.XtraEditors.TextEdit fMaSo;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit repoChucDanh;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit1View;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit repoPhongBan;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit2View;
     }
 }

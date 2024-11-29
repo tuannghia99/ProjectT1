@@ -51,14 +51,17 @@
             barEditItem2 = new DevExpress.XtraBars.BarEditItem();
             selectReport = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            fTenNhanVien = new DevExpress.XtraEditors.TextEdit();
             textEdit2 = new DevExpress.XtraEditors.TextEdit();
             textEdit3 = new DevExpress.XtraEditors.TextEdit();
             textEdit4 = new DevExpress.XtraEditors.TextEdit();
             textEdit5 = new DevExpress.XtraEditors.TextEdit();
             textEdit6 = new DevExpress.XtraEditors.TextEdit();
-            memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
-            dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            fHinhThucKyLuat = new DevExpress.XtraEditors.MemoEdit();
+            fNgayBatDauThiHanh = new DevExpress.XtraEditors.DateEdit();
+            fDiaDiemXayRa = new DevExpress.XtraEditors.TextEdit();
+            fMaSo = new DevExpress.XtraEditors.TextEdit();
+            fNgayHetHieuLuc = new DevExpress.XtraEditors.DateEdit();
             Root = new DevExpress.XtraLayout.LayoutControlGroup();
             layoutControlGroupExtension = new DevExpress.XtraLayout.LayoutControlGroup();
             layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -73,6 +76,9 @@
             layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
             layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -85,15 +91,19 @@
             ((System.ComponentModel.ISupportInitialize)barManager1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)selectReport).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridView9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fTenNhanVien.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit5.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit6.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)memoEdit1.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties.CalendarTimeProperties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fHinhThucKyLuat.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayBatDauThiHanh.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayBatDauThiHanh.Properties.CalendarTimeProperties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fDiaDiemXayRa.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fMaSo.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayHetHieuLuc.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayHetHieuLuc.Properties.CalendarTimeProperties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Root).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlGroupExtension).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem1).BeginInit();
@@ -108,6 +118,9 @@
             ((System.ComponentModel.ISupportInitialize)layoutControlItem11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)emptySpaceItem1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem12).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem13).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem14).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitterItem1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem9).BeginInit();
@@ -122,14 +135,17 @@
             // layoutControl1
             // 
             layoutControl1.Controls.Add(gridControlDanhSach);
-            layoutControl1.Controls.Add(textEdit1);
+            layoutControl1.Controls.Add(fTenNhanVien);
             layoutControl1.Controls.Add(textEdit2);
             layoutControl1.Controls.Add(textEdit3);
             layoutControl1.Controls.Add(textEdit4);
             layoutControl1.Controls.Add(textEdit5);
             layoutControl1.Controls.Add(textEdit6);
-            layoutControl1.Controls.Add(memoEdit1);
-            layoutControl1.Controls.Add(dateEdit1);
+            layoutControl1.Controls.Add(fHinhThucKyLuat);
+            layoutControl1.Controls.Add(fNgayBatDauThiHanh);
+            layoutControl1.Controls.Add(fDiaDiemXayRa);
+            layoutControl1.Controls.Add(fMaSo);
+            layoutControl1.Controls.Add(fNgayHetHieuLuc);
             layoutControl1.Dock = DockStyle.Fill;
             layoutControl1.Location = new Point(0, 24);
             layoutControl1.Name = "layoutControl1";
@@ -145,7 +161,7 @@
             gridControlDanhSach.MainView = gridViewDanhSach;
             gridControlDanhSach.MenuManager = barManager1;
             gridControlDanhSach.Name = "gridControlDanhSach";
-            gridControlDanhSach.Size = new Size(490, 655);
+            gridControlDanhSach.Size = new Size(332, 655);
             gridControlDanhSach.TabIndex = 0;
             gridControlDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewDanhSach });
             // 
@@ -333,80 +349,110 @@
             gridView9.OptionsSelection.EnableAppearanceFocusedCell = false;
             gridView9.OptionsView.ShowGroupPanel = false;
             // 
-            // textEdit1
+            // fTenNhanVien
             // 
-            textEdit1.Location = new Point(679, 47);
-            textEdit1.MenuManager = barManager1;
-            textEdit1.Name = "textEdit1";
-            textEdit1.Size = new Size(905, 20);
-            textEdit1.StyleController = layoutControl1;
-            textEdit1.TabIndex = 3;
+            fTenNhanVien.Location = new Point(521, 71);
+            fTenNhanVien.MenuManager = barManager1;
+            fTenNhanVien.Name = "fTenNhanVien";
+            fTenNhanVien.Size = new Size(1063, 20);
+            fTenNhanVien.StyleController = layoutControl1;
+            fTenNhanVien.TabIndex = 4;
             // 
             // textEdit2
             // 
-            textEdit2.Location = new Point(679, 71);
+            textEdit2.Location = new Point(521, 95);
             textEdit2.MenuManager = barManager1;
             textEdit2.Name = "textEdit2";
-            textEdit2.Size = new Size(388, 20);
+            textEdit2.Size = new Size(467, 20);
             textEdit2.StyleController = layoutControl1;
-            textEdit2.TabIndex = 4;
+            textEdit2.TabIndex = 5;
             // 
             // textEdit3
             // 
-            textEdit3.Location = new Point(1195, 71);
+            textEdit3.Location = new Point(1116, 95);
             textEdit3.MenuManager = barManager1;
             textEdit3.Name = "textEdit3";
-            textEdit3.Size = new Size(389, 20);
+            textEdit3.Size = new Size(468, 20);
             textEdit3.StyleController = layoutControl1;
-            textEdit3.TabIndex = 5;
+            textEdit3.TabIndex = 6;
             // 
             // textEdit4
             // 
-            textEdit4.Location = new Point(679, 119);
+            textEdit4.Location = new Point(521, 143);
             textEdit4.MenuManager = barManager1;
             textEdit4.Name = "textEdit4";
-            textEdit4.Size = new Size(905, 20);
+            textEdit4.Size = new Size(1063, 20);
             textEdit4.StyleController = layoutControl1;
-            textEdit4.TabIndex = 7;
+            textEdit4.TabIndex = 8;
             // 
             // textEdit5
             // 
-            textEdit5.Location = new Point(679, 143);
+            textEdit5.Location = new Point(521, 167);
             textEdit5.MenuManager = barManager1;
             textEdit5.Name = "textEdit5";
-            textEdit5.Size = new Size(905, 20);
+            textEdit5.Size = new Size(1063, 20);
             textEdit5.StyleController = layoutControl1;
-            textEdit5.TabIndex = 8;
+            textEdit5.TabIndex = 9;
             // 
             // textEdit6
             // 
-            textEdit6.Location = new Point(679, 95);
+            textEdit6.Location = new Point(521, 119);
             textEdit6.MenuManager = barManager1;
             textEdit6.Name = "textEdit6";
-            textEdit6.Size = new Size(905, 20);
+            textEdit6.Size = new Size(1063, 20);
             textEdit6.StyleController = layoutControl1;
-            textEdit6.TabIndex = 6;
+            textEdit6.TabIndex = 7;
             // 
-            // memoEdit1
+            // fHinhThucKyLuat
             // 
-            memoEdit1.Location = new Point(555, 183);
-            memoEdit1.MenuManager = barManager1;
-            memoEdit1.Name = "memoEdit1";
-            memoEdit1.Size = new Size(1029, 111);
-            memoEdit1.StyleController = layoutControl1;
-            memoEdit1.TabIndex = 9;
+            fHinhThucKyLuat.Location = new Point(397, 231);
+            fHinhThucKyLuat.MenuManager = barManager1;
+            fHinhThucKyLuat.Name = "fHinhThucKyLuat";
+            fHinhThucKyLuat.Size = new Size(1187, 53);
+            fHinhThucKyLuat.StyleController = layoutControl1;
+            fHinhThucKyLuat.TabIndex = 11;
             // 
-            // dateEdit1
+            // fNgayBatDauThiHanh
             // 
-            dateEdit1.EditValue = null;
-            dateEdit1.Location = new Point(679, 298);
-            dateEdit1.MenuManager = barManager1;
-            dateEdit1.Name = "dateEdit1";
-            dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateEdit1.Size = new Size(905, 20);
-            dateEdit1.StyleController = layoutControl1;
-            dateEdit1.TabIndex = 10;
+            fNgayBatDauThiHanh.EditValue = null;
+            fNgayBatDauThiHanh.Location = new Point(521, 288);
+            fNgayBatDauThiHanh.MenuManager = barManager1;
+            fNgayBatDauThiHanh.Name = "fNgayBatDauThiHanh";
+            fNgayBatDauThiHanh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fNgayBatDauThiHanh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fNgayBatDauThiHanh.Size = new Size(467, 20);
+            fNgayBatDauThiHanh.StyleController = layoutControl1;
+            fNgayBatDauThiHanh.TabIndex = 12;
+            // 
+            // fDiaDiemXayRa
+            // 
+            fDiaDiemXayRa.Location = new Point(521, 191);
+            fDiaDiemXayRa.MenuManager = barManager1;
+            fDiaDiemXayRa.Name = "fDiaDiemXayRa";
+            fDiaDiemXayRa.Size = new Size(1063, 20);
+            fDiaDiemXayRa.StyleController = layoutControl1;
+            fDiaDiemXayRa.TabIndex = 10;
+            // 
+            // fMaSo
+            // 
+            fMaSo.Location = new Point(521, 47);
+            fMaSo.MenuManager = barManager1;
+            fMaSo.Name = "fMaSo";
+            fMaSo.Size = new Size(1063, 20);
+            fMaSo.StyleController = layoutControl1;
+            fMaSo.TabIndex = 3;
+            // 
+            // fNgayHetHieuLuc
+            // 
+            fNgayHetHieuLuc.EditValue = null;
+            fNgayHetHieuLuc.Location = new Point(1116, 288);
+            fNgayHetHieuLuc.MenuManager = barManager1;
+            fNgayHetHieuLuc.Name = "fNgayHetHieuLuc";
+            fNgayHetHieuLuc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fNgayHetHieuLuc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fNgayHetHieuLuc.Size = new Size(468, 20);
+            fNgayHetHieuLuc.StyleController = layoutControl1;
+            fNgayHetHieuLuc.TabIndex = 13;
             // 
             // Root
             // 
@@ -423,7 +469,7 @@
             layoutControlGroupExtension.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem1 });
             layoutControlGroupExtension.Location = new Point(0, 0);
             layoutControlGroupExtension.Name = "layoutControlGroupExtension";
-            layoutControlGroupExtension.Size = new Size(518, 704);
+            layoutControlGroupExtension.Size = new Size(360, 704);
             layoutControlGroupExtension.Text = "Danh sách kỷ luật";
             // 
             // layoutControlItem1
@@ -431,7 +477,7 @@
             layoutControlItem1.Control = gridControlDanhSach;
             layoutControlItem1.Location = new Point(0, 0);
             layoutControlItem1.Name = "layoutControlItem1";
-            layoutControlItem1.Size = new Size(494, 659);
+            layoutControlItem1.Size = new Size(336, 659);
             layoutControlItem1.TextSize = new Size(0, 0);
             layoutControlItem1.TextVisible = false;
             // 
@@ -440,82 +486,82 @@
             layoutControlGroupDetail.CaptionImageOptions.Image = (Image)resources.GetObject("layoutControlGroupDetail.CaptionImageOptions.Image");
             layoutControlGroupDetail.ExpandButtonVisible = true;
             layoutControlGroupDetail.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlGroupNameReport });
-            layoutControlGroupDetail.Location = new Point(528, 0);
+            layoutControlGroupDetail.Location = new Point(370, 0);
             layoutControlGroupDetail.Name = "layoutControlGroupDetail";
             layoutControlGroupDetail.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            layoutControlGroupDetail.Size = new Size(1085, 704);
+            layoutControlGroupDetail.Size = new Size(1243, 704);
             layoutControlGroupDetail.Text = "Thông tin chi tiết";
             layoutControlGroupDetail.TextLocation = DevExpress.Utils.Locations.Right;
             // 
             // layoutControlGroupNameReport
             // 
             layoutControlGroupNameReport.CustomizationFormText = "Chi tiết báo cáo";
-            layoutControlGroupNameReport.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem2, layoutControlItem3, layoutControlItem5, layoutControlItem6, layoutControlItem4, layoutControlItem7, layoutControlItem11, emptySpaceItem1, layoutControlItem12 });
+            layoutControlGroupNameReport.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem2, layoutControlItem3, layoutControlItem5, layoutControlItem6, layoutControlItem4, layoutControlItem7, layoutControlItem11, emptySpaceItem1, layoutControlItem12, layoutControlItem10, layoutControlItem13, layoutControlItem14 });
             layoutControlGroupNameReport.Location = new Point(0, 0);
             layoutControlGroupNameReport.Name = "layoutControlGroupNameReport";
-            layoutControlGroupNameReport.Size = new Size(1057, 699);
+            layoutControlGroupNameReport.Size = new Size(1215, 699);
             layoutControlGroupNameReport.Text = "Thông tin kỷ luật";
             // 
             // layoutControlItem2
             // 
-            layoutControlItem2.Control = textEdit1;
-            layoutControlItem2.Location = new Point(0, 0);
+            layoutControlItem2.Control = fTenNhanVien;
+            layoutControlItem2.Location = new Point(0, 24);
             layoutControlItem2.Name = "layoutControlItem2";
-            layoutControlItem2.Size = new Size(1033, 24);
+            layoutControlItem2.Size = new Size(1191, 24);
             layoutControlItem2.Text = "Họ và tên:";
             layoutControlItem2.TextSize = new Size(112, 13);
             // 
             // layoutControlItem3
             // 
             layoutControlItem3.Control = textEdit2;
-            layoutControlItem3.Location = new Point(0, 24);
+            layoutControlItem3.Location = new Point(0, 48);
             layoutControlItem3.Name = "layoutControlItem3";
-            layoutControlItem3.Size = new Size(516, 24);
+            layoutControlItem3.Size = new Size(595, 24);
             layoutControlItem3.Text = "Giới tính:";
             layoutControlItem3.TextSize = new Size(112, 13);
             // 
             // layoutControlItem5
             // 
             layoutControlItem5.Control = textEdit4;
-            layoutControlItem5.Location = new Point(0, 72);
+            layoutControlItem5.Location = new Point(0, 96);
             layoutControlItem5.Name = "layoutControlItem5";
-            layoutControlItem5.Size = new Size(1033, 24);
+            layoutControlItem5.Size = new Size(1191, 24);
             layoutControlItem5.Text = "Phòng ban:";
             layoutControlItem5.TextSize = new Size(112, 13);
             // 
             // layoutControlItem6
             // 
             layoutControlItem6.Control = textEdit5;
-            layoutControlItem6.Location = new Point(0, 96);
+            layoutControlItem6.Location = new Point(0, 120);
             layoutControlItem6.Name = "layoutControlItem6";
-            layoutControlItem6.Size = new Size(1033, 24);
+            layoutControlItem6.Size = new Size(1191, 24);
             layoutControlItem6.Text = "Chức danh:";
             layoutControlItem6.TextSize = new Size(112, 13);
             // 
             // layoutControlItem4
             // 
             layoutControlItem4.Control = textEdit3;
-            layoutControlItem4.Location = new Point(516, 24);
+            layoutControlItem4.Location = new Point(595, 48);
             layoutControlItem4.Name = "layoutControlItem4";
-            layoutControlItem4.Size = new Size(517, 24);
+            layoutControlItem4.Size = new Size(596, 24);
             layoutControlItem4.Text = "Ngày sinh:";
             layoutControlItem4.TextSize = new Size(112, 13);
             // 
             // layoutControlItem7
             // 
             layoutControlItem7.Control = textEdit6;
-            layoutControlItem7.Location = new Point(0, 48);
+            layoutControlItem7.Location = new Point(0, 72);
             layoutControlItem7.Name = "layoutControlItem7";
-            layoutControlItem7.Size = new Size(1033, 24);
+            layoutControlItem7.Size = new Size(1191, 24);
             layoutControlItem7.Text = "Quê quán:";
             layoutControlItem7.TextSize = new Size(112, 13);
             // 
             // layoutControlItem11
             // 
-            layoutControlItem11.Control = memoEdit1;
-            layoutControlItem11.Location = new Point(0, 120);
+            layoutControlItem11.Control = fHinhThucKyLuat;
+            layoutControlItem11.Location = new Point(0, 168);
             layoutControlItem11.Name = "layoutControlItem11";
-            layoutControlItem11.Size = new Size(1033, 131);
+            layoutControlItem11.Size = new Size(1191, 73);
             layoutControlItem11.Text = "Nội dung kỷ luật";
             layoutControlItem11.TextLocation = DevExpress.Utils.Locations.Top;
             layoutControlItem11.TextSize = new Size(112, 13);
@@ -523,24 +569,51 @@
             // emptySpaceItem1
             // 
             emptySpaceItem1.AllowHotTrack = false;
-            emptySpaceItem1.Location = new Point(0, 275);
+            emptySpaceItem1.Location = new Point(0, 265);
             emptySpaceItem1.Name = "emptySpaceItem1";
-            emptySpaceItem1.Size = new Size(1033, 379);
+            emptySpaceItem1.Size = new Size(1191, 389);
             emptySpaceItem1.TextSize = new Size(0, 0);
             // 
             // layoutControlItem12
             // 
-            layoutControlItem12.Control = dateEdit1;
-            layoutControlItem12.Location = new Point(0, 251);
+            layoutControlItem12.Control = fNgayBatDauThiHanh;
+            layoutControlItem12.Location = new Point(0, 241);
             layoutControlItem12.Name = "layoutControlItem12";
-            layoutControlItem12.Size = new Size(1033, 24);
+            layoutControlItem12.Size = new Size(595, 24);
             layoutControlItem12.Text = "Ngày ban hành kỷ luật:";
             layoutControlItem12.TextSize = new Size(112, 13);
+            // 
+            // layoutControlItem10
+            // 
+            layoutControlItem10.Control = fDiaDiemXayRa;
+            layoutControlItem10.Location = new Point(0, 144);
+            layoutControlItem10.Name = "layoutControlItem10";
+            layoutControlItem10.Size = new Size(1191, 24);
+            layoutControlItem10.Text = "Địa điểm xảy ra:";
+            layoutControlItem10.TextSize = new Size(112, 13);
+            // 
+            // layoutControlItem13
+            // 
+            layoutControlItem13.Control = fMaSo;
+            layoutControlItem13.Location = new Point(0, 0);
+            layoutControlItem13.Name = "layoutControlItem13";
+            layoutControlItem13.Size = new Size(1191, 24);
+            layoutControlItem13.Text = "Mã số:";
+            layoutControlItem13.TextSize = new Size(112, 13);
+            // 
+            // layoutControlItem14
+            // 
+            layoutControlItem14.Control = fNgayHetHieuLuc;
+            layoutControlItem14.Location = new Point(595, 241);
+            layoutControlItem14.Name = "layoutControlItem14";
+            layoutControlItem14.Size = new Size(596, 24);
+            layoutControlItem14.Text = "Ngày hết hiệu lực:";
+            layoutControlItem14.TextSize = new Size(112, 13);
             // 
             // splitterItem1
             // 
             splitterItem1.AllowHotTrack = true;
-            splitterItem1.Location = new Point(518, 0);
+            splitterItem1.Location = new Point(360, 0);
             splitterItem1.Name = "splitterItem1";
             splitterItem1.Size = new Size(10, 704);
             // 
@@ -585,15 +658,19 @@
             ((System.ComponentModel.ISupportInitialize)barManager1).EndInit();
             ((System.ComponentModel.ISupportInitialize)selectReport).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridView9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fTenNhanVien.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit5.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit6.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)memoEdit1.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties.CalendarTimeProperties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fHinhThucKyLuat.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayBatDauThiHanh.Properties.CalendarTimeProperties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayBatDauThiHanh.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fDiaDiemXayRa.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fMaSo.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayHetHieuLuc.Properties.CalendarTimeProperties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayHetHieuLuc.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)Root).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlGroupExtension).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem1).EndInit();
@@ -608,6 +685,9 @@
             ((System.ComponentModel.ISupportInitialize)layoutControlItem11).EndInit();
             ((System.ComponentModel.ISupportInitialize)emptySpaceItem1).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem12).EndInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem13).EndInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem14).EndInit();
             ((System.ComponentModel.ISupportInitialize)splitterItem1).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem8).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem9).EndInit();
@@ -641,7 +721,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewDanhSach;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroupNameReport;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit fTenNhanVien;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
@@ -659,8 +739,8 @@
         private DevExpress.XtraEditors.TextEdit textEdit4;
         private DevExpress.XtraEditors.TextEdit textEdit5;
         private DevExpress.XtraEditors.TextEdit textEdit6;
-        private DevExpress.XtraEditors.MemoEdit memoEdit1;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.MemoEdit fHinhThucKyLuat;
+        private DevExpress.XtraEditors.DateEdit fNgayBatDauThiHanh;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
@@ -668,5 +748,11 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
+        private DevExpress.XtraEditors.TextEdit fDiaDiemXayRa;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraEditors.TextEdit fMaSo;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
+        private DevExpress.XtraEditors.DateEdit fNgayHetHieuLuc;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
     }
 }
