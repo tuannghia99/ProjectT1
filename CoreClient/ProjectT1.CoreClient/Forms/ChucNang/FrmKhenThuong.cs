@@ -1,13 +1,12 @@
 ﻿using DevExpress.XtraEditors;
-using ProjectT1.Client.Winform;
-using System.Net.Http;
-using static ProjectT1.Client.Winform.clsCommon;
+using System;
+using static ProjectT1.CoreClient.clsCommon;
 
 namespace ProjectT1.CoreClient {
-    public partial class FrmKyLuat : XtraForm {
+    public partial class FrmKhenThuong : XtraForm {
 
         #region Contructor & FormLoad
-        public FrmKyLuat() {
+        public FrmKhenThuong() {
             InitializeComponent();
         }
 
@@ -29,6 +28,11 @@ namespace ProjectT1.CoreClient {
                     break;
                 default:
                     break;
+            }
+        }
+        private async void gridViewMain_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
+            if (gridViewMain.RowCount > 0) {
+                //clsCommonY4c.CommonHandler.SetValueToControl(_curDataMain, this);
             }
         }
         #endregion

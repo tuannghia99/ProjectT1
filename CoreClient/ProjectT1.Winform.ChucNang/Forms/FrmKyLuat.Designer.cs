@@ -1,4 +1,4 @@
-﻿namespace Project.Client.Winform {
+﻿namespace ProjectT1.CoreClient {
     partial class FrmKyLuat {
         /// <summary>
         /// Required designer variable.

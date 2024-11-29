@@ -1,4 +1,7 @@
-﻿namespace ProjectT1.CoreClient {
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace ProjectT1.CoreClient {
     partial class FrmDanhSachNhanVien {
         /// <summary>
         /// Required designer variable.

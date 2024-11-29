@@ -5,6 +5,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraSplashScreen;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace ProjectT1.CoreClient {
         private MainStatusForm _mainStatus;
         private Guid _curIdMain = new();
         private Guid _tempNewIdMain = new();
-        private BindingList<ChucVuDTO> _bindingListMain = [];
+        private BindingList<ChucVuDTO> _bindingListMain = new();
 
         #region Contructor & FormLoad
         public FrmDMChucVu() {
@@ -87,7 +88,7 @@ namespace ProjectT1.CoreClient {
             try {
                 ConfigControlStatus(_mainStatus = MainStatusForm.WAIT);
                 clsCommon.CommonHandler.ClearControlData(layoutControlGroupEditControl);
-                _bindingListMain = [];
+                _bindingListMain = new();
 
                 var res = await IBusObj.GetAllAsync();
                 _bindingListMain = new BindingList<ChucVuDTO>(res.Result.OrderBy(x => x.MaSo).ToList());
@@ -179,7 +180,9 @@ namespace ProjectT1.CoreClient {
 
                 // Submit
                 if (_mainStatus == MainStatusForm.CREATE) {
-                    var res = await IBusObj.PostAsync([obj]);
+                    List<ChucVuDTO> data = new List<ChucVuDTO>();
+                    data.Add(obj);
+                    var res = await IBusObj.PostAsync(data);
                     if (res.IsSuccess) clsCommon.CommonHandler.ShowNotificationForm_CreatedSuccessfully();
                     _bindingListMain.Add(obj);
                     gridViewMain.RefreshData();

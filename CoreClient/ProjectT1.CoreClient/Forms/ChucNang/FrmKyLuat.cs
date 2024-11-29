@@ -1,7 +1,7 @@
 ﻿using DevExpress.XtraEditors;
-using ProjectT1.Client.Winform;
+using System;
 using System.Net.Http;
-using static ProjectT1.Client.Winform.clsCommon;
+using static ProjectT1.CoreClient.clsCommon;
 
 namespace ProjectT1.CoreClient {
     public partial class FrmKyLuat : XtraForm {

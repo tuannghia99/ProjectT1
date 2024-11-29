@@ -2,7 +2,7 @@
 using ProjectT1.Client.Winform;
 using static ProjectT1.Client.Winform.clsCommon;
 
-namespace Project.Client.Winform {
+namespace ProjectT1.CoreClient {
     public partial class FrmKhenThuong : XtraForm {
 
         #region Contructor & FormLoad

@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
-using Project.Client.Winform;
+using ProjectT1.CoreClient;
 using System.IO;
 using System.Text.Json;
 

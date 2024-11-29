@@ -1,7 +1,8 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
-using ProjectT1.Client.Winform;
-using static ProjectT1.Client.Winform.clsCommon;
+using System;
+using System.Windows.Forms;
+using static ProjectT1.CoreClient.clsCommon;
 
 namespace ProjectT1.CoreClient {
     public partial class FrmNhanVienInfo : DevExpress.XtraEditors.XtraForm {

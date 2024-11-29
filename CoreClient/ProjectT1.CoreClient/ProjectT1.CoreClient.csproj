@@ -14,11 +14,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Forms\ChucNang\" />
 		<Folder Include="Validators\ChucNang\" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<Compile Update="Forms\ChucNang\FrmKhenThuong.cs">
+		  <SubType>Form</SubType>
+		</Compile>
+		<Compile Update="Forms\ChucNang\FrmKyLuat.cs">
+		  <SubType>Form</SubType>
+		</Compile>
 		<Compile Update="Forms\DanhMuc\FrmDMTrinhDoHocVan.cs">
 		  <SubType>Form</SubType>
 		</Compile>

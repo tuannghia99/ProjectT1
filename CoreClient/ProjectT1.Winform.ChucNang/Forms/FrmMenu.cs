@@ -1,11 +1,10 @@
 ﻿using DevExpress.XtraBars;
 using ProjectT1.Client.Winform;
-using ProjectY.Client.Winform;
 using System.Data;
 using System.Net.Http;
 using System.Windows.Forms;
 
-namespace Project.Client.Winform {
+namespace ProjectT1.CoreClient {
     public partial class FrmMenu : DevExpress.XtraEditors.XtraForm {
         public FrmMenu() {
             InitializeComponent();
@@ -23,14 +22,7 @@ namespace Project.Client.Winform {
         }
 
         private void btnDanhMuc_ListItemClick(object sender, ListItemClickEventArgs e) {
-            if (e.Index == 0) { // Chucdanh
-                var frm = new FrmDMChucDanh();
-                frm.ShowDialog();
-            }
-            if (e.Index == 1) { // PhongBan
-                var frm = new FrmDMPhongBan();
-                frm.ShowDialog();
-            }
+           
         }
     }
 }
