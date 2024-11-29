@@ -1,7 +1,4 @@
-﻿using app.StdCommon;
-using DevExpress.LookAndFeel.Design;
-using DevExpress.XtraEditors;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;

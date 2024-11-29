@@ -65,7 +65,6 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="NLog.Extensions.Logging" Version="5.3.3" />
     <PackageReference Include="NLog.Targets.Seq" Version="3.0.0" />
-    <PackageReference Include="ProjectX.Client.ServerBusiness.Infrastructure" Version="1.2.1" />
   </ItemGroup>
 
   <ItemGroup>

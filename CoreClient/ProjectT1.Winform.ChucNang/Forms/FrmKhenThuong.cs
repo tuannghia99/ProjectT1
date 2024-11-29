@@ -1,5 +1,4 @@
-﻿using app.StdCommon;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using ProjectT1.Client.Winform;
 using static ProjectT1.Client.Winform.clsCommon;
 

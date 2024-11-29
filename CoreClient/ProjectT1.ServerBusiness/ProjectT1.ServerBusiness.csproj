@@ -17,8 +17,6 @@
 	  <ProjectReference Include="..\ProjectZ1.Client.ServerBusiness.Infrastructure\ProjectZ1.Client.ServerBusiness.Infrastructure.csproj" />-->
 	
 	  <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
-	
-	  <PackageReference Include="ProjectX.Abstract" Version="1.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>

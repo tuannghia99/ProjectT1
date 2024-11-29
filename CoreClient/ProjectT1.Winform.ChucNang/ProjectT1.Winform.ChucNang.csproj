@@ -41,7 +41,6 @@
 		<PackageReference Include="FluentValidation" Version="11.4.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
 		<PackageReference Include="NLog" Version="5.2.0" />
-		<PackageReference Include="ProjectX.Client.ServerBusiness.Infrastructure" Version="1.2.1" />
 		<!--<PackageReference Include="ProjectX.Client.Winform.Common" Version="1.2.0-alpha5" />-->
 		<!--<PackageReference Include="ProjectX.Client.Winform.Common" Version="1.2.0-alpha5" />-->
 	</ItemGroup>
