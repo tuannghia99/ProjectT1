@@ -68,6 +68,7 @@ namespace ProjectT1.CoreClient {
             clsCommon.CommonHandler.LoadFromObject(fIdChucVu, listChucVu, "Oid", "Ten");
             clsCommon.CommonHandler.LoadFromObject(fIdPhongBan, listPhongBan, "Oid", "Ten");
             clsCommon.CommonHandler.LoadFromObject(fIdTrinhDoHocVan, listHocVan, "Oid", "Ten");
+
         }
         private void ConfigControlStatus(MainStatusForm status) {
             switch (status) {

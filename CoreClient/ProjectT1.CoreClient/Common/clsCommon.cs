@@ -641,19 +641,37 @@ namespace ProjectT1.CoreClient {
                 }
             }
             public static void LoadFromObject(object lookUpEdit, IEnumerable<object> dataSource, string valueMember, string displayMember) {
+                var columnsToDisplay = new List<Tuple<string, string>> {
+                    new Tuple<string, string>("MaSo", "Mã số"),
+                    new Tuple<string, string>("Ten", "Tên")    
+                };
+
                 if (lookUpEdit is DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit) {
                     searchLookUpEdit.Properties.DataSource = dataSource;
                     searchLookUpEdit.Properties.ValueMember = valueMember;
                     searchLookUpEdit.Properties.DisplayMember = displayMember;
+                    CreateColumns(searchLookUpEdit.Properties.View, columnsToDisplay);
                 }
                 else if (lookUpEdit is DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit repoSearchLookUpEdit) {
                     repoSearchLookUpEdit.DataSource = dataSource;
                     repoSearchLookUpEdit.ValueMember = valueMember;
                     repoSearchLookUpEdit.DisplayMember = displayMember;
+                    CreateColumns(repoSearchLookUpEdit.View, columnsToDisplay);
                 }
             }
-
-
+            private static void CreateColumns(DevExpress.XtraGrid.Views.Grid.GridView gridView, List<Tuple<string, string>> columnsToDisplay) {
+                foreach (var columnInfo in columnsToDisplay) {
+                    var column = gridView.Columns.AddField(columnInfo.Item1);
+                    column.VisibleIndex = gridView.Columns.Count - 1; // Đặt chỉ số cho cột
+                    column.Caption = columnInfo.Item2;  // Đặt tên cột
+                    column.Visible = true;
+                }
+                foreach (DevExpress.XtraGrid.Columns.GridColumn column in gridView.Columns) {
+                    if (!columnsToDisplay.Any(c => c.Item1 == column.FieldName)) {
+                        column.Visible = false;
+                    }
+                }
+            }
         }
     }
     public static class ImageExtensions {
