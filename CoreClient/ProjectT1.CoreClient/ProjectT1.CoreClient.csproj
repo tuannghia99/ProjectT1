@@ -8,18 +8,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="Forms\ChucNang\FrmDanhSachNhanVien.cs" />
-	  <Compile Remove="Forms\ChucNang\FrmDanhSachNhanVien.Designer.cs" />
-	  <Compile Remove="Forms\ChucNang\FrmNhanVienInfo.cs" />
-	  <Compile Remove="Forms\ChucNang\FrmNhanVienInfo.Designer.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <EmbeddedResource Remove="Forms\ChucNang\FrmDanhSachNhanVien.resx" />
-	  <EmbeddedResource Remove="Forms\ChucNang\FrmNhanVienInfo.resx" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="DevExpress.Win.Design" Version="24.1.5" />
 		<PackageReference Include="FluentValidation" Version="11.11.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
