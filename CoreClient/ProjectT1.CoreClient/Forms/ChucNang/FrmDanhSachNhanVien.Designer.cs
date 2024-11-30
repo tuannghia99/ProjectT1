@@ -36,6 +36,11 @@ namespace ProjectT1.CoreClient {
             barManager1 = new DevExpress.XtraBars.BarManager(components);
             bar1 = new DevExpress.XtraBars.Bar();
             barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            btnCreate = new DevExpress.XtraBars.BarButtonItem();
+            btnEdit = new DevExpress.XtraBars.BarButtonItem();
+            btnDelete = new DevExpress.XtraBars.BarButtonItem();
+            btnRefresh = new DevExpress.XtraBars.BarButtonItem();
+            btnClose = new DevExpress.XtraBars.BarButtonItem();
             bar3 = new DevExpress.XtraBars.Bar();
             barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -84,8 +89,8 @@ namespace ProjectT1.CoreClient {
             barManager1.DockControls.Add(barDockControlLeft);
             barManager1.DockControls.Add(barDockControlRight);
             barManager1.Form = this;
-            barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { barButtonItem1 });
-            barManager1.MaxItemId = 1;
+            barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { barButtonItem1, btnCreate, btnEdit, btnDelete, btnRefresh, btnClose });
+            barManager1.MaxItemId = 6;
             barManager1.StatusBar = bar3;
             // 
             // bar1
@@ -94,7 +99,7 @@ namespace ProjectT1.CoreClient {
             bar1.DockCol = 0;
             bar1.DockRow = 0;
             bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] { new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph) });
+            bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] { new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, btnCreate, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, btnEdit, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, btnDelete, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, btnRefresh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, btnClose, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph) });
             bar1.Text = "Tools";
             // 
             // barButtonItem1
@@ -103,6 +108,42 @@ namespace ProjectT1.CoreClient {
             barButtonItem1.Id = 0;
             barButtonItem1.ImageOptions.Image = (Image)resources.GetObject("barButtonItem1.ImageOptions.Image");
             barButtonItem1.Name = "barButtonItem1";
+            // 
+            // btnCreate
+            // 
+            btnCreate.Caption = "Thêm mới";
+            btnCreate.Id = 1;
+            btnCreate.ImageOptions.Image = (Image)resources.GetObject("btnCreate.ImageOptions.Image");
+            btnCreate.Name = "btnCreate";
+            btnCreate.ItemClick += btnCreate_ItemClick;
+            // 
+            // btnEdit
+            // 
+            btnEdit.Caption = "Sửa";
+            btnEdit.Id = 2;
+            btnEdit.ImageOptions.Image = (Image)resources.GetObject("btnEdit.ImageOptions.Image");
+            btnEdit.Name = "btnEdit";
+            // 
+            // btnDelete
+            // 
+            btnDelete.Caption = "Xoá";
+            btnDelete.Id = 3;
+            btnDelete.ImageOptions.Image = (Image)resources.GetObject("btnDelete.ImageOptions.Image");
+            btnDelete.Name = "btnDelete";
+            // 
+            // btnRefresh
+            // 
+            btnRefresh.Caption = "Làm mới";
+            btnRefresh.Id = 4;
+            btnRefresh.ImageOptions.Image = (Image)resources.GetObject("btnRefresh.ImageOptions.Image");
+            btnRefresh.Name = "btnRefresh";
+            // 
+            // btnClose
+            // 
+            btnClose.Caption = "Đóng";
+            btnClose.Id = 5;
+            btnClose.ImageOptions.Image = (Image)resources.GetObject("btnClose.ImageOptions.Image");
+            btnClose.Name = "btnClose";
             // 
             // bar3
             // 
@@ -169,6 +210,7 @@ namespace ProjectT1.CoreClient {
             gridControlMain.Size = new Size(1183, 594);
             gridControlMain.TabIndex = 3;
             gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewMain });
+            gridControlMain.Click += gridControlMain_Click;
             // 
             // gridViewMain
             // 
@@ -187,6 +229,7 @@ namespace ProjectT1.CoreClient {
             gridColumn3.Caption = "Tên nhân viên";
             gridColumn3.FieldName = "Ten";
             gridColumn3.Name = "gridColumn3";
+            gridColumn3.OptionsColumn.AllowEdit = false;
             gridColumn3.Visible = true;
             gridColumn3.VisibleIndex = 0;
             // 
@@ -195,6 +238,7 @@ namespace ProjectT1.CoreClient {
             gridColumn4.Caption = "Giới tính";
             gridColumn4.FieldName = "GioiTinh";
             gridColumn4.Name = "gridColumn4";
+            gridColumn4.OptionsColumn.AllowEdit = false;
             gridColumn4.Visible = true;
             gridColumn4.VisibleIndex = 1;
             // 
@@ -204,6 +248,7 @@ namespace ProjectT1.CoreClient {
             gridColumn5.ColumnEdit = repoNgay;
             gridColumn5.FieldName = "NgaySinh";
             gridColumn5.Name = "gridColumn5";
+            gridColumn5.OptionsColumn.AllowEdit = false;
             gridColumn5.Visible = true;
             gridColumn5.VisibleIndex = 2;
             // 
@@ -219,6 +264,7 @@ namespace ProjectT1.CoreClient {
             gridColumn6.Caption = "Phòng ban";
             gridColumn6.FieldName = "IdPhongBan";
             gridColumn6.Name = "gridColumn6";
+            gridColumn6.OptionsColumn.AllowEdit = false;
             gridColumn6.Visible = true;
             gridColumn6.VisibleIndex = 3;
             // 
@@ -227,6 +273,7 @@ namespace ProjectT1.CoreClient {
             gridColumn7.Caption = "Chức danh";
             gridColumn7.FieldName = "IdChucDanh";
             gridColumn7.Name = "gridColumn7";
+            gridColumn7.OptionsColumn.AllowEdit = false;
             gridColumn7.Visible = true;
             gridColumn7.VisibleIndex = 4;
             // 
@@ -235,6 +282,7 @@ namespace ProjectT1.CoreClient {
             gridColumn2.Caption = "Hình ảnh";
             gridColumn2.FieldName = "Avatar";
             gridColumn2.Name = "gridColumn2";
+            gridColumn2.OptionsColumn.AllowEdit = false;
             gridColumn2.Visible = true;
             gridColumn2.VisibleIndex = 5;
             // 
@@ -365,5 +413,10 @@ namespace ProjectT1.CoreClient {
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit2View;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repoNgay;
+        private DevExpress.XtraBars.BarButtonItem btnCreate;
+        private DevExpress.XtraBars.BarButtonItem btnEdit;
+        private DevExpress.XtraBars.BarButtonItem btnDelete;
+        private DevExpress.XtraBars.BarButtonItem btnRefresh;
+        private DevExpress.XtraBars.BarButtonItem btnClose;
     }
 }

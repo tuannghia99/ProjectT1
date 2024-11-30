@@ -47,13 +47,8 @@ namespace ProjectT1.CoreClient {
             fAvatar = new DevExpress.XtraEditors.PictureEdit();
             fTen = new DevExpress.XtraEditors.TextEdit();
             fUsername = new DevExpress.XtraEditors.TextEdit();
-            fCreateDate = new DevExpress.XtraEditors.TextEdit();
             fEmail = new DevExpress.XtraEditors.TextEdit();
-            fModifiedDate = new DevExpress.XtraEditors.TextEdit();
-            fNgaySinh = new DevExpress.XtraEditors.TextEdit();
-            fGioiTinh = new DevExpress.XtraEditors.TextEdit();
             fSoCanCuoc = new DevExpress.XtraEditors.TextEdit();
-            fNgayCap = new DevExpress.XtraEditors.TextEdit();
             fQuocTich = new DevExpress.XtraEditors.TextEdit();
             fNoiSinh = new DevExpress.XtraEditors.MemoEdit();
             fTonGiao = new DevExpress.XtraEditors.TextEdit();
@@ -62,8 +57,6 @@ namespace ProjectT1.CoreClient {
             fNoiCap = new DevExpress.XtraEditors.TextEdit();
             btnChonAnh = new DevExpress.XtraEditors.SimpleButton();
             btnGoAnh = new DevExpress.XtraEditors.SimpleButton();
-            fIdPhongBan = new DevExpress.XtraEditors.TextEdit();
-            fIdChucVu = new DevExpress.XtraEditors.TextEdit();
             fChieuCao = new DevExpress.XtraEditors.TextEdit();
             fIdTrinhDoHocVan = new DevExpress.XtraEditors.TextEdit();
             fCanNang = new DevExpress.XtraEditors.TextEdit();
@@ -71,6 +64,15 @@ namespace ProjectT1.CoreClient {
             fMaSo = new DevExpress.XtraEditors.TextEdit();
             fPhoneNumber = new DevExpress.XtraEditors.TextEdit();
             fTinhTrangHonNhan = new DevExpress.XtraEditors.TextEdit();
+            fNgaySinh = new DevExpress.XtraEditors.DateEdit();
+            fCreateDate = new DevExpress.XtraEditors.DateEdit();
+            fModifiedDate = new DevExpress.XtraEditors.DateEdit();
+            fNgayCap = new DevExpress.XtraEditors.DateEdit();
+            fGioiTinh = new DevExpress.XtraEditors.ComboBoxEdit();
+            fIdPhongBan = new DevExpress.XtraEditors.SearchLookUpEdit();
+            searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            fIdChucVu = new DevExpress.XtraEditors.SearchLookUpEdit();
+            gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             Root = new DevExpress.XtraLayout.LayoutControlGroup();
             layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -110,21 +112,14 @@ namespace ProjectT1.CoreClient {
             ((System.ComponentModel.ISupportInitialize)fAvatar.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fTen.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fUsername.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)fCreateDate.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fEmail.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)fModifiedDate.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)fNgaySinh.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)fGioiTinh.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fSoCanCuoc.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)fNgayCap.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fQuocTich.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fNoiSinh.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fTonGiao.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fDanToc.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fDiaChi.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fNoiCap.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)fIdPhongBan.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)fIdChucVu.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fChieuCao.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fIdTrinhDoHocVan.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fCanNang.Properties).BeginInit();
@@ -132,6 +127,19 @@ namespace ProjectT1.CoreClient {
             ((System.ComponentModel.ISupportInitialize)fMaSo.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fPhoneNumber.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fTinhTrangHonNhan.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fNgaySinh.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fNgaySinh.Properties.CalendarTimeProperties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fCreateDate.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fCreateDate.Properties.CalendarTimeProperties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fModifiedDate.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fModifiedDate.Properties.CalendarTimeProperties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayCap.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayCap.Properties.CalendarTimeProperties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fGioiTinh.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fIdPhongBan.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)searchLookUpEdit1View).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fIdChucVu.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Root).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlGroup2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem10).BeginInit();
@@ -209,6 +217,7 @@ namespace ProjectT1.CoreClient {
             btnSua.Id = 1;
             btnSua.ImageOptions.Image = (Image)resources.GetObject("btnSua.ImageOptions.Image");
             btnSua.Name = "btnSua";
+            btnSua.ItemClick += btnSua_ItemClick;
             // 
             // btnXoa
             // 
@@ -223,6 +232,7 @@ namespace ProjectT1.CoreClient {
             btnGhi.Id = 3;
             btnGhi.ImageOptions.Image = (Image)resources.GetObject("btnGhi.ImageOptions.Image");
             btnGhi.Name = "btnGhi";
+            btnGhi.ItemClick += btnGhi_ItemClick;
             // 
             // btnBoQua
             // 
@@ -294,13 +304,8 @@ namespace ProjectT1.CoreClient {
             layoutControl1.Controls.Add(fAvatar);
             layoutControl1.Controls.Add(fTen);
             layoutControl1.Controls.Add(fUsername);
-            layoutControl1.Controls.Add(fCreateDate);
             layoutControl1.Controls.Add(fEmail);
-            layoutControl1.Controls.Add(fModifiedDate);
-            layoutControl1.Controls.Add(fNgaySinh);
-            layoutControl1.Controls.Add(fGioiTinh);
             layoutControl1.Controls.Add(fSoCanCuoc);
-            layoutControl1.Controls.Add(fNgayCap);
             layoutControl1.Controls.Add(fQuocTich);
             layoutControl1.Controls.Add(fNoiSinh);
             layoutControl1.Controls.Add(fTonGiao);
@@ -309,8 +314,6 @@ namespace ProjectT1.CoreClient {
             layoutControl1.Controls.Add(fNoiCap);
             layoutControl1.Controls.Add(btnChonAnh);
             layoutControl1.Controls.Add(btnGoAnh);
-            layoutControl1.Controls.Add(fIdPhongBan);
-            layoutControl1.Controls.Add(fIdChucVu);
             layoutControl1.Controls.Add(fChieuCao);
             layoutControl1.Controls.Add(fIdTrinhDoHocVan);
             layoutControl1.Controls.Add(fCanNang);
@@ -318,6 +321,13 @@ namespace ProjectT1.CoreClient {
             layoutControl1.Controls.Add(fMaSo);
             layoutControl1.Controls.Add(fPhoneNumber);
             layoutControl1.Controls.Add(fTinhTrangHonNhan);
+            layoutControl1.Controls.Add(fNgaySinh);
+            layoutControl1.Controls.Add(fCreateDate);
+            layoutControl1.Controls.Add(fModifiedDate);
+            layoutControl1.Controls.Add(fNgayCap);
+            layoutControl1.Controls.Add(fGioiTinh);
+            layoutControl1.Controls.Add(fIdPhongBan);
+            layoutControl1.Controls.Add(fIdChucVu);
             layoutControl1.Dock = DockStyle.Fill;
             layoutControl1.Location = new Point(0, 24);
             layoutControl1.Name = "layoutControl1";
@@ -355,15 +365,6 @@ namespace ProjectT1.CoreClient {
             fUsername.StyleController = layoutControl1;
             fUsername.TabIndex = 3;
             // 
-            // fCreateDate
-            // 
-            fCreateDate.Location = new Point(673, 93);
-            fCreateDate.MenuManager = barManager1;
-            fCreateDate.Name = "fCreateDate";
-            fCreateDate.Size = new Size(141, 20);
-            fCreateDate.StyleController = layoutControl1;
-            fCreateDate.TabIndex = 6;
-            // 
             // fEmail
             // 
             fEmail.Location = new Point(931, 69);
@@ -373,33 +374,6 @@ namespace ProjectT1.CoreClient {
             fEmail.StyleController = layoutControl1;
             fEmail.TabIndex = 4;
             // 
-            // fModifiedDate
-            // 
-            fModifiedDate.Location = new Point(931, 93);
-            fModifiedDate.MenuManager = barManager1;
-            fModifiedDate.Name = "fModifiedDate";
-            fModifiedDate.Size = new Size(186, 20);
-            fModifiedDate.StyleController = layoutControl1;
-            fModifiedDate.TabIndex = 7;
-            // 
-            // fNgaySinh
-            // 
-            fNgaySinh.Location = new Point(369, 162);
-            fNgaySinh.MenuManager = barManager1;
-            fNgaySinh.Name = "fNgaySinh";
-            fNgaySinh.Size = new Size(250, 20);
-            fNgaySinh.StyleController = layoutControl1;
-            fNgaySinh.TabIndex = 8;
-            // 
-            // fGioiTinh
-            // 
-            fGioiTinh.Location = new Point(736, 162);
-            fGioiTinh.MenuManager = barManager1;
-            fGioiTinh.Name = "fGioiTinh";
-            fGioiTinh.Size = new Size(381, 20);
-            fGioiTinh.StyleController = layoutControl1;
-            fGioiTinh.TabIndex = 9;
-            // 
             // fSoCanCuoc
             // 
             fSoCanCuoc.Location = new Point(381, 564);
@@ -408,15 +382,6 @@ namespace ProjectT1.CoreClient {
             fSoCanCuoc.Size = new Size(284, 20);
             fSoCanCuoc.StyleController = layoutControl1;
             fSoCanCuoc.TabIndex = 18;
-            // 
-            // fNgayCap
-            // 
-            fNgayCap.Location = new Point(381, 588);
-            fNgayCap.MenuManager = barManager1;
-            fNgayCap.Name = "fNgayCap";
-            fNgayCap.Size = new Size(284, 20);
-            fNgayCap.StyleController = layoutControl1;
-            fNgayCap.TabIndex = 19;
             // 
             // fQuocTich
             // 
@@ -492,24 +457,6 @@ namespace ProjectT1.CoreClient {
             btnGoAnh.Text = "Gỡ xuống";
             btnGoAnh.Click += btnGoAnh_Click;
             // 
-            // fIdPhongBan
-            // 
-            fIdPhongBan.Location = new Point(369, 435);
-            fIdPhongBan.MenuManager = barManager1;
-            fIdPhongBan.Name = "fIdPhongBan";
-            fIdPhongBan.Size = new Size(748, 20);
-            fIdPhongBan.StyleController = layoutControl1;
-            fIdPhongBan.TabIndex = 15;
-            // 
-            // fIdChucVu
-            // 
-            fIdChucVu.Location = new Point(369, 459);
-            fIdChucVu.MenuManager = barManager1;
-            fIdChucVu.Name = "fIdChucVu";
-            fIdChucVu.Size = new Size(748, 20);
-            fIdChucVu.StyleController = layoutControl1;
-            fIdChucVu.TabIndex = 16;
-            // 
             // fChieuCao
             // 
             fChieuCao.Location = new Point(806, 588);
@@ -572,6 +519,128 @@ namespace ProjectT1.CoreClient {
             fTinhTrangHonNhan.Size = new Size(748, 20);
             fTinhTrangHonNhan.StyleController = layoutControl1;
             fTinhTrangHonNhan.TabIndex = 26;
+            // 
+            // fNgaySinh
+            // 
+            fNgaySinh.EditValue = null;
+            fNgaySinh.Location = new Point(369, 162);
+            fNgaySinh.MenuManager = barManager1;
+            fNgaySinh.Name = "fNgaySinh";
+            fNgaySinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fNgaySinh.Properties.DisplayFormat.FormatString = "";
+            fNgaySinh.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            fNgaySinh.Properties.EditFormat.FormatString = "";
+            fNgaySinh.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            fNgaySinh.Properties.Mask.EditMask = "";
+            fNgaySinh.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            fNgaySinh.Size = new Size(250, 20);
+            fNgaySinh.StyleController = layoutControl1;
+            fNgaySinh.TabIndex = 8;
+            // 
+            // fCreateDate
+            // 
+            fCreateDate.EditValue = null;
+            fCreateDate.Location = new Point(673, 93);
+            fCreateDate.MenuManager = barManager1;
+            fCreateDate.Name = "fCreateDate";
+            fCreateDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fCreateDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fCreateDate.Properties.DisplayFormat.FormatString = "";
+            fCreateDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            fCreateDate.Properties.EditFormat.FormatString = "";
+            fCreateDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            fCreateDate.Properties.Mask.EditMask = "";
+            fCreateDate.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            fCreateDate.Size = new Size(141, 20);
+            fCreateDate.StyleController = layoutControl1;
+            fCreateDate.TabIndex = 6;
+            // 
+            // fModifiedDate
+            // 
+            fModifiedDate.EditValue = null;
+            fModifiedDate.Location = new Point(931, 93);
+            fModifiedDate.MenuManager = barManager1;
+            fModifiedDate.Name = "fModifiedDate";
+            fModifiedDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fModifiedDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fModifiedDate.Properties.DisplayFormat.FormatString = "";
+            fModifiedDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            fModifiedDate.Properties.EditFormat.FormatString = "";
+            fModifiedDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            fModifiedDate.Properties.Mask.EditMask = "";
+            fModifiedDate.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            fModifiedDate.Size = new Size(186, 20);
+            fModifiedDate.StyleController = layoutControl1;
+            fModifiedDate.TabIndex = 7;
+            // 
+            // fNgayCap
+            // 
+            fNgayCap.EditValue = null;
+            fNgayCap.Location = new Point(381, 588);
+            fNgayCap.MenuManager = barManager1;
+            fNgayCap.Name = "fNgayCap";
+            fNgayCap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fNgayCap.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fNgayCap.Properties.DisplayFormat.FormatString = "";
+            fNgayCap.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            fNgayCap.Properties.EditFormat.FormatString = "";
+            fNgayCap.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            fNgayCap.Properties.Mask.EditMask = "";
+            fNgayCap.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            fNgayCap.Size = new Size(284, 20);
+            fNgayCap.StyleController = layoutControl1;
+            fNgayCap.TabIndex = 19;
+            // 
+            // fGioiTinh
+            // 
+            fGioiTinh.Location = new Point(736, 162);
+            fGioiTinh.MenuManager = barManager1;
+            fGioiTinh.Name = "fGioiTinh";
+            fGioiTinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fGioiTinh.Properties.Items.AddRange(new object[] { "Nam", "Nữ" });
+            fGioiTinh.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            fGioiTinh.Size = new Size(381, 20);
+            fGioiTinh.StyleController = layoutControl1;
+            fGioiTinh.TabIndex = 9;
+            // 
+            // fIdPhongBan
+            // 
+            fIdPhongBan.Location = new Point(369, 435);
+            fIdPhongBan.MenuManager = barManager1;
+            fIdPhongBan.Name = "fIdPhongBan";
+            fIdPhongBan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fIdPhongBan.Properties.NullText = "";
+            fIdPhongBan.Properties.PopupView = searchLookUpEdit1View;
+            fIdPhongBan.Size = new Size(748, 20);
+            fIdPhongBan.StyleController = layoutControl1;
+            fIdPhongBan.TabIndex = 15;
+            // 
+            // searchLookUpEdit1View
+            // 
+            searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // fIdChucVu
+            // 
+            fIdChucVu.Location = new Point(369, 459);
+            fIdChucVu.MenuManager = barManager1;
+            fIdChucVu.Name = "fIdChucVu";
+            fIdChucVu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fIdChucVu.Properties.NullText = "";
+            fIdChucVu.Properties.PopupView = gridView1;
+            fIdChucVu.Size = new Size(748, 20);
+            fIdChucVu.StyleController = layoutControl1;
+            fIdChucVu.TabIndex = 16;
+            // 
+            // gridView1
+            // 
+            gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            gridView1.Name = "gridView1";
+            gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // Root
             // 
@@ -889,21 +958,14 @@ namespace ProjectT1.CoreClient {
             ((System.ComponentModel.ISupportInitialize)fAvatar.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fTen.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fUsername.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)fCreateDate.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fEmail.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)fModifiedDate.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)fNgaySinh.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)fGioiTinh.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fSoCanCuoc.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)fNgayCap.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fQuocTich.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fNoiSinh.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fTonGiao.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fDanToc.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fDiaChi.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fNoiCap.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)fIdPhongBan.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)fIdChucVu.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fChieuCao.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fIdTrinhDoHocVan.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fCanNang.Properties).EndInit();
@@ -911,6 +973,19 @@ namespace ProjectT1.CoreClient {
             ((System.ComponentModel.ISupportInitialize)fMaSo.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fPhoneNumber.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fTinhTrangHonNhan.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fNgaySinh.Properties.CalendarTimeProperties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fNgaySinh.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fCreateDate.Properties.CalendarTimeProperties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fCreateDate.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fModifiedDate.Properties.CalendarTimeProperties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fModifiedDate.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayCap.Properties.CalendarTimeProperties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayCap.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fGioiTinh.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fIdPhongBan.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)searchLookUpEdit1View).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fIdChucVu.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)Root).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlGroup2).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem10).EndInit();
@@ -962,14 +1037,9 @@ namespace ProjectT1.CoreClient {
         private DevExpress.XtraEditors.PictureEdit fAvatar;
         private DevExpress.XtraEditors.TextEdit fTen;
         private DevExpress.XtraEditors.TextEdit fUsername;
-        private DevExpress.XtraEditors.TextEdit fCreateDate;
         private DevExpress.XtraEditors.TextEdit fEmail;
-        private DevExpress.XtraEditors.TextEdit fModifiedDate;
-        private DevExpress.XtraEditors.TextEdit fNgaySinh;
-        private DevExpress.XtraEditors.TextEdit fGioiTinh;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.TextEdit fSoCanCuoc;
-        private DevExpress.XtraEditors.TextEdit fNgayCap;
         private DevExpress.XtraEditors.TextEdit fQuocTich;
         private DevExpress.XtraEditors.MemoEdit fDiaChi;
         private DevExpress.XtraEditors.TextEdit fTonGiao;
@@ -1005,8 +1075,6 @@ namespace ProjectT1.CoreClient {
         private DevExpress.XtraBars.BarButtonItem btnGhi;
         private DevExpress.XtraBars.BarButtonItem btnBoQua;
         private DevExpress.XtraBars.BarButtonItem btnLamMoi;
-        private DevExpress.XtraEditors.TextEdit fIdPhongBan;
-        private DevExpress.XtraEditors.TextEdit fIdChucVu;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem20;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
@@ -1026,5 +1094,14 @@ namespace ProjectT1.CoreClient {
         private DevExpress.XtraEditors.TextEdit fTinhTrangHonNhan;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraEditors.MemoEdit fNoiSinh;
+        private DevExpress.XtraEditors.DateEdit fNgaySinh;
+        private DevExpress.XtraEditors.DateEdit fCreateDate;
+        private DevExpress.XtraEditors.DateEdit fModifiedDate;
+        private DevExpress.XtraEditors.DateEdit fNgayCap;
+        private DevExpress.XtraEditors.ComboBoxEdit fGioiTinh;
+        private DevExpress.XtraEditors.SearchLookUpEdit fIdPhongBan;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraEditors.SearchLookUpEdit fIdChucVu;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

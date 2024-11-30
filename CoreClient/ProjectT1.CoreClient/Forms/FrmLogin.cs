@@ -27,15 +27,15 @@ namespace ProjectT1.CoreClient {
                     return;
                 }
 
-                var resLogin = await _clientAccount.LoginAsync(new LoginRequestDTO {
-                    UserName = fUsername.EditValue.ToString(),
-                    Password = fPassword.EditValue.ToString()
-                });
+                //var resLogin = await _clientAccount.LoginAsync(new LoginRequestDTO {
+                //    UserName = fUsername.EditValue.ToString(),
+                //    Password = fPassword.EditValue.ToString()
+                //});
 
-                if (resLogin.Result == false) {
-                    XtraMessageBox.Show(resLogin.InfoMessage, "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                //if (resLogin.Result == false) {
+                //    XtraMessageBox.Show(resLogin.InfoMessage, "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    return;
+                //}
 
                 this.Hide();
                 var formMain = new FrmMain();

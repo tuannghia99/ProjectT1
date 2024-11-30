@@ -41,7 +41,8 @@ namespace ProjectT1.CoreClient {
         }
 
         private void btnCnDsNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
-            // TODO
+            var form = new FrmDanhSachNhanVien();
+            form.ShowDialog();
         }
 
         private void btnCnKhenThuong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {

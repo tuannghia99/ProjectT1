@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraCharts.Design;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid;
@@ -17,6 +18,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
@@ -500,14 +502,14 @@ namespace ProjectT1.CoreClient {
                                 buttonEdit.EditValue = property.GetValue(TObject, null);
                             }
                         }
-                        else if (type == typeof(PictureEdit)) {
-                            if (control[0] is PictureEdit pictureEdit) {
-                                using (MemoryStream mStream = new MemoryStream((byte[])property.GetValue(TObject, null))) {
-                                    Bitmap bitMap = new Bitmap(mStream);
-                                    pictureEdit.Image = bitMap;
-                                }
-                            }
-                        }
+                        //else if (type == typeof(PictureEdit)) {
+                        //    if (control[0] is PictureEdit pictureEdit) {
+                        //        using (MemoryStream mStream = new MemoryStream((byte[])property.GetValue(TObject, null))) {
+                        //            Bitmap bitMap = new Bitmap(mStream);
+                        //            pictureEdit.Image = bitMap;
+                        //        }
+                        //    }
+                        //}
                         else if (type == typeof(HyperLinkEdit)) {
                             if (control[0] is HyperLinkEdit hyperLinkEdit) {
                                 hyperLinkEdit.EditValue = property.GetValue(TObject, null);
@@ -657,6 +659,78 @@ namespace ProjectT1.CoreClient {
                     lookup.Properties.AllowMouseWheel = false;
                 }
             }
+            public static void ConfigureDateEdits(params DevExpress.XtraEditors.DateEdit[] dateEdits) {
+                foreach (var dateEdit in dateEdits) {
+                    dateEdit.Properties.Mask.EditMask = "dd/MM/yyyy";
+                    dateEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+                    dateEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
+                    dateEdit.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+                    dateEdit.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+                    dateEdit.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+                    dateEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+                    dateEdit.KeyPress += (sender, e) => {
+                        if (char.IsDigit(e.KeyChar)) {
+                            string text = dateEdit.Text;
+                            int cursorPosition = dateEdit.SelectionStart;
+                            if (cursorPosition == 2 && text.Length == 2) {
+                                dateEdit.Focus();
+                                SendKeys.Send("{RIGHT}"); // Di chuyển con trỏ sang phần tháng (MM)
+                            }
+                        }
+                    };
+                }
+            }
+            public static void LoadFromObject(object lookUpEdit, IEnumerable<object> dataSource, string valueMember, string displayMember) {
+                if (lookUpEdit is DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit) {
+                    searchLookUpEdit.Properties.DataSource = dataSource;
+                    searchLookUpEdit.Properties.ValueMember = valueMember;
+                    searchLookUpEdit.Properties.DisplayMember = displayMember;
+                }
+                else if (lookUpEdit is DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit repoSearchLookUpEdit) {
+                    repoSearchLookUpEdit.DataSource = dataSource;
+                    repoSearchLookUpEdit.ValueMember = valueMember;
+                    repoSearchLookUpEdit.DisplayMember = displayMember;
+                }
+            }
+
+
         }
     }
+    public static class ImageExtensions {
+        public static byte[] ToByteArray(this Image image) {
+            if (image == null) return null;
+            using (var memoryStream = new MemoryStream()) {
+                image.Save(memoryStream, image.RawFormat);
+                return memoryStream.ToArray();
+            }
+        }
+    }
+
+    public static class ByteExtensions {
+        public static byte[] CompressBytes(this byte[] data) {
+            if (data == null || data.Length == 0) return data;
+
+            using (var outputStream = new MemoryStream()) {
+                using (var gzipStream = new GZipStream(outputStream, CompressionMode.Compress)) {
+                    gzipStream.Write(data, 0, data.Length);
+                }
+                return outputStream.ToArray();
+            }
+        }
+    }
+    public static class ByteArrayExtensions {
+        public static byte[] DecompressBytes(this byte[] compressedData) {
+            if (compressedData == null || compressedData.Length == 0)
+                return null;
+
+            using (var outputMemoryStream = new MemoryStream())
+            using (var inputMemoryStream = new MemoryStream(compressedData))
+            using (var decompressStream = new GZipStream(inputMemoryStream, CompressionMode.Decompress)) {
+                decompressStream.CopyTo(outputMemoryStream);
+                return outputMemoryStream.ToArray();
+            }
+        }
+    }
+
+
 }
