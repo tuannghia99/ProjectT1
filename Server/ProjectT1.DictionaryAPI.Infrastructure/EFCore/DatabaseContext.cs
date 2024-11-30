@@ -65,6 +65,8 @@ namespace GenerateModelSQLServerEFCore.Models {
 
                 entity.Property(e => e.Oid).ValueGeneratedNever();
 
+                entity.Property(e => e.MucKhenThuong).HasColumnType("decimal(18, 2)");
+
                 entity.Property(e => e.CreateDate).HasColumnType("datetime");
 
                 entity.Property(e => e.ModifiedDate).HasColumnType("datetime");

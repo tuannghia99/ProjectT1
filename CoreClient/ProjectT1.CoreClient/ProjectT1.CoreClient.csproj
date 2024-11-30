@@ -8,20 +8,40 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Forms\ChucNang\FrmDanhSachNhanVien.cs" />
+	  <Compile Remove="Forms\ChucNang\FrmDanhSachNhanVien.Designer.cs" />
+	  <Compile Remove="Forms\ChucNang\FrmNhanVienInfo.cs" />
+	  <Compile Remove="Forms\ChucNang\FrmNhanVienInfo.Designer.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Remove="Forms\ChucNang\FrmDanhSachNhanVien.resx" />
+	  <EmbeddedResource Remove="Forms\ChucNang\FrmNhanVienInfo.resx" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="DevExpress.Win.Design" Version="24.1.5" />
 		<PackageReference Include="FluentValidation" Version="11.11.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Validators\ChucNang\" />
+	  <Reference Include="app.Common.v24.1">
+	    <HintPath>..\DLLs\app.Common.v24.1.dll</HintPath>
+	  </Reference>
+	  <Reference Include="app.StdAppResources">
+	    <HintPath>..\DLLs\app.StdAppResources.dll</HintPath>
+	  </Reference>
+	  <Reference Include="app.StdCommon.Core">
+	    <HintPath>..\DLLs\app.StdCommon.Core.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Update="Forms\ChucNang\FrmKhenThuong.cs">
+		<Compile Update="Forms\ChucNang\FrmKyLuat.cs">
 		  <SubType>Form</SubType>
 		</Compile>
-		<Compile Update="Forms\ChucNang\FrmKyLuat.cs">
+		<Compile Update="Forms\ChucNang\FrmKhenThuong.cs">
 		  <SubType>Form</SubType>
 		</Compile>
 		<Compile Update="Forms\DanhMuc\FrmDMTrinhDoHocVan.cs">

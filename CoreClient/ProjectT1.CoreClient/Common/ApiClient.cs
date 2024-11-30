@@ -3867,7 +3867,7 @@ namespace ProjectT1.CoreClient {
         public string HinhThucKhenThuong { get; set; }
 
         [Newtonsoft.Json.JsonProperty("mucKhenThuong", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? MucKhenThuong { get; set; }
+        public decimal? MucKhenThuong { get; set; }
 
         [Newtonsoft.Json.JsonProperty("ngayKhenThuong", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.DateTimeOffset? NgayKhenThuong { get; set; }
