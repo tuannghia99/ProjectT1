@@ -1,4 +1,5 @@
-﻿using System;
+﻿using app.StdCommon;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -21,7 +22,7 @@ namespace ProjectT1.CoreClient {
 
         private void Timer_Tick(object sender, EventArgs e) {
             progressBarControl1.EditValue = Speed;
-            if (Speed == 100) {
+            if (progressBarControl1.EditValue.ConvertToInt() == 100) {
                 this.Close();
             }
             else {

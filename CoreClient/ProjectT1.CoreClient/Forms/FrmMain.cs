@@ -45,11 +45,13 @@ namespace ProjectT1.CoreClient {
         }
 
         private void btnCnKhenThuong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
-            // TODO
+            var form = new FrmKhenThuong();
+            form.ShowDialog();
         }
 
         private void btnCnKyLuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
-            // TODO
+            var form = new FrmKyLuat();
+            form.ShowDialog();
         }
 
         private void btnCnTroGiup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {

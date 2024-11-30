@@ -13,7 +13,7 @@ namespace GenerateModelSQLServerEFCore.Models
         public string CanCuKhenThuong { get; set; }
         public string LyDoKhenThuong { get; set; }
         public string HinhThucKhenThuong { get; set; }
-        public bool? MucKhenThuong { get; set; }
+        public decimal? MucKhenThuong { get; set; }
         public DateTime? NgayKhenThuong { get; set; }
         public string CreateUser { get; set; }
         public DateTime? CreateDate { get; set; }

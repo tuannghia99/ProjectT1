@@ -1,52 +1,20 @@
-﻿using DevExpress.XtraBars;
-using DevExpress.XtraBars.Ribbon;
+﻿using app.StdCommon;
+using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid;
-using DevExpress.XtraGrid.Columns;
-using DevExpress.XtraGrid.Controls;
 using DevExpress.XtraGrid.Views.BandedGrid;
-using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraGrid.Views.Grid.Drawing;
 using DevExpress.XtraLayout;
-using DevExpress.XtraTab;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Windows.Forms;
 
 namespace ProjectT1.CoreClient {
     public class clsCommon {
-        public enum MainCaseForm_KPSN_DADT {
-            KinhPhiSuNghiep = 1,
-            DuAnDauTu = 2
-        }
-        public enum MainCaseForm_GD_N {
-            GiaiDoan = 1,
-            Nam = 2
-        }
-        public enum CaseConvertData {
-            GetOrRestore = 1,
-            SendOrRecall = 2
-        }
-        public enum CaseConvertDataSubmit {
-            Get = 1,
-            Restore = 2,
-            Send = 3,
-            Recall = 4
-        }
-        public enum StatusChuyenDoiDuLieu {
-            ChuaGui = 1,
-            DaGui = 2,
-            DaTiepNhan = 3,
-            TraLai = 4
-        }
         public enum MainStatusForm {
             WAIT = 0,
             VIEW = 1,
@@ -57,96 +25,87 @@ namespace ProjectT1.CoreClient {
         }
 
         public partial class CommonHandler {
-            public static Guid ConvertToGuid(object value) {
-                if (value == null) return Guid.Empty;
-                else return (Guid)value;
-            }
-            public static string SafeToString(object value) {
-                if (value == null) return null;
-                else return value.ToString();
-            }
-
             public static void ConfigBarButtonFormat(BarItem btnCreate = null, BarItem btnEdit = null, BarItem btnDelete = null, BarItem btnSubmit = null, BarItem btnCancel = null, BarItem btnRefresh = null, BarItem btnClose = null, BarItem btnSearch = null, BarItem btnPrint = null, BarItem btnGetOrRestoreData = null, BarItem btnSendOrRecallData = null, BarItem btnUpdateDataReport = null) {
                 if (btnCreate != null) {
                     btnCreate.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    //btnCreate.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.add_16x16));
+                    btnCreate.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.add_16x16));
                     btnCreate.ItemShortcut = new BarShortcut((Keys.Control | Keys.N));
                     btnCreate.Hint = "Ctrl + N";
                     btnCreate.Caption = "Thêm";
                 }
                 if (btnEdit != null) {
                     btnEdit.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    //btnEdit.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.edit_16x16));
+                    btnEdit.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.edit_16x16));
                     btnEdit.ItemShortcut = new BarShortcut((Keys.Control | Keys.E));
                     btnEdit.Hint = "Ctrl + E";
                     btnEdit.Caption = "Sửa";
                 }
                 if (btnDelete != null) {
                     btnDelete.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    //btnDelete.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.remove_16x16));
+                    btnDelete.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.remove_16x16));
                     btnDelete.ItemShortcut = new BarShortcut((Keys.Control | Keys.Delete));
                     btnDelete.Hint = "Ctrl + Delete";
                     btnDelete.Caption = "Xoá";
                 }
                 if (btnSubmit != null) {
                     btnSubmit.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    //btnSubmit.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.apply_16x16));
+                    btnSubmit.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.apply_16x16));
                     btnSubmit.ItemShortcut = new BarShortcut((Keys.Control | Keys.S));
                     btnSubmit.Hint = "Ctrl + S";
                     btnSubmit.Caption = "Ghi";
                 }
                 if (btnCancel != null) {
                     btnCancel.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    //btnCancel.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.cancel_16x16));
+                    btnCancel.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.cancel_16x16));
                     btnCancel.ItemShortcut = new BarShortcut((Keys.Control | Keys.Z));
                     btnCancel.Hint = "Ctrl + Z";
                     btnCancel.Caption = "Bỏ qua";
                 }
                 if (btnRefresh != null) {
                     btnRefresh.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    //btnRefresh.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.refresh_16x16));
+                    btnRefresh.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.refresh_16x16));
                     btnRefresh.ItemShortcut = new BarShortcut((Keys.Control | Keys.F5));
                     btnRefresh.Hint = "Ctrl + F5";
                     btnRefresh.Caption = "Làm mới";
                 }
                 if (btnClose != null) {
                     btnClose.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    //btnClose.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.close_16x16));
+                    btnClose.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.close_16x16));
                     btnClose.ItemShortcut = new BarShortcut((Keys.Control | Keys.Q));
                     btnClose.Hint = "Ctrl + Q";
                     btnClose.Caption = "Đóng";
                 }
                 if (btnSearch != null) {
                     btnSearch.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    //btnSearch.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.find_16x16));
+                    btnSearch.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.find_16x16));
                     btnSearch.ItemShortcut = new BarShortcut((Keys.Control | Keys.Shift | Keys.F));
                     btnSearch.Hint = "Ctrl + Shift + F";
                     btnSearch.Caption = "Tìm kiếm";
                 }
                 if (btnPrint != null) {
                     btnPrint.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    //btnPrint.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.print_16x16));
+                    btnPrint.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.print_16x16));
                     btnPrint.ItemShortcut = new BarShortcut((Keys.Control | Keys.P));
                     btnPrint.Hint = "Ctrl + P";
                     btnPrint.Caption = "In dữ liệu";
                 }
                 if (btnGetOrRestoreData != null) {
                     btnGetOrRestoreData.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    //btnGetOrRestoreData.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.Article_16x16));
+                    btnGetOrRestoreData.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.Article_16x16));
                     btnGetOrRestoreData.ItemShortcut = new BarShortcut((Keys.Control | Keys.Shift | Keys.F1));
                     btnGetOrRestoreData.Hint = "Ctrl + Shift + F1";
                     btnGetOrRestoreData.Caption = "Cập nhật/Hoàn trả dữ liệu";
                 }
                 if (btnSendOrRecallData != null) {
                     btnSendOrRecallData.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    //btnSendOrRecallData.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.SortGroupHeader_16x16));
+                    btnSendOrRecallData.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.SortGroupHeader_16x16));
                     btnSendOrRecallData.ItemShortcut = new BarShortcut((Keys.Control | Keys.Shift | Keys.F2));
                     btnSendOrRecallData.Hint = "Ctrl + Shift + F2";
                     btnSendOrRecallData.Caption = "Gửi/Thu hồi dữ liệu";
                 }
                 if (btnUpdateDataReport != null) {
                     btnUpdateDataReport.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-                    //btnUpdateDataReport.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.EditDataSource_16x16));
+                    btnUpdateDataReport.ImageOptions.Image = (Bitmap)(new ImageConverter().ConvertFrom(app.StdAppResources.DXIconPack.EditDataSource_16x16));
                     btnUpdateDataReport.Caption = "Cập nhật dữ liệu báo cáo";
                 }
             }
@@ -490,7 +449,7 @@ namespace ProjectT1.CoreClient {
                             //searchLookupEdit.ShowPopup();
                             //searchLookupEdit.ClosePopup();
                         }
-                        else if (type == typeof(TreeListLookUpEdit)) {
+                        else if (type == typeof(SearchLookUpEdit)) {
                             if (control[0] is TreeListLookUpEdit treeListLookUpEdit) {
                                 treeListLookUpEdit.EditValue = property.GetValue(TObject, null);
                             }
@@ -515,7 +474,7 @@ namespace ProjectT1.CoreClient {
                         }
                         else if (type == typeof(CheckedListBoxControl)) {
                             if (control[0] is CheckedListBoxControl checkedListBoxControl) {
-                                var array = SafeToString(property.GetValue(TObject, null)).Split(';');
+                                var array = property.GetValue(TObject, null).SafeToString().Split(';');
                                 for (int i = 0; i < checkedListBoxControl.ItemCount; i++) {
                                     DataRowView? rowView = checkedListBoxControl.GetItem(i) as DataRowView;
                                     if (array.Contains(rowView.Row.ItemArray[0].ToString())) {
@@ -526,7 +485,7 @@ namespace ProjectT1.CoreClient {
                         }
                         else if (type == typeof(HyperlinkLabelControl)) {
                             if (control[0] is HyperlinkLabelControl hyperlinkLabelControl) {
-                                hyperlinkLabelControl.Text = SafeToString(property.GetValue(TObject, null));
+                                hyperlinkLabelControl.Text = property.GetValue(TObject, null).SafeToString();
                             }
                         }
                     }
@@ -537,26 +496,26 @@ namespace ProjectT1.CoreClient {
                     return;
                 }
                 if (TypeofData == typeof(Int16) || TypeofData == typeof(Int32) || TypeofData == typeof(Int64) || TypeofData == typeof(UInt16) || TypeofData == typeof(UInt32) || TypeofData == typeof(UInt64) || TypeofData == typeof(IntPtr) || TypeofData == typeof(UIntPtr) || TypeofData == typeof(Byte) || TypeofData == typeof(SByte)) {
-                    ObjToAssign.EditValue = (int)ObjValue;
+                    ObjToAssign.EditValue = ObjValue.ConvertToNullableInt();
                 }
                 else if (TypeofData == typeof(Double) || TypeofData == typeof(Decimal) || TypeofData == typeof(Single)) {
-                    ObjToAssign.EditValue = (double)ObjValue;
+                    ObjToAssign.EditValue = ObjValue.ConvertToDouble();
                 }
                 else if (TypeofData == typeof(Char) || TypeofData == typeof(String)) {
-                    ObjToAssign.EditValue = SafeToString(ObjValue);
+                    ObjToAssign.EditValue = ObjValue.SafeToString();
                 }
                 else if (TypeofData == typeof(Boolean)) {
-                    ObjToAssign.EditValue = (bool)ObjValue;
+                    ObjToAssign.EditValue = ObjValue.ConvertToBool();
                 }
                 else if (TypeofData == typeof(DateTime) || TypeofData == typeof(DateTimeOffset)) {
-                    ObjToAssign.EditValue = (DateTime)ObjValue;
+                    ObjToAssign.EditValue = ObjValue.ConvertToDateTimeDMY();
                 }
                 else if (TypeofData == typeof(TimeSpan)) {
                     // ObjToAssign.EditValue = ObjValue.ToTime();  // TODO: ADD ConvertToTimeSpan
                     throw new NotSupportedException();
                 }
                 else if (TypeofData == typeof(Guid)) {
-                    ObjToAssign.EditValue = (Guid)ObjValue;
+                    ObjToAssign.EditValue = ObjValue.ConvertToGuid();
                 }
             }
             public static void ClearEditControlErrorText(LayoutControlGroup layoutControlGroup) {

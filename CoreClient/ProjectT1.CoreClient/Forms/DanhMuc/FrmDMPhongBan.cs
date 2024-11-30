@@ -1,4 +1,5 @@
-﻿using DevExpress.Spreadsheet;
+﻿using app.StdCommon;
+using DevExpress.Spreadsheet;
 using DevExpress.Utils;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
@@ -134,7 +135,7 @@ namespace ProjectT1.CoreClient {
                             var objToDelete = _bindingListMain.First(x => x.Oid == oid);
                             _bindingListMain.Remove(objToDelete);
                         }
-                        _curIdMain = clsCommon.CommonHandler.ConvertToGuid(gridViewMain.GetFocusedRowCellValue("Oid"));
+                        _curIdMain = gridViewMain.GetFocusedRowCellValue("Oid").ConvertToGuid();
                         if (_curIdMain == Guid.Empty) {
                             // nothing
                         }
@@ -156,8 +157,8 @@ namespace ProjectT1.CoreClient {
                 if (_mainStatus == MainStatusForm.CREATE) _curIdMain = _tempNewIdMain;
                 var obj = new PhongBanDTO {
                     Oid = (_mainStatus == MainStatusForm.CREATE) ? _tempNewIdMain : _curIdMain,
-                    MaSo = clsCommon.CommonHandler.SafeToString(fMaSo.EditValue),
-                    Ten = clsCommon.CommonHandler.SafeToString(fTen.EditValue),
+                    MaSo = fMaSo.EditValue.SafeToString(),
+                    Ten = fTen.EditValue.SafeToString(),
                 };
 
                 // Validate
@@ -180,7 +181,7 @@ namespace ProjectT1.CoreClient {
 
                 // Submit
                 if (_mainStatus == MainStatusForm.CREATE) {
-                    List<PhongBanDTO>  data = new List<PhongBanDTO>();
+                    List<PhongBanDTO> data = new List<PhongBanDTO>();
                     data.Add(obj);
                     var res = await IBusObj.PostAsync(data);
                     if (res.IsSuccess) clsCommon.CommonHandler.ShowNotificationForm_CreatedSuccessfully();
@@ -215,7 +216,7 @@ namespace ProjectT1.CoreClient {
         #region EventHandler
         private async void gridViewMain_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
             if (gridViewMain.RowCount > 0) {
-                _curIdMain = clsCommon.CommonHandler.ConvertToGuid(gridViewMain.GetFocusedRowCellValue("Oid"));
+                _curIdMain = gridViewMain.GetFocusedRowCellValue("Oid").ConvertToGuid();
                 var objMain = (PhongBanDTO)gridViewMain.GetFocusedRow();
                 clsCommon.CommonHandler.SetValueToControl(objMain, this);
             }
