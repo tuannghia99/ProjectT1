@@ -1,5 +1,7 @@
-﻿using DevExpress.XtraEditors;
+﻿using app.StdCommon;
+using DevExpress.XtraEditors;
 using System;
+using System.Linq;
 using System.Net.Http;
 using System.Windows.Forms;
 
@@ -7,10 +9,12 @@ namespace ProjectT1.CoreClient {
     public partial class FrmLogin : DevExpress.XtraEditors.XtraForm {
         HttpClient _httpClient = new();
         NVAccountClient _clientAccount;
+        CNNhanVienClient _clientNhanVien;
 
         public FrmLogin() {
             InitializeComponent();
             _clientAccount = new NVAccountClient(_httpClient);
+            _clientNhanVien = new CNNhanVienClient(_httpClient);
         }
 
         private async void btnLogin_Click(object sender, EventArgs e) {
@@ -18,8 +22,8 @@ namespace ProjectT1.CoreClient {
                 fUsername.ErrorText = "";
                 fPassword.ErrorText = "";
 
-                var check1 = !(fUsername.EditValue == null || fUsername.EditValue.ToString() == "");
-                var check2 = !(fPassword.EditValue == null || fPassword.EditValue.ToString() == "");
+                var check1 = !(fUsername.EditValue.IsNullOrEmpty());
+                var check2 = !(fPassword.EditValue.IsNullOrEmpty());
 
                 if (!check1 || !check2) {
                     if (!check1) fUsername.ErrorText = "Chưa nhập Tên đăng nhập";
@@ -36,6 +40,8 @@ namespace ProjectT1.CoreClient {
                     XtraMessageBox.Show(resLogin.InfoMessage, "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
+                FrmMain.g_IdAccount = (await _clientNhanVien.GetAllAsync()).Result.First(x => x.Username == fUsername.EditValue.SafeToString()).Oid;
 
                 this.Hide();
                 var formMain = new FrmMain();

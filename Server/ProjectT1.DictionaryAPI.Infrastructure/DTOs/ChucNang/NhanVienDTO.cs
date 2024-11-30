@@ -11,8 +11,6 @@
         public string DanToc { get; set; }
         public string TonGiao { get; set; }
         public string TinhTrangHonNhan { get; set; }
-        public string NgoaiNgu { get; set; }
-        public string TinHoc { get; set; }
 
         public string SoCanCuoc { get; set; }
         public DateTime? NgayCap { get; set; }
@@ -22,9 +20,11 @@
         public decimal? ChieuCao { get; set; }
         public decimal? CanNang { get; set; }
 
-        public Guid? IdChucVu { get; set; }
         public Guid? IdPhongBan { get; set; }
+        public Guid? IdChucVu { get; set; }
         public Guid? IdTrinhDoHocVan { get; set; }
+        public string NgoaiNgu { get; set; }
+        public string TinHoc { get; set; }
 
         public string Username { get; set; }
         public string Password { get; set; }

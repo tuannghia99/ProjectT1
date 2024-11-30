@@ -32,7 +32,7 @@
             barManager1 = new DevExpress.XtraBars.BarManager(components);
             bar1 = new DevExpress.XtraBars.Bar();
             btnCnNguoiDung = new DevExpress.XtraBars.BarSubItem();
-            btnThongTinNguoiDung = new DevExpress.XtraBars.BarButtonItem();
+            btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
             btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
             btnCnDanhMuc = new DevExpress.XtraBars.BarSubItem();
             btnDmChucVu = new DevExpress.XtraBars.BarButtonItem();
@@ -102,7 +102,7 @@
             barManager1.DockControls.Add(barDockControlLeft);
             barManager1.DockControls.Add(barDockControlRight);
             barManager1.Form = this;
-            barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { btnCnDsNhanVien, btnCnKhenThuong, btnCnKyLuat, btnCnTroGiup, btnCnDanhMuc, btnDmChucVu, btnDmPhongBan, btnDmTrinhDoHocVan, btnCnNguoiDung, btnThongTinNguoiDung, btnDangXuat });
+            barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { btnCnDsNhanVien, btnCnKhenThuong, btnCnKyLuat, btnCnTroGiup, btnCnDanhMuc, btnDmChucVu, btnDmPhongBan, btnDmTrinhDoHocVan, btnCnNguoiDung, btnDoiMatKhau, btnDangXuat });
             barManager1.MaxItemId = 15;
             barManager1.StatusBar = bar3;
             // 
@@ -120,16 +120,16 @@
             btnCnNguoiDung.Caption = "Người dùng";
             btnCnNguoiDung.Id = 12;
             btnCnNguoiDung.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("btnCnNguoiDung.ImageOptions.Image");
-            btnCnNguoiDung.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] { new DevExpress.XtraBars.LinkPersistInfo(btnThongTinNguoiDung), new DevExpress.XtraBars.LinkPersistInfo(btnDangXuat) });
+            btnCnNguoiDung.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] { new DevExpress.XtraBars.LinkPersistInfo(btnDoiMatKhau), new DevExpress.XtraBars.LinkPersistInfo(btnDangXuat) });
             btnCnNguoiDung.Name = "btnCnNguoiDung";
             btnCnNguoiDung.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
-            // btnThongTinNguoiDung
+            // btnDoiMatKhau
             // 
-            btnThongTinNguoiDung.Caption = "Thông tin người dùng";
-            btnThongTinNguoiDung.Id = 13;
-            btnThongTinNguoiDung.Name = "btnThongTinNguoiDung";
-            btnThongTinNguoiDung.ItemClick += btnThongTinNguoiDung_ItemClick;
+            btnDoiMatKhau.Caption = "Đổi mật khẩu";
+            btnDoiMatKhau.Id = 13;
+            btnDoiMatKhau.Name = "btnDoiMatKhau";
+            btnDoiMatKhau.ItemClick += btnDoiMatKhau_ItemClick;
             // 
             // btnDangXuat
             // 
@@ -292,7 +292,7 @@
         private DevExpress.XtraBars.BarButtonItem btnDmPhongBan;
         private DevExpress.XtraBars.BarButtonItem btnDmTrinhDoHocVan;
         private DevExpress.XtraBars.BarSubItem btnCnNguoiDung;
-        private DevExpress.XtraBars.BarButtonItem btnThongTinNguoiDung;
+        private DevExpress.XtraBars.BarButtonItem btnDoiMatKhau;
         private DevExpress.XtraBars.BarButtonItem btnDangXuat;
         private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;

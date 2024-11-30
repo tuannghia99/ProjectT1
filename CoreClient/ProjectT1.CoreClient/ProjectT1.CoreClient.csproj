@@ -26,6 +26,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Compile Update="Forms\ChucNang\FrmNhanVien.cs">
+		  <SubType>Form</SubType>
+		</Compile>
 		<Compile Update="Forms\ChucNang\FrmKyLuat.cs">
 		  <SubType>Form</SubType>
 		</Compile>
@@ -36,6 +39,9 @@
 		  <SubType>Form</SubType>
 		</Compile>
 		<Compile Update="Forms\DanhMuc\FrmDMPhongBan.cs">
+		  <SubType>Form</SubType>
+		</Compile>
+		<Compile Update="Forms\FrmChangePassword.cs">
 		  <SubType>Form</SubType>
 		</Compile>
 		<Compile Update="Properties\Resources.Designer.cs">
