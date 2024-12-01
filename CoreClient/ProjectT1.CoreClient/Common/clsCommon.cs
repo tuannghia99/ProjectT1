@@ -117,11 +117,6 @@ namespace ProjectT1.CoreClient {
                     btn.Enabled = isEnable;
                 }
             }
-            public static void ConfigBarSubItemEnable(bool isEnable, params BarSubItem[] subItems) {
-                foreach (var item in subItems) {
-                    item.Enabled = isEnable;
-                }
-            }
             public static void ConfigForGridViewHeader(XtraForm? thisForm, LayoutControlGroup? layoutControlGroupMainData, params GridView[] grids) {
                 if (thisForm != null) {
                     thisForm.Size = new Size(1400, 800);
@@ -218,28 +213,8 @@ namespace ProjectT1.CoreClient {
             public static void ShowNotificationForm_CreatedSuccessfully() => ShowNotificationForm("Thêm mới thành công");
             public static void ShowNotificationForm_UpdatedSuccessfully() => ShowNotificationForm("Cập nhật thành công");
             public static void ShowNotificationForm_DeletedSuccessfully() => ShowNotificationForm("Xoá thành công");
-            public static DialogResult ShowXtraMessageBox_CannotDeleteBecauseOfExistReference() => XtraMessageBox.Show("Không thể xoá bản ghi do đã phát sinh dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             public static DialogResult ShowXtraMessageBox_NeedToSelectRecord() => MessageBox.Show("Cần chọn bản ghi dữ liệu trước khi thực hiện thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            public static DialogResult ShowXtraMessageBox_ConvertDataSuccess() => MessageBox.Show("Chuyển đổi dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            public static DialogResult ShowXtraMessageBox_ConvertDataFail() => MessageBox.Show("Chuyển đổi dữ liệu thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            public static DialogResult ShowXtraMessageBox_CannotDeleteMainRecord_BecauseOfDetailData() => MessageBox.Show("Không thể xoá bản ghi đang chọn do tồn tại dữ liệu chi tiết", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             public static DialogResult ShowXtraMessageBox_SubmitToDelete() => MessageBox.Show("Chắc chắn xoá dữ liệu?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            public static DialogResult ShowXtraMessageBox_SubmitToDeleteAll() => MessageBox.Show("Chắc chắn xoá tất cả dữ liệu?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            public static DialogResult ShowXtraMessageBox_SubmitToUpdate() => MessageBox.Show("Mã số vừa sửa đã phát sinh dữ liệu trong cơ sở dữ liệu, có thể làm thay đổi bản chất của dữ liệu liên quan.\nChắc chắn sửa dữ liệu?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            public static DialogResult ShowXtraMessageBox_SubmitToConvertData() => MessageBox.Show("Chắc chắn chuyển đổi dữ liệu?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            public static DialogResult ShowXtraMessageBox_PleaseConfigMsCodeDiaBan() => MessageBox.Show("Chưa chọn dữ liệu địa bàn trong form Admin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            public static void SetGroupingGridView(GridView view, string groupColFieldName) {
-                view.Columns[groupColFieldName].Group();
-                GridGroupSummaryItem item = new GridGroupSummaryItem();
-                item.FieldName = groupColFieldName;
-                item.SummaryType = DevExpress.Data.SummaryItemType.Count;
-                view.GroupSummary.Add(item);
-                view.CustomDrawGroupRow += (s, e) => {
-                    var info = e.Info as DevExpress.XtraGrid.Views.Grid.ViewInfo.GridGroupRowInfo;
-                    info.GroupText = info.GroupText.Replace("Count=", string.Empty);
-                };
-                view.ExpandAllGroups();
-            }
             public static void SetReadOnlyControlData(LayoutControlGroup layoutControlGroup, bool isReadOnly) {
                 foreach (var li in layoutControlGroup.Items) {
                     if (li is LayoutControlItem li2) {
