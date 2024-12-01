@@ -8,6 +8,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Forms\ChucNang\Old\**" />
+	  <EmbeddedResource Remove="Forms\ChucNang\Old\**" />
+	  <None Remove="Forms\ChucNang\Old\**" />
+	  <Page Remove="Forms\ChucNang\Old\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="DevExpress.Win.Design" Version="24.1.5" />
 		<PackageReference Include="FluentValidation" Version="11.11.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

@@ -290,6 +290,7 @@ namespace ProjectT1.CoreClient {
             // 
             // layoutControlGroupMainData
             // 
+            layoutControlGroupMainData.CaptionImageOptions.Image = (Image)resources.GetObject("layoutControlGroupMainData.CaptionImageOptions.Image");
             layoutControlGroupMainData.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem1 });
             layoutControlGroupMainData.Location = new Point(0, 0);
             layoutControlGroupMainData.Name = "layoutControlGroupMainData";
@@ -307,6 +308,7 @@ namespace ProjectT1.CoreClient {
             // 
             // layoutControlGroupEditControl
             // 
+            layoutControlGroupEditControl.CaptionImageOptions.Image = (Image)resources.GetObject("layoutControlGroupEditControl.CaptionImageOptions.Image");
             layoutControlGroupEditControl.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem2, layoutControlItem10, emptySpaceItem1 });
             layoutControlGroupEditControl.Location = new Point(287, 0);
             layoutControlGroupEditControl.Name = "layoutControlGroupEditControl";
@@ -346,7 +348,7 @@ namespace ProjectT1.CoreClient {
             splitterItem1.Name = "splitterItem1";
             splitterItem1.Size = new Size(10, 704);
             // 
-            // FrmDMTrinhDoHocVan_v2
+            // FrmDMTrinhDoHocVan
             // 
             ClientSize = new Size(1398, 768);
             Controls.Add(layoutControl1);
@@ -354,7 +356,7 @@ namespace ProjectT1.CoreClient {
             Controls.Add(barDockControlRight);
             Controls.Add(barDockControlBottom);
             Controls.Add(barDockControlTop);
-            Name = "FrmDMTrinhDoHocVan_v2";
+            Name = "FrmDMTrinhDoHocVan";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DM Trình độ học vấn";
             Load += Form_Load;

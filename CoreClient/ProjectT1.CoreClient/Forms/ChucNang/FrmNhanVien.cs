@@ -293,6 +293,7 @@ namespace ProjectT1.CoreClient {
                     clsCommon.CommonHandler.MemberwiseClone(obj, ref objToEdit);
                     gridViewMain.RefreshData();
                 }
+                await LoadDataMainGrid();
                 ConfigControlStatus(_mainStatus = MainStatusForm.VIEW);
             }
             catch {

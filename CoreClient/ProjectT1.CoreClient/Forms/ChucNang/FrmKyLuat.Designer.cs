@@ -29,7 +29,7 @@ namespace ProjectT1.CoreClient {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKyLuat));
             layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            fDiaDiemXayRa = new DevExpress.XtraEditors.TextEdit();
+            fDienGiai = new DevExpress.XtraEditors.MemoEdit();
             barManager1 = new DevExpress.XtraBars.BarManager(components);
             bar2 = new DevExpress.XtraBars.Bar();
             btnCreate = new DevExpress.XtraBars.BarButtonItem();
@@ -44,6 +44,10 @@ namespace ProjectT1.CoreClient {
             barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            fIsViPhamChinhSachCongTy = new DevExpress.XtraEditors.CheckEdit();
+            fNhungNguoiChungKien = new DevExpress.XtraEditors.TextEdit();
+            fNgayBatDauThiHanh = new DevExpress.XtraEditors.DateEdit();
+            fDiaDiemXayRa = new DevExpress.XtraEditors.TextEdit();
             fThoiGianXayRa = new DevExpress.XtraEditors.DateEdit();
             fNgayHetHieuLuc = new DevExpress.XtraEditors.DateEdit();
             fHinhThucKyLuat = new DevExpress.XtraEditors.MemoEdit();
@@ -78,29 +82,30 @@ namespace ProjectT1.CoreClient {
             layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
-            fNgayBatDauThiHanh = new DevExpress.XtraEditors.DateEdit();
             layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            fNhungNguoiChungKien = new DevExpress.XtraEditors.TextEdit();
             layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            fIsViPhamChinhSachCongTy = new DevExpress.XtraEditors.CheckEdit();
             layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            fDienGiai = new DevExpress.XtraEditors.MemoEdit();
             layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
+            splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
+            emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             ((System.ComponentModel.ISupportInitialize)layoutControl1).BeginInit();
             layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)fDiaDiemXayRa.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fDienGiai.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)barManager1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fIsViPhamChinhSachCongTy.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fNhungNguoiChungKien.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayBatDauThiHanh.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayBatDauThiHanh.Properties.CalendarTimeProperties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fDiaDiemXayRa.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fThoiGianXayRa.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fThoiGianXayRa.Properties.CalendarTimeProperties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fNgayHetHieuLuc.Properties).BeginInit();
@@ -121,26 +126,21 @@ namespace ProjectT1.CoreClient {
             ((System.ComponentModel.ISupportInitialize)layoutControlItem2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)layoutControlItem5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem10).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)splitterItem1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)fNgayBatDauThiHanh.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)fNgayBatDauThiHanh.Properties.CalendarTimeProperties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem11).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)fNhungNguoiChungKien.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)emptySpaceItem2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)emptySpaceItem3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)layoutControlGroup1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)emptySpaceItem1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)fIsViPhamChinhSachCongTy.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)fDienGiai.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)emptySpaceItem4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)emptySpaceItem5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)splitterItem1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)emptySpaceItem2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)emptySpaceItem3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlGroup1).BeginInit();
             SuspendLayout();
             // 
             // layoutControl1
@@ -165,14 +165,14 @@ namespace ProjectT1.CoreClient {
             layoutControl1.TabIndex = 0;
             layoutControl1.Text = "layoutControl1";
             // 
-            // fDiaDiemXayRa
+            // fDienGiai
             // 
-            fDiaDiemXayRa.Location = new Point(457, 117);
-            fDiaDiemXayRa.MenuManager = barManager1;
-            fDiaDiemXayRa.Name = "fDiaDiemXayRa";
-            fDiaDiemXayRa.Size = new Size(917, 20);
-            fDiaDiemXayRa.StyleController = layoutControl1;
-            fDiaDiemXayRa.TabIndex = 5;
+            fDienGiai.Location = new Point(311, 317);
+            fDienGiai.MenuManager = barManager1;
+            fDienGiai.Name = "fDienGiai";
+            fDienGiai.Size = new Size(1063, 84);
+            fDienGiai.StyleController = layoutControl1;
+            fDienGiai.TabIndex = 9;
             // 
             // barManager1
             // 
@@ -304,6 +304,46 @@ namespace ProjectT1.CoreClient {
             barDockControlRight.Location = new Point(1398, 24);
             barDockControlRight.Manager = barManager1;
             barDockControlRight.Size = new Size(0, 724);
+            // 
+            // fIsViPhamChinhSachCongTy
+            // 
+            fIsViPhamChinhSachCongTy.Location = new Point(578, 275);
+            fIsViPhamChinhSachCongTy.MenuManager = barManager1;
+            fIsViPhamChinhSachCongTy.Name = "fIsViPhamChinhSachCongTy";
+            fIsViPhamChinhSachCongTy.Properties.Caption = "";
+            fIsViPhamChinhSachCongTy.Size = new Size(796, 20);
+            fIsViPhamChinhSachCongTy.StyleController = layoutControl1;
+            fIsViPhamChinhSachCongTy.TabIndex = 8;
+            // 
+            // fNhungNguoiChungKien
+            // 
+            fNhungNguoiChungKien.Location = new Point(457, 241);
+            fNhungNguoiChungKien.MenuManager = barManager1;
+            fNhungNguoiChungKien.Name = "fNhungNguoiChungKien";
+            fNhungNguoiChungKien.Size = new Size(917, 20);
+            fNhungNguoiChungKien.StyleController = layoutControl1;
+            fNhungNguoiChungKien.TabIndex = 7;
+            // 
+            // fNgayBatDauThiHanh
+            // 
+            fNgayBatDauThiHanh.EditValue = null;
+            fNgayBatDauThiHanh.Location = new Point(457, 515);
+            fNgayBatDauThiHanh.MenuManager = barManager1;
+            fNgayBatDauThiHanh.Name = "fNgayBatDauThiHanh";
+            fNgayBatDauThiHanh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fNgayBatDauThiHanh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fNgayBatDauThiHanh.Size = new Size(917, 20);
+            fNgayBatDauThiHanh.StyleController = layoutControl1;
+            fNgayBatDauThiHanh.TabIndex = 11;
+            // 
+            // fDiaDiemXayRa
+            // 
+            fDiaDiemXayRa.Location = new Point(457, 117);
+            fDiaDiemXayRa.MenuManager = barManager1;
+            fDiaDiemXayRa.Name = "fDiaDiemXayRa";
+            fDiaDiemXayRa.Size = new Size(917, 20);
+            fDiaDiemXayRa.StyleController = layoutControl1;
+            fDiaDiemXayRa.TabIndex = 5;
             // 
             // fThoiGianXayRa
             // 
@@ -521,6 +561,7 @@ namespace ProjectT1.CoreClient {
             // 
             // layoutControlGroupMainData
             // 
+            layoutControlGroupMainData.CaptionImageOptions.Image = (Image)resources.GetObject("layoutControlGroupMainData.CaptionImageOptions.Image");
             layoutControlGroupMainData.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem1 });
             layoutControlGroupMainData.Location = new Point(0, 0);
             layoutControlGroupMainData.Name = "layoutControlGroupMainData";
@@ -538,6 +579,7 @@ namespace ProjectT1.CoreClient {
             // 
             // layoutControlGroupEditControl
             // 
+            layoutControlGroupEditControl.CaptionImageOptions.Image = (Image)resources.GetObject("layoutControlGroupEditControl.CaptionImageOptions.Image");
             layoutControlGroupEditControl.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem2, layoutControlItem3, layoutControlItem4, layoutControlItem8, layoutControlItem9, layoutControlItem10, layoutControlItem11, layoutControlItem6, layoutControlItem5, emptySpaceItem1, layoutControlItem7, layoutControlItem12, emptySpaceItem4, emptySpaceItem5 });
             layoutControlGroupEditControl.Location = new Point(287, 0);
             layoutControlGroupEditControl.Name = "layoutControlGroupEditControl";
@@ -577,21 +619,6 @@ namespace ProjectT1.CoreClient {
             layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Left;
             layoutControlItem4.TextSize = new Size(134, 13);
             // 
-            // layoutControlItem5
-            // 
-            layoutControlItem5.AppearanceItemCaption.Options.UseTextOptions = true;
-            layoutControlItem5.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
-            layoutControlItem5.ContentVertAlignment = DevExpress.Utils.VertAlignment.Top;
-            layoutControlItem5.Control = fHinhThucKyLuat;
-            layoutControlItem5.Location = new Point(0, 370);
-            layoutControlItem5.MaxSize = new Size(0, 100);
-            layoutControlItem5.MinSize = new Size(136, 100);
-            layoutControlItem5.Name = "layoutControlItem5";
-            layoutControlItem5.Size = new Size(1067, 100);
-            layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            layoutControlItem5.Text = "Hình thức kỷ luật (*)";
-            layoutControlItem5.TextSize = new Size(134, 13);
-            // 
             // layoutControlItem8
             // 
             layoutControlItem8.Control = fNgayHetHieuLuc;
@@ -619,25 +646,6 @@ namespace ProjectT1.CoreClient {
             layoutControlItem10.Text = "Địa điểm xảy ra (*)";
             layoutControlItem10.TextSize = new Size(134, 13);
             // 
-            // splitterItem1
-            // 
-            splitterItem1.AllowHotTrack = true;
-            splitterItem1.Location = new Point(277, 0);
-            splitterItem1.Name = "splitterItem1";
-            splitterItem1.Size = new Size(10, 704);
-            // 
-            // fNgayBatDauThiHanh
-            // 
-            fNgayBatDauThiHanh.EditValue = null;
-            fNgayBatDauThiHanh.Location = new Point(457, 515);
-            fNgayBatDauThiHanh.MenuManager = barManager1;
-            fNgayBatDauThiHanh.Name = "fNgayBatDauThiHanh";
-            fNgayBatDauThiHanh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            fNgayBatDauThiHanh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            fNgayBatDauThiHanh.Size = new Size(917, 20);
-            fNgayBatDauThiHanh.StyleController = layoutControl1;
-            fNgayBatDauThiHanh.TabIndex = 11;
-            // 
             // layoutControlItem11
             // 
             layoutControlItem11.Control = fNgayBatDauThiHanh;
@@ -646,15 +654,6 @@ namespace ProjectT1.CoreClient {
             layoutControlItem11.Size = new Size(1067, 24);
             layoutControlItem11.Text = "Ngày bắt đầu thi hành (*)";
             layoutControlItem11.TextSize = new Size(134, 13);
-            // 
-            // fNhungNguoiChungKien
-            // 
-            fNhungNguoiChungKien.Location = new Point(457, 241);
-            fNhungNguoiChungKien.MenuManager = barManager1;
-            fNhungNguoiChungKien.Name = "fNhungNguoiChungKien";
-            fNhungNguoiChungKien.Size = new Size(917, 20);
-            fNhungNguoiChungKien.StyleController = layoutControl1;
-            fNhungNguoiChungKien.TabIndex = 7;
             // 
             // layoutControlItem6
             // 
@@ -665,33 +664,20 @@ namespace ProjectT1.CoreClient {
             layoutControlItem6.Text = "Những người chứng kiến (*)";
             layoutControlItem6.TextSize = new Size(134, 13);
             // 
-            // emptySpaceItem2
+            // layoutControlItem5
             // 
-            emptySpaceItem2.AllowHotTrack = false;
-            emptySpaceItem2.Location = new Point(0, 220);
-            emptySpaceItem2.MaxSize = new Size(0, 10);
-            emptySpaceItem2.MinSize = new Size(10, 10);
-            emptySpaceItem2.Name = "emptySpaceItem2";
-            emptySpaceItem2.Size = new Size(1067, 10);
-            emptySpaceItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            emptySpaceItem2.TextSize = new Size(0, 0);
-            // 
-            // emptySpaceItem3
-            // 
-            emptySpaceItem3.AllowHotTrack = false;
-            emptySpaceItem3.Location = new Point(0, 275);
-            emptySpaceItem3.MaxSize = new Size(0, 10);
-            emptySpaceItem3.MinSize = new Size(10, 10);
-            emptySpaceItem3.Name = "emptySpaceItem3";
-            emptySpaceItem3.Size = new Size(1067, 10);
-            emptySpaceItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            emptySpaceItem3.TextSize = new Size(0, 0);
-            // 
-            // layoutControlGroup1
-            // 
-            layoutControlGroup1.Location = new Point(0, 230);
-            layoutControlGroup1.Name = "layoutControlGroup1";
-            layoutControlGroup1.Size = new Size(1067, 45);
+            layoutControlItem5.AppearanceItemCaption.Options.UseTextOptions = true;
+            layoutControlItem5.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
+            layoutControlItem5.ContentVertAlignment = DevExpress.Utils.VertAlignment.Top;
+            layoutControlItem5.Control = fHinhThucKyLuat;
+            layoutControlItem5.Location = new Point(0, 370);
+            layoutControlItem5.MaxSize = new Size(0, 100);
+            layoutControlItem5.MinSize = new Size(136, 100);
+            layoutControlItem5.Name = "layoutControlItem5";
+            layoutControlItem5.Size = new Size(1067, 100);
+            layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            layoutControlItem5.Text = "Hình thức kỷ luật (*)";
+            layoutControlItem5.TextSize = new Size(134, 13);
             // 
             // emptySpaceItem1
             // 
@@ -700,16 +686,6 @@ namespace ProjectT1.CoreClient {
             emptySpaceItem1.Name = "emptySpaceItem1";
             emptySpaceItem1.Size = new Size(1067, 141);
             emptySpaceItem1.TextSize = new Size(0, 0);
-            // 
-            // fIsViPhamChinhSachCongTy
-            // 
-            fIsViPhamChinhSachCongTy.Location = new Point(578, 275);
-            fIsViPhamChinhSachCongTy.MenuManager = barManager1;
-            fIsViPhamChinhSachCongTy.Name = "fIsViPhamChinhSachCongTy";
-            fIsViPhamChinhSachCongTy.Properties.Caption = "";
-            fIsViPhamChinhSachCongTy.Size = new Size(796, 20);
-            fIsViPhamChinhSachCongTy.StyleController = layoutControl1;
-            fIsViPhamChinhSachCongTy.TabIndex = 8;
             // 
             // layoutControlItem7
             // 
@@ -721,15 +697,6 @@ namespace ProjectT1.CoreClient {
             layoutControlItem7.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             layoutControlItem7.TextSize = new Size(262, 13);
             layoutControlItem7.TextToControlDistance = 5;
-            // 
-            // fDienGiai
-            // 
-            fDienGiai.Location = new Point(311, 317);
-            fDienGiai.MenuManager = barManager1;
-            fDienGiai.Name = "fDienGiai";
-            fDienGiai.Size = new Size(1063, 84);
-            fDienGiai.StyleController = layoutControl1;
-            fDienGiai.TabIndex = 9;
             // 
             // layoutControlItem12
             // 
@@ -768,6 +735,41 @@ namespace ProjectT1.CoreClient {
             emptySpaceItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             emptySpaceItem5.TextSize = new Size(0, 0);
             // 
+            // splitterItem1
+            // 
+            splitterItem1.AllowHotTrack = true;
+            splitterItem1.Location = new Point(277, 0);
+            splitterItem1.Name = "splitterItem1";
+            splitterItem1.Size = new Size(10, 704);
+            // 
+            // emptySpaceItem2
+            // 
+            emptySpaceItem2.AllowHotTrack = false;
+            emptySpaceItem2.Location = new Point(0, 220);
+            emptySpaceItem2.MaxSize = new Size(0, 10);
+            emptySpaceItem2.MinSize = new Size(10, 10);
+            emptySpaceItem2.Name = "emptySpaceItem2";
+            emptySpaceItem2.Size = new Size(1067, 10);
+            emptySpaceItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            emptySpaceItem2.TextSize = new Size(0, 0);
+            // 
+            // emptySpaceItem3
+            // 
+            emptySpaceItem3.AllowHotTrack = false;
+            emptySpaceItem3.Location = new Point(0, 275);
+            emptySpaceItem3.MaxSize = new Size(0, 10);
+            emptySpaceItem3.MinSize = new Size(10, 10);
+            emptySpaceItem3.Name = "emptySpaceItem3";
+            emptySpaceItem3.Size = new Size(1067, 10);
+            emptySpaceItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            emptySpaceItem3.TextSize = new Size(0, 0);
+            // 
+            // layoutControlGroup1
+            // 
+            layoutControlGroup1.Location = new Point(0, 230);
+            layoutControlGroup1.Name = "layoutControlGroup1";
+            layoutControlGroup1.Size = new Size(1067, 45);
+            // 
             // FrmKyLuat
             // 
             ClientSize = new Size(1398, 768);
@@ -782,8 +784,13 @@ namespace ProjectT1.CoreClient {
             Load += Form_Load;
             ((System.ComponentModel.ISupportInitialize)layoutControl1).EndInit();
             layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)fDiaDiemXayRa.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fDienGiai.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)barManager1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fIsViPhamChinhSachCongTy.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fNhungNguoiChungKien.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayBatDauThiHanh.Properties.CalendarTimeProperties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fNgayBatDauThiHanh.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fDiaDiemXayRa.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fThoiGianXayRa.Properties.CalendarTimeProperties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fThoiGianXayRa.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fNgayHetHieuLuc.Properties.CalendarTimeProperties).EndInit();
@@ -804,26 +811,21 @@ namespace ProjectT1.CoreClient {
             ((System.ComponentModel.ISupportInitialize)layoutControlItem2).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem3).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)layoutControlItem5).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem8).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem9).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem10).EndInit();
-            ((System.ComponentModel.ISupportInitialize)splitterItem1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)fNgayBatDauThiHanh.Properties.CalendarTimeProperties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)fNgayBatDauThiHanh.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem11).EndInit();
-            ((System.ComponentModel.ISupportInitialize)fNhungNguoiChungKien.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)emptySpaceItem2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)emptySpaceItem3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)layoutControlGroup1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem5).EndInit();
             ((System.ComponentModel.ISupportInitialize)emptySpaceItem1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)fIsViPhamChinhSachCongTy.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)fDienGiai.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem12).EndInit();
             ((System.ComponentModel.ISupportInitialize)emptySpaceItem4).EndInit();
             ((System.ComponentModel.ISupportInitialize)emptySpaceItem5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)splitterItem1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)emptySpaceItem2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)emptySpaceItem3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlGroup1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

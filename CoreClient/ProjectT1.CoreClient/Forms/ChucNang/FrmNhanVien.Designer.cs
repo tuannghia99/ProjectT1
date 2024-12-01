@@ -29,7 +29,7 @@ namespace ProjectT1.CoreClient {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNhanVien));
             layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            fModifiedDate = new DevExpress.XtraEditors.DateEdit();
+            fAvatar = new DevExpress.XtraEditors.PictureEdit();
             barManager1 = new DevExpress.XtraBars.BarManager(components);
             bar2 = new DevExpress.XtraBars.Bar();
             btnCreate = new DevExpress.XtraBars.BarButtonItem();
@@ -44,6 +44,7 @@ namespace ProjectT1.CoreClient {
             barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            fModifiedDate = new DevExpress.XtraEditors.DateEdit();
             fCreateDate = new DevExpress.XtraEditors.DateEdit();
             fEmail = new DevExpress.XtraEditors.TextEdit();
             fPhoneNumber = new DevExpress.XtraEditors.TextEdit();
@@ -147,15 +148,15 @@ namespace ProjectT1.CoreClient {
             layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
             splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
             dateTimeChartRangeControlClient1 = new DevExpress.XtraEditors.DateTimeChartRangeControlClient();
-            fAvatar = new DevExpress.XtraEditors.PictureEdit();
-            layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)layoutControl1).BeginInit();
             layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)fAvatar.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)barManager1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fModifiedDate.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fModifiedDate.Properties.CalendarTimeProperties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)barManager1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fCreateDate.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fCreateDate.Properties.CalendarTimeProperties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fEmail.Properties).BeginInit();
@@ -228,10 +229,9 @@ namespace ProjectT1.CoreClient {
             ((System.ComponentModel.ISupportInitialize)layoutControlItem10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem24).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitterItem1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateTimeChartRangeControlClient1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)fAvatar.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)layoutControlItem24).BeginInit();
             SuspendLayout();
             // 
             // layoutControl1
@@ -274,17 +274,15 @@ namespace ProjectT1.CoreClient {
             layoutControl1.TabIndex = 0;
             layoutControl1.Text = "layoutControl1";
             // 
-            // fModifiedDate
+            // fAvatar
             // 
-            fModifiedDate.EditValue = null;
-            fModifiedDate.Location = new Point(998, 414);
-            fModifiedDate.MenuManager = barManager1;
-            fModifiedDate.Name = "fModifiedDate";
-            fModifiedDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            fModifiedDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            fModifiedDate.Size = new Size(364, 20);
-            fModifiedDate.StyleController = layoutControl1;
-            fModifiedDate.TabIndex = 23;
+            fAvatar.Location = new Point(311, 45);
+            fAvatar.MenuManager = barManager1;
+            fAvatar.Name = "fAvatar";
+            fAvatar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            fAvatar.Size = new Size(163, 186);
+            fAvatar.StyleController = layoutControl1;
+            fAvatar.TabIndex = 1;
             // 
             // barManager1
             // 
@@ -417,10 +415,22 @@ namespace ProjectT1.CoreClient {
             barDockControlRight.Manager = barManager1;
             barDockControlRight.Size = new Size(0, 724);
             // 
+            // fModifiedDate
+            // 
+            fModifiedDate.EditValue = null;
+            fModifiedDate.Location = new Point(998, 390);
+            fModifiedDate.MenuManager = barManager1;
+            fModifiedDate.Name = "fModifiedDate";
+            fModifiedDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fModifiedDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            fModifiedDate.Size = new Size(364, 20);
+            fModifiedDate.StyleController = layoutControl1;
+            fModifiedDate.TabIndex = 23;
+            // 
             // fCreateDate
             // 
             fCreateDate.EditValue = null;
-            fCreateDate.Location = new Point(998, 390);
+            fCreateDate.Location = new Point(998, 366);
             fCreateDate.MenuManager = barManager1;
             fCreateDate.Name = "fCreateDate";
             fCreateDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
@@ -431,7 +441,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fEmail
             // 
-            fEmail.Location = new Point(998, 366);
+            fEmail.Location = new Point(998, 342);
             fEmail.MenuManager = barManager1;
             fEmail.Name = "fEmail";
             fEmail.Size = new Size(364, 20);
@@ -440,7 +450,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fPhoneNumber
             // 
-            fPhoneNumber.Location = new Point(998, 342);
+            fPhoneNumber.Location = new Point(998, 318);
             fPhoneNumber.MenuManager = barManager1;
             fPhoneNumber.Name = "fPhoneNumber";
             fPhoneNumber.Size = new Size(364, 20);
@@ -449,7 +459,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fUsername
             // 
-            fUsername.Location = new Point(998, 318);
+            fUsername.Location = new Point(998, 294);
             fUsername.MenuManager = barManager1;
             fUsername.Name = "fUsername";
             fUsername.Size = new Size(364, 20);
@@ -459,7 +469,7 @@ namespace ProjectT1.CoreClient {
             // btnRemoveAvatar
             // 
             btnRemoveAvatar.ImageOptions.Image = (Image)resources.GetObject("btnRemoveAvatar.ImageOptions.Image");
-            btnRemoveAvatar.Location = new Point(397, 259);
+            btnRemoveAvatar.Location = new Point(397, 235);
             btnRemoveAvatar.Name = "btnRemoveAvatar";
             btnRemoveAvatar.Size = new Size(77, 22);
             btnRemoveAvatar.StyleController = layoutControl1;
@@ -470,7 +480,7 @@ namespace ProjectT1.CoreClient {
             // btnUploadAvatar
             // 
             btnUploadAvatar.ImageOptions.Image = (Image)resources.GetObject("btnUploadAvatar.ImageOptions.Image");
-            btnUploadAvatar.Location = new Point(311, 259);
+            btnUploadAvatar.Location = new Point(311, 235);
             btnUploadAvatar.Name = "btnUploadAvatar";
             btnUploadAvatar.Size = new Size(82, 22);
             btnUploadAvatar.StyleController = layoutControl1;
@@ -480,7 +490,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fCanNang
             // 
-            fCanNang.Location = new Point(998, 531);
+            fCanNang.Location = new Point(998, 507);
             fCanNang.MenuManager = barManager1;
             fCanNang.Name = "fCanNang";
             fCanNang.Size = new Size(364, 20);
@@ -489,7 +499,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fChieuCao
             // 
-            fChieuCao.Location = new Point(998, 507);
+            fChieuCao.Location = new Point(998, 483);
             fChieuCao.MenuManager = barManager1;
             fChieuCao.Name = "fChieuCao";
             fChieuCao.Size = new Size(364, 20);
@@ -498,7 +508,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fTinhTrangSucKhoe
             // 
-            fTinhTrangSucKhoe.Location = new Point(998, 483);
+            fTinhTrangSucKhoe.Location = new Point(998, 459);
             fTinhTrangSucKhoe.MenuManager = barManager1;
             fTinhTrangSucKhoe.Name = "fTinhTrangSucKhoe";
             fTinhTrangSucKhoe.Size = new Size(364, 20);
@@ -507,7 +517,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fNoiCap
             // 
-            fNoiCap.Location = new Point(453, 531);
+            fNoiCap.Location = new Point(453, 507);
             fNoiCap.MenuManager = barManager1;
             fNoiCap.Name = "fNoiCap";
             fNoiCap.Size = new Size(387, 20);
@@ -517,7 +527,7 @@ namespace ProjectT1.CoreClient {
             // fNgayCap
             // 
             fNgayCap.EditValue = null;
-            fNgayCap.Location = new Point(453, 507);
+            fNgayCap.Location = new Point(453, 483);
             fNgayCap.MenuManager = barManager1;
             fNgayCap.Name = "fNgayCap";
             fNgayCap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
@@ -528,7 +538,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fSoCanCuoc
             // 
-            fSoCanCuoc.Location = new Point(453, 483);
+            fSoCanCuoc.Location = new Point(453, 459);
             fSoCanCuoc.MenuManager = barManager1;
             fSoCanCuoc.Name = "fSoCanCuoc";
             fSoCanCuoc.Size = new Size(387, 20);
@@ -537,7 +547,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fIdTrinhDoHocVan
             // 
-            fIdTrinhDoHocVan.Location = new Point(453, 366);
+            fIdTrinhDoHocVan.Location = new Point(453, 342);
             fIdTrinhDoHocVan.MenuManager = barManager1;
             fIdTrinhDoHocVan.Name = "fIdTrinhDoHocVan";
             fIdTrinhDoHocVan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
@@ -555,7 +565,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fIdChucVu
             // 
-            fIdChucVu.Location = new Point(453, 342);
+            fIdChucVu.Location = new Point(453, 318);
             fIdChucVu.MenuManager = barManager1;
             fIdChucVu.Name = "fIdChucVu";
             fIdChucVu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
@@ -573,7 +583,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fIdPhongBan
             // 
-            fIdPhongBan.Location = new Point(453, 318);
+            fIdPhongBan.Location = new Point(453, 294);
             fIdPhongBan.MenuManager = barManager1;
             fIdPhongBan.Name = "fIdPhongBan";
             fIdPhongBan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
@@ -591,7 +601,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fTinHoc
             // 
-            fTinHoc.Location = new Point(453, 414);
+            fTinHoc.Location = new Point(453, 390);
             fTinHoc.MenuManager = barManager1;
             fTinHoc.Name = "fTinHoc";
             fTinHoc.Size = new Size(387, 20);
@@ -600,7 +610,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fNgoaiNgu
             // 
-            fNgoaiNgu.Location = new Point(453, 390);
+            fNgoaiNgu.Location = new Point(453, 366);
             fNgoaiNgu.MenuManager = barManager1;
             fNgoaiNgu.Name = "fNgoaiNgu";
             fNgoaiNgu.Size = new Size(387, 20);
@@ -609,7 +619,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fTinhTrangHonNhan
             // 
-            fTinhTrangHonNhan.Location = new Point(608, 261);
+            fTinhTrangHonNhan.Location = new Point(608, 237);
             fTinhTrangHonNhan.MenuManager = barManager1;
             fTinhTrangHonNhan.Name = "fTinhTrangHonNhan";
             fTinhTrangHonNhan.Size = new Size(766, 20);
@@ -618,7 +628,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fDiaChi
             // 
-            fDiaChi.Location = new Point(608, 165);
+            fDiaChi.Location = new Point(608, 141);
             fDiaChi.MenuManager = barManager1;
             fDiaChi.Name = "fDiaChi";
             fDiaChi.Size = new Size(766, 20);
@@ -627,7 +637,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fTonGiao
             // 
-            fTonGiao.Location = new Point(608, 237);
+            fTonGiao.Location = new Point(608, 213);
             fTonGiao.MenuManager = barManager1;
             fTonGiao.Name = "fTonGiao";
             fTonGiao.Size = new Size(766, 20);
@@ -636,7 +646,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fDanToc
             // 
-            fDanToc.Location = new Point(608, 213);
+            fDanToc.Location = new Point(608, 189);
             fDanToc.MenuManager = barManager1;
             fDanToc.Name = "fDanToc";
             fDanToc.Size = new Size(766, 20);
@@ -645,7 +655,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fQuocTich
             // 
-            fQuocTich.Location = new Point(608, 189);
+            fQuocTich.Location = new Point(608, 165);
             fQuocTich.MenuManager = barManager1;
             fQuocTich.Name = "fQuocTich";
             fQuocTich.Size = new Size(766, 20);
@@ -654,7 +664,7 @@ namespace ProjectT1.CoreClient {
             // 
             // fNoiSinh
             // 
-            fNoiSinh.Location = new Point(608, 141);
+            fNoiSinh.Location = new Point(608, 117);
             fNoiSinh.MenuManager = barManager1;
             fNoiSinh.Name = "fNoiSinh";
             fNoiSinh.Size = new Size(766, 20);
@@ -663,11 +673,11 @@ namespace ProjectT1.CoreClient {
             // 
             // fGioiTinh
             // 
-            fGioiTinh.Location = new Point(608, 117);
+            fGioiTinh.Location = new Point(1058, 93);
             fGioiTinh.MenuManager = barManager1;
             fGioiTinh.Name = "fGioiTinh";
             fGioiTinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            fGioiTinh.Size = new Size(766, 20);
+            fGioiTinh.Size = new Size(316, 20);
             fGioiTinh.StyleController = layoutControl1;
             fGioiTinh.TabIndex = 5;
             // 
@@ -679,7 +689,7 @@ namespace ProjectT1.CoreClient {
             fNgaySinh.Name = "fNgaySinh";
             fNgaySinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             fNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            fNgaySinh.Size = new Size(766, 20);
+            fNgaySinh.Size = new Size(316, 20);
             fNgaySinh.StyleController = layoutControl1;
             fNgaySinh.TabIndex = 4;
             // 
@@ -943,6 +953,7 @@ namespace ProjectT1.CoreClient {
             // 
             // layoutControlGroupMainData
             // 
+            layoutControlGroupMainData.CaptionImageOptions.Image = (Image)resources.GetObject("layoutControlGroupMainData.CaptionImageOptions.Image");
             layoutControlGroupMainData.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem1 });
             layoutControlGroupMainData.Location = new Point(0, 0);
             layoutControlGroupMainData.Name = "layoutControlGroupMainData";
@@ -960,7 +971,8 @@ namespace ProjectT1.CoreClient {
             // 
             // layoutControlGroupEditControl
             // 
-            layoutControlGroupEditControl.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem2, emptySpaceItem1, layoutControlItem4, layoutControlItem6, layoutControlItem12, layoutControlItem7, layoutControlGroup1, layoutControlGroup2, layoutControlGroup3, layoutControlItem25, layoutControlItem26, layoutControlItem9, layoutControlItem5, layoutControlItem13, layoutControlGroup4, layoutControlItem11, layoutControlItem3, layoutControlItem24 });
+            layoutControlGroupEditControl.CaptionImageOptions.Image = (Image)resources.GetObject("layoutControlGroupEditControl.CaptionImageOptions.Image");
+            layoutControlGroupEditControl.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem2, emptySpaceItem1, layoutControlItem4, layoutControlItem6, layoutControlItem12, layoutControlItem7, layoutControlGroup1, layoutControlGroup2, layoutControlGroup3, layoutControlItem25, layoutControlItem26, layoutControlItem9, layoutControlGroup4, layoutControlItem11, layoutControlItem3, layoutControlItem24, layoutControlItem5, layoutControlItem13 });
             layoutControlGroupEditControl.Location = new Point(287, 0);
             layoutControlGroupEditControl.Name = "layoutControlGroupEditControl";
             layoutControlGroupEditControl.Size = new Size(1091, 704);
@@ -978,9 +990,9 @@ namespace ProjectT1.CoreClient {
             // emptySpaceItem1
             // 
             emptySpaceItem1.AllowHotTrack = false;
-            emptySpaceItem1.Location = new Point(0, 522);
+            emptySpaceItem1.Location = new Point(0, 498);
             emptySpaceItem1.Name = "emptySpaceItem1";
-            emptySpaceItem1.Size = new Size(1067, 137);
+            emptySpaceItem1.Size = new Size(1067, 161);
             emptySpaceItem1.TextSize = new Size(0, 0);
             // 
             // layoutControlItem4
@@ -988,14 +1000,14 @@ namespace ProjectT1.CoreClient {
             layoutControlItem4.Control = fNgaySinh;
             layoutControlItem4.Location = new Point(167, 48);
             layoutControlItem4.Name = "layoutControlItem4";
-            layoutControlItem4.Size = new Size(900, 24);
+            layoutControlItem4.Size = new Size(450, 24);
             layoutControlItem4.Text = "Ngày sinh (*)";
             layoutControlItem4.TextSize = new Size(118, 13);
             // 
             // layoutControlItem6
             // 
             layoutControlItem6.Control = fNoiSinh;
-            layoutControlItem6.Location = new Point(167, 96);
+            layoutControlItem6.Location = new Point(167, 72);
             layoutControlItem6.Name = "layoutControlItem6";
             layoutControlItem6.Size = new Size(900, 24);
             layoutControlItem6.Text = "Nơi sinh (*)";
@@ -1004,7 +1016,7 @@ namespace ProjectT1.CoreClient {
             // layoutControlItem12
             // 
             layoutControlItem12.Control = fDanToc;
-            layoutControlItem12.Location = new Point(167, 168);
+            layoutControlItem12.Location = new Point(167, 144);
             layoutControlItem12.Name = "layoutControlItem12";
             layoutControlItem12.Size = new Size(900, 24);
             layoutControlItem12.Text = "Dân tộc (*)";
@@ -1013,7 +1025,7 @@ namespace ProjectT1.CoreClient {
             // layoutControlItem7
             // 
             layoutControlItem7.Control = fTinhTrangHonNhan;
-            layoutControlItem7.Location = new Point(167, 216);
+            layoutControlItem7.Location = new Point(167, 192);
             layoutControlItem7.Name = "layoutControlItem7";
             layoutControlItem7.Size = new Size(900, 24);
             layoutControlItem7.Text = "Trình trạng hôn nhân (*)";
@@ -1021,8 +1033,9 @@ namespace ProjectT1.CoreClient {
             // 
             // layoutControlGroup1
             // 
+            layoutControlGroup1.CaptionImageOptions.Image = (Image)resources.GetObject("layoutControlGroup1.CaptionImageOptions.Image");
             layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem15, layoutControlItem16, layoutControlItem17, layoutControlItem8, layoutControlItem14 });
-            layoutControlGroup1.Location = new Point(0, 240);
+            layoutControlGroup1.Location = new Point(0, 216);
             layoutControlGroup1.Name = "layoutControlGroup1";
             layoutControlGroup1.Size = new Size(545, 165);
             layoutControlGroup1.Text = "Thông tin công tác, học vấn";
@@ -1074,8 +1087,9 @@ namespace ProjectT1.CoreClient {
             // 
             // layoutControlGroup2
             // 
+            layoutControlGroup2.CaptionImageOptions.Image = (Image)resources.GetObject("layoutControlGroup2.CaptionImageOptions.Image");
             layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem18, layoutControlItem19, layoutControlItem20 });
-            layoutControlGroup2.Location = new Point(0, 405);
+            layoutControlGroup2.Location = new Point(0, 381);
             layoutControlGroup2.Name = "layoutControlGroup2";
             layoutControlGroup2.Size = new Size(545, 117);
             layoutControlGroup2.Text = "Thông tin CCCD/CMND";
@@ -1109,8 +1123,9 @@ namespace ProjectT1.CoreClient {
             // 
             // layoutControlGroup3
             // 
+            layoutControlGroup3.CaptionImageOptions.Image = (Image)resources.GetObject("layoutControlGroup3.CaptionImageOptions.Image");
             layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem21, layoutControlItem22, layoutControlItem23 });
-            layoutControlGroup3.Location = new Point(545, 405);
+            layoutControlGroup3.Location = new Point(545, 381);
             layoutControlGroup3.Name = "layoutControlGroup3";
             layoutControlGroup3.Size = new Size(522, 117);
             layoutControlGroup3.Text = "Thông tin sức khoẻ";
@@ -1145,7 +1160,7 @@ namespace ProjectT1.CoreClient {
             // layoutControlItem25
             // 
             layoutControlItem25.Control = btnUploadAvatar;
-            layoutControlItem25.Location = new Point(0, 214);
+            layoutControlItem25.Location = new Point(0, 190);
             layoutControlItem25.Name = "layoutControlItem25";
             layoutControlItem25.Size = new Size(86, 26);
             layoutControlItem25.TextSize = new Size(0, 0);
@@ -1154,7 +1169,7 @@ namespace ProjectT1.CoreClient {
             // layoutControlItem26
             // 
             layoutControlItem26.Control = btnRemoveAvatar;
-            layoutControlItem26.Location = new Point(86, 214);
+            layoutControlItem26.Location = new Point(86, 190);
             layoutControlItem26.Name = "layoutControlItem26";
             layoutControlItem26.Size = new Size(81, 26);
             layoutControlItem26.TextSize = new Size(0, 0);
@@ -1172,16 +1187,16 @@ namespace ProjectT1.CoreClient {
             // layoutControlItem5
             // 
             layoutControlItem5.Control = fGioiTinh;
-            layoutControlItem5.Location = new Point(167, 72);
+            layoutControlItem5.Location = new Point(617, 48);
             layoutControlItem5.Name = "layoutControlItem5";
-            layoutControlItem5.Size = new Size(900, 24);
+            layoutControlItem5.Size = new Size(450, 24);
             layoutControlItem5.Text = "Giới tính (*)";
             layoutControlItem5.TextSize = new Size(118, 13);
             // 
             // layoutControlItem13
             // 
             layoutControlItem13.Control = fTonGiao;
-            layoutControlItem13.Location = new Point(167, 192);
+            layoutControlItem13.Location = new Point(167, 168);
             layoutControlItem13.Name = "layoutControlItem13";
             layoutControlItem13.Size = new Size(900, 24);
             layoutControlItem13.Text = "Tôn giáo (*)";
@@ -1189,8 +1204,9 @@ namespace ProjectT1.CoreClient {
             // 
             // layoutControlGroup4
             // 
+            layoutControlGroup4.CaptionImageOptions.Image = (Image)resources.GetObject("layoutControlGroup4.CaptionImageOptions.Image");
             layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem27, layoutControlItem28, layoutControlItem29, layoutControlItem31, layoutControlItem10 });
-            layoutControlGroup4.Location = new Point(545, 240);
+            layoutControlGroup4.Location = new Point(545, 216);
             layoutControlGroup4.Name = "layoutControlGroup4";
             layoutControlGroup4.Size = new Size(522, 165);
             layoutControlGroup4.Text = "Thông tin tài khoản";
@@ -1243,7 +1259,7 @@ namespace ProjectT1.CoreClient {
             // layoutControlItem11
             // 
             layoutControlItem11.Control = fQuocTich;
-            layoutControlItem11.Location = new Point(167, 144);
+            layoutControlItem11.Location = new Point(167, 120);
             layoutControlItem11.Name = "layoutControlItem11";
             layoutControlItem11.Size = new Size(900, 24);
             layoutControlItem11.Text = "Quốc tịch (*)";
@@ -1252,11 +1268,20 @@ namespace ProjectT1.CoreClient {
             // layoutControlItem3
             // 
             layoutControlItem3.Control = fDiaChi;
-            layoutControlItem3.Location = new Point(167, 120);
+            layoutControlItem3.Location = new Point(167, 96);
             layoutControlItem3.Name = "layoutControlItem3";
             layoutControlItem3.Size = new Size(900, 24);
             layoutControlItem3.Text = "Địa chỉ (*)";
             layoutControlItem3.TextSize = new Size(118, 13);
+            // 
+            // layoutControlItem24
+            // 
+            layoutControlItem24.Control = fAvatar;
+            layoutControlItem24.Location = new Point(0, 0);
+            layoutControlItem24.Name = "layoutControlItem24";
+            layoutControlItem24.Size = new Size(167, 190);
+            layoutControlItem24.TextSize = new Size(0, 0);
+            layoutControlItem24.TextVisible = false;
             // 
             // splitterItem1
             // 
@@ -1264,25 +1289,6 @@ namespace ProjectT1.CoreClient {
             splitterItem1.Location = new Point(277, 0);
             splitterItem1.Name = "splitterItem1";
             splitterItem1.Size = new Size(10, 704);
-            // 
-            // fAvatar
-            // 
-            fAvatar.Location = new Point(311, 45);
-            fAvatar.MenuManager = barManager1;
-            fAvatar.Name = "fAvatar";
-            fAvatar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            fAvatar.Size = new Size(163, 210);
-            fAvatar.StyleController = layoutControl1;
-            fAvatar.TabIndex = 5;
-            // 
-            // layoutControlItem24
-            // 
-            layoutControlItem24.Control = fAvatar;
-            layoutControlItem24.Location = new Point(0, 0);
-            layoutControlItem24.Name = "layoutControlItem24";
-            layoutControlItem24.Size = new Size(167, 214);
-            layoutControlItem24.TextSize = new Size(0, 0);
-            layoutControlItem24.TextVisible = false;
             // 
             // FrmNhanVien
             // 
@@ -1298,9 +1304,10 @@ namespace ProjectT1.CoreClient {
             Load += Form_Load;
             ((System.ComponentModel.ISupportInitialize)layoutControl1).EndInit();
             layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)fAvatar.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)barManager1).EndInit();
             ((System.ComponentModel.ISupportInitialize)fModifiedDate.Properties.CalendarTimeProperties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fModifiedDate.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)barManager1).EndInit();
             ((System.ComponentModel.ISupportInitialize)fCreateDate.Properties.CalendarTimeProperties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fCreateDate.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)fEmail.Properties).EndInit();
@@ -1373,10 +1380,9 @@ namespace ProjectT1.CoreClient {
             ((System.ComponentModel.ISupportInitialize)layoutControlItem10).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem11).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)layoutControlItem24).EndInit();
             ((System.ComponentModel.ISupportInitialize)splitterItem1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateTimeChartRangeControlClient1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)fAvatar.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)layoutControlItem24).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
