@@ -458,6 +458,7 @@ namespace ProjectT1.CoreClient {
             // 
             // layoutControlGroupMainData
             // 
+            layoutControlGroupMainData.CaptionImageOptions.Image = (Image)resources.GetObject("layoutControlGroupMainData.CaptionImageOptions.Image");
             layoutControlGroupMainData.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem1 });
             layoutControlGroupMainData.Location = new Point(0, 0);
             layoutControlGroupMainData.Name = "layoutControlGroupMainData";
@@ -475,6 +476,7 @@ namespace ProjectT1.CoreClient {
             // 
             // layoutControlGroupEditControl
             // 
+            layoutControlGroupEditControl.CaptionImageOptions.Image = (Image)resources.GetObject("layoutControlGroupEditControl.CaptionImageOptions.Image");
             layoutControlGroupEditControl.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem2, emptySpaceItem1, layoutControlItem3, layoutControlItem4, layoutControlItem5, layoutControlItem6, layoutControlItem7, layoutControlItem8 });
             layoutControlGroupEditControl.Location = new Point(287, 0);
             layoutControlGroupEditControl.Name = "layoutControlGroupEditControl";
